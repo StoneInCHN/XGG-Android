@@ -1,0 +1,47 @@
+<resources>
+    <string name="app_name">享个购</string>
+    <string name="null_des"/>
+
+    <string name="order_share_title">@string/app_name</string>
+
+    <string name="string_filter">0123456789qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM</string>
+
+    <!--我的、推荐有礼-->
+    <string name="mine_recommend_tip">邀请好友注册并填写您的邀请码，您可得到此好友每笔消费的收益！若此好友升级为商家，您也可得到此好友每笔交易的收益！</string>
+
+    <!--我的、店铺-->
+    <string name="mine_shop_checkin_license_photo">营业执照照片(最大上传2000*2000的像素)</string>
+
+    <!--分享内容-->
+    <!--<string name="recommend_share_download_content">翼享生活，大众分享，全民受益！</string>-->
+    <string name="recommend_share_download_content">在享个购APP消费越多，获得奖励越高，快来看看吧！</string>
+    <string name="recommend_share_content">在享个购APP消费越多，获得奖励越高，快来看看吧！</string>
+
+    <string name="alert_dialog_tips">确定要返回吗？返回后资料将被清空。</string>
+
+
+    <string name="permission_get_accounts_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+    <string name="permission_read_phone_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+    <string name="permission_call_phone_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+    <string name="permission_camera_hint">相机服务未开启，请在系统设置中开启相机服务。</string>
+    <string name="permission_access_fine_location_hint">定位服务未开启，请在系统设置中开启定位服务。</string>
+    <string name="permission_access_coarse_location_hint">定位服务未开启，请在系统设置中开启定位服务。</string>
+    <string name="permission_read_external_hint">内存存储服务未开启，请在系统设置中开启存储服务。</string>
+    <string name="permission_white_external_hint">内存存储服务未开启，请在系统设置中开启存储服务。</string>
+    <string name="permission_recode_audio_hint">没有此权限，无法开启这个功能，请开启权限。</string>
+
+    <string name="text_add_shop">请确认手机号是店铺法人的手机号，否则店铺有可能绑定到别的会员账号，请慎重填写。</string>
+    <string name="tip_bind_member">此会员已经存在，确定要绑定此会员为商家吗？</string>
+    <string name="tip_real_name_verification">信息已安全加密，公用于实名认证审核</string>
+    <string name="tip_real_name_verification_2">请上传您本人真实有效的身份证照片，否则将会影响您的提现哦！</string>
+    <string name="tip_real_name_verification_upload_id_card_1">上传身份证正面</string>
+    <string name="tip_real_name_verification_upload_id_card_2">上传身份证反面</string>
+    <string name="tip_real_name_verification_3">现在您还没有实名认证成功，确定要返回吗？</string>
+
+    <string name="tip_bank_card_add">请绑定持卡人本人的银行卡</string>
+    <string name="tip_bank_card_default">设为默认提现卡</string>
+    <string name="tip_bank_card_info">信息已安全加密，仅用于银行验证</string>
+    <string name="tip_bank_card_verify_mobile" formatted="false">绑定银行卡需要短信确认，验证码已发送至手机：\n%s，请按提示操作。</string>
+
+    <string name="tip_shop_record_order_tip">录单只需要支付让利款。</string>
+</resources>

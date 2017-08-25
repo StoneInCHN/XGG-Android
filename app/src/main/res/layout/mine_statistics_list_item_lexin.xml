@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--乐心统计item-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white">
+
+    <!--时间与积分-->
+    <TextView
+        android:id="@+id/mine_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXX-XX-XX XX:XX\n积分：XXX"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_black"
+        android:lineSpacingExtra="@dimen/view_padding_less"
+        android:paddingTop="@dimen/view_padding"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingBottom="@dimen/view_padding"/>
+
+    <!--本次增加乐心与总乐心-->
+    <TextView
+        android:id="@+id/mine_tv_add_lexin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="+X\nX"
+        android:gravity="right"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_red"
+        android:layout_gravity="right"
+        android:lineSpacingExtra="@dimen/view_padding_less"
+        android:paddingTop="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding"
+        android:paddingBottom="@dimen/view_padding"
+        />
+
+    <include layout="@layout/common_split_line_long"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_gravity="bottom"/>
+
+</FrameLayout>

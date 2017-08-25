@@ -1,0 +1,47 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <!-- 文字尺寸 比率 0.52 -->
+    <dimen name="text_72">37.4sp</dimen>
+    <dimen name="text_50">26sp</dimen>
+    <dimen name="text_38">19.8sp</dimen>
+    <dimen name="text_36">18.7sp</dimen>
+    <dimen name="text_34">17.7sp</dimen>
+    <dimen name="text_32">16.6sp</dimen>
+    <dimen name="text_30">15.6sp</dimen>
+    <dimen name="text_28">14.6sp</dimen>
+    <dimen name="text_26">13.5sp</dimen>
+    <dimen name="text_24">12.5sp</dimen>
+    <dimen name="text_22">11.5sp</dimen>
+    <dimen name="text_20">10.4sp</dimen>
+    <dimen name="text_16">8.3sp</dimen>
+
+    <!-- 视图尺寸 -->
+    <dimen name="title_layout_height">55dp</dimen>                      <!-- 标题行高度 -->
+    <dimen name="title_index_section_height">40dp</dimen>               <!-- 索引标题高度 -->
+    <dimen name="title_btn_width">@dimen/title_layout_height</dimen>    <!-- 标题行按钮宽度 -->
+    <dimen name="title_btn_height">@dimen/title_layout_height</dimen>   <!-- 标题行按钮高度 -->
+    <dimen name="common_line_height">55dp</dimen>                       <!-- 普通行高度 -->
+    <dimen name="common_list_icon_size">60dp</dimen>                    <!-- 列表图标尺寸 -->
+    <dimen name="common_head_icon_big_size">80dp</dimen>                <!-- 头像图标大尺寸 -->
+    <dimen name="common_head_icon_small_size">50dp</dimen>              <!-- 头像图标小尺寸 -->
+    <dimen name="common_img_list_size">80dp</dimen>                    <!-- 图片列表尺寸 -->
+    <dimen name="common_img_list_size_with">100dp</dimen>               <!-- 图片列表尺寸（宽） -->
+    <dimen name="common_img_list_size_height">70dp</dimen>              <!-- 图片列表尺寸（高） -->
+    <dimen name="common_logo_icon_big_size">135dp</dimen>               <!-- 图片logo大尺寸  -->
+
+    <!-- 间距 -->
+    <dimen name="view_margin">13dp</dimen>               <!-- 外间距 -->
+    <dimen name="view_margin_less">6dp</dimen>           <!-- 缩小外间距 -->
+    <dimen name="view_margin_double">22dp</dimen>        <!-- 双倍外间距 -->
+    <dimen name="view_margin_with_arraw">28dp</dimen>    <!-- 文字带箭头的右边间距 -->
+    <dimen name="view_padding">@dimen/view_margin</dimen>               <!-- 内间距 -->
+    <dimen name="view_padding_less">@dimen/view_margin_less</dimen>     <!-- 缩小内间距 -->
+    <dimen name="view_padding_double">@dimen/view_margin_double</dimen> <!-- 双倍内间距 -->
+    <dimen name="drawable_padding">5dp</dimen>           <!-- 文字与icon的间距 -->
+    <dimen name="edit_padding">5dp</dimen>               <!-- 输入框内间距 -->
+    <dimen name="edit_padding_double">10dp</dimen>       <!-- 输入框双倍内间距 -->
+
+</resources>

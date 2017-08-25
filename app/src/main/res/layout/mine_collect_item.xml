@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <include layout="@layout/common_split_line_long"
+        android:id="@+id/mine_item_div_top"/>
+    <include layout="@layout/common_split_line_long_mt_less"
+        android:visibility="gone"
+        android:id="@+id/mine_item_div_normal"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white">
+
+        <!--图片-->
+        <ImageView
+            android:id="@+id/mine_item_img_icon"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:scaleType="centerCrop"/>
+
+        <!--显示距离-->
+        <TextView
+            android:id="@+id/mine_item_tv_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:text=""
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_gray"/>
+
+        <!--标题-->
+        <TextView
+            android:id="@+id/mine_item_tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_toLeftOf="@id/mine_item_tv_distance"
+            android:layout_toRightOf="@id/mine_item_img_icon"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:text=""
+            android:textSize="@dimen/text_34"
+            android:textColor="@color/text_title_black" />
+
+        <!--地址-->
+        <TextView
+            android:id="@+id/mine_item_tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/mine_item_img_icon"
+            android:layout_toLeftOf="@id/mine_item_tv_distance"
+            android:layout_toRightOf="@id/mine_item_img_icon"
+            android:drawableLeft="@drawable/rebate_public_icon_location"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="XXXXXX"
+            android:textSize="@dimen/text_26"
+            android:textColor="@color/text_black"
+            />
+
+        <RelativeLayout
+            android:id="@+id/layout_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/mine_item_tv_distance"
+            android:layout_toRightOf="@id/mine_item_img_icon"
+            android:layout_below="@id/mine_item_tv_title"
+            android:layout_above="@id/mine_item_tv_address"
+            >
+
+            <!--经营类型-->
+            <TextView
+                android:id="@+id/mine_item_tv_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:paddingRight="@dimen/view_padding_less"
+                android:paddingLeft="@dimen/view_padding_less"
+                android:text=""
+                android:textSize="@dimen/text_22"
+                android:background="@drawable/shape_bg_white_bd_1px_red_rad_4"
+                android:textColor="@color/text_red"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/view_margin"
+                />
+
+
+            <!--评分-->
+            <TextView
+                android:id="@+id/mine_item_tv_score"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/text_26"
+                android:layout_toRightOf="@id/mine_item_tv_type"
+                android:layout_centerVertical="true"
+                android:textColor="@color/text_black"/>
+
+            <!--评分-->
+            <TextView
+                android:id="@+id/mine_item_tv_average"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="@dimen/text_26"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:textColor="@color/text_black"/>
+
+        </RelativeLayout>
+
+        <!--消费描述-->
+        <TextView
+            android:id="@+id/mine_item_tv_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@id/mine_item_tv_address"
+            android:layout_below="@id/mine_item_tv_address"
+            android:layout_marginTop="@dimen/view_margin_less"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_red"
+            android:paddingBottom="@dimen/view_padding_less"/>
+
+        <include layout="@layout/common_split_line_long"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_alignParentBottom="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

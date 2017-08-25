@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleView
+        android:id="@+id/common_title"
+        title:ctTitleText="登录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:background="@color/bg_white"
+        android:gravity="center"
+        android:textSize="@dimen/text_24"
+        android:text="首次登录需要验证手机号，请补全！"/>
+
+    <!-- 分割线 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription=""
+        android:background="@null"/>
+
+    <!-- 分割线 -->
+    <ImageView
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription=""
+        android:background="@null"/>
+    <LinearLayout
+        android:background="@color/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="手机号"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_28"/>
+        <EditText
+            android:id="@+id/third_login_edt_phone"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:hint="手机号"
+            android:textColor="@color/text_normal"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_26"
+            android:gravity="right|center_vertical"
+            android:background="@null"
+            android:inputType="phone"/>
+        <TextView
+            android:id="@+id/third_login_tv_counttimedown"
+            android:layout_width="40dp"
+            android:layout_height="wrap_content"
+            android:text="60S"
+            android:gravity="center_vertical|right"
+            android:textSize="@dimen/text_26"
+            android:paddingRight="10dp"
+            android:visibility="invisible"/>
+        <Button
+            android:id="@+id/third_login_btn_send_sms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="发送"
+            android:textSize="@dimen/text_26"
+            android:minHeight="0dp"
+            android:minWidth="0dp"/>
+    </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginRight="@dimen/view_margin"/>
+
+    <LinearLayout
+        android:background="@color/bg_white"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:orientation="horizontal"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="验证码"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_28"/>
+        <EditText
+            android:id="@+id/third_login_edt_sms"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:hint="验证码"
+            android:textColor="@color/text_normal"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_26"
+            android:gravity="right|center_vertical"
+            android:background="@null"/>
+    </LinearLayout>
+    <!-- 分割线 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:contentDescription=""
+        android:background="@null"/>
+
+    <Button
+        android:id="@+id/third_login_btn_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="完成"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_28"
+        android:background="@null"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"/>
+
+    <TextView
+        android:id="@+id/third_login_tip_text"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:gravity="center"
+        android:textSize="@dimen/text_24"
+        android:text="轻触“完成按钮，即表示你同意《软件许可及服务协议》"/>
+
+</LinearLayout>

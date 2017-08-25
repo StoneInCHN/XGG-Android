@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical"
+    >
+
+    <!-- 买单界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="买单"
+        />
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:id="@+id/index_pay_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:orientation="vertical"
+                >
+                <!-- logo -->
+                <ImageView
+                    android:id="@+id/index_pay_logo_img"
+                    android:layout_width="@dimen/common_logo_icon_big_size"
+                    android:layout_height="@dimen/common_logo_icon_big_size"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/view_margin_double"
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    />
+
+                <!-- 名称 -->
+                <TextView
+                    android:id="@+id/index_pay_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_padding"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/view_padding"
+                    android:paddingRight="@dimen/view_padding"
+                    android:textColor="@color/text_normal"
+                    android:textSize="@dimen/text_38"
+                    />
+
+                <!-- 折扣 -->
+                <TextView
+                    android:id="@+id/index_pay_discount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_padding"
+                    android:gravity="center"
+                    android:paddingLeft="@dimen/view_padding"
+                    android:paddingRight="@dimen/view_padding"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_28"
+                    />
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long"/>
+            <!-- 消费金额 -->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/index_pay_amount"
+                style="@style/line.btn_edt"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_line_height"
+                android:background="@color/bg_white"
+                lnv:lineContentHint="询问服务员后输入"
+                lnv:lineContentTextSize="@dimen/text_24"
+                lnv:lineTitleText="消费金额"
+                />
+
+            <include layout="@layout/common_split_line_long"/>
+            <!-- 备注 -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/bg_white"
+                >
+
+                <EditText
+                    android:id="@+id/index_pay_remark_edit"
+                    style="@style/text_black_28"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@null"
+                    android:gravity="left"
+                    android:hint="备注(选填)"
+                    android:maxLength="15"
+                    android:padding="@dimen/view_padding"
+                    />
+
+                <TextView
+                    android:id="@+id/index_pay_edit_count"
+                    style="@style/text_gray_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:layout_margin="5dp"
+                    android:text="0/15"
+                    />
+            </FrameLayout>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--乐豆抵扣-->
+            <include layout="@layout/index_pay_le_bean"
+                android:id="@+id/layout_index_pay_le_bean_info"
+                android:visibility="gone"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/title_index_section_height"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/view_padding"
+                android:text="支付方式"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_26"
+                />
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!-- 支付方式列表 -->
+            <com.hentica.app.lib.view.ChildListView
+                android:id="@+id/index_pay_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:listSelector="@color/transparent"
+                />
+        </LinearLayout>
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+
+</LinearLayout>

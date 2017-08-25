@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 发表评价界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleText="发表评价"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:id="@+id/mine_fill_evaluate_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_white"
+            >
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/view_padding"
+                >
+                <!-- 图标 -->
+                <ImageView
+                    android:id="@+id/mine_fill_value_icon"
+                    android:layout_width="@dimen/common_head_icon_small_size"
+                    android:layout_height="@dimen/common_head_icon_small_size"
+                    android:contentDescription=""
+                    android:scaleType="centerCrop"
+                    />
+                <!-- 返还积分 -->
+                <TextView
+                    android:id="@+id/mine_fill_evaluate_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_30"
+                    android:textColor="@color/text_normal"
+                    android:layout_toRightOf="@+id/mine_fill_value_icon"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginRight="80dp"
+                    android:text="好上好鱼嘴码头干锅烤鱼"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <!-- 地址 -->
+                <TextView
+                    android:id="@+id/mine_fill_evaluate_location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/mine_fill_value_icon"
+                    android:layout_below="@+id/mine_fill_evaluate_name"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:textSize="@dimen/text_28"
+                    android:textColor="@color/text_black"
+                    android:drawableLeft="@drawable/rebate_public_icon_location"
+                    android:drawablePadding="3dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_line_height"
+                >
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="@dimen/text_30"
+                    android:textColor="@color/text_black"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:text="服务评分"
+                    android:layout_centerVertical="true"
+                    />
+
+                <!-- 评星 -->
+                <RatingBar
+                    android:id="@+id/mine_fill_evaluate_rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:numStars="5"
+                    style="@style/roomRatingBar"
+                    android:layout_centerVertical="true"
+                    android:rating="5"
+                    android:stepSize="1"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/view_margin"
+                    />
+            </RelativeLayout>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <EditText
+                android:id="@+id/mine_fill_evaluate_edit"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@null"
+                style="@style/text_black_28"
+                android:padding="@dimen/view_padding"
+                android:hint="请写下对商家服务的感受吧！"
+                android:gravity="left"
+                />
+
+            <!-- 上传照片列表 -->
+            <com.hentica.app.lib.view.ChildGridView
+                android:id="@+id/mine_fill_evaluate_photo_gridview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/view_margin"
+                android:layout_marginTop="@dimen/view_margin"
+                android:horizontalSpacing="@dimen/view_margin"
+                android:listSelector="@color/transparent"
+                android:numColumns="4"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                android:verticalSpacing="@dimen/view_margin" >
+            </com.hentica.app.lib.view.ChildGridView>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--回复评价-->
+
+            <LinearLayout
+                android:id="@+id/mine_fill_evaluate_layout_reply"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+            <EditText
+                android:id="@+id/mine_fill_evaluate_reply"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:background="@null"
+                style="@style/text_black_28"
+                android:padding="@dimen/view_padding"
+                android:hint="商家：请写下对买家的感受吧！"
+                android:gravity="left"
+                />
+
+            <include layout="@layout/common_split_line_long"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+    <!-- 发表评价 -->
+    <TextView
+        android:id="@+id/mine_fill_evaluate_comment_btn"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:gravity="center"
+        android:textSize="@dimen/text_34"
+        android:textColor="@color/text_white"
+        android:text="发表评价"
+        android:background="@color/text_red"
+        />
+
+</LinearLayout>

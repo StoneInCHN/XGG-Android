@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    >
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/view_margin"
+        />
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_income"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/view_margin"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_order_sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@+id/mine_payment_detail_item_time"
+        />
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_discount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="@dimen/view_margin"
+        android:layout_below="@+id/mine_payment_detail_item_time"
+        android:layout_alignParentRight="true"
+        />
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_cost"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@+id/mine_payment_detail_item_order_sn"
+        />
+
+    <TextView
+        android:id="@+id/mine_payment_detail_item_give"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text="XXXXX"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@+id/mine_payment_detail_item_cost"
+
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/mine_payment_detail_item_give"
+        android:layout_marginTop="8dp"
+        >
+
+        <include layout="@layout/common_split_line_long"/>
+
+    </FrameLayout>
+
+</RelativeLayout>

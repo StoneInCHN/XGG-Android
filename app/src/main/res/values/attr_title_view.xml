@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 标题view -->
+    <declare-styleable name="TitleViewAttr">
+        <!-- 标题值 -->
+        <attr name="ctTitleText" format="string" />
+
+        <!-- 标题中哪些按钮可见 -->
+        <attr name="ctTitleVisibleBtns">
+            <!-- 标题文字 -->
+            <flag name="title" value="0x00000001" />
+            <!-- 左边文字按钮 -->
+            <flag name="leftTextBtn" value="0x00000002" />
+            <!-- 右边文字按钮 -->
+            <flag name="rightTextBtn" value="0x00000004" />
+            <!-- 左边图片按钮 -->
+            <flag name="leftImgBtn" value="0x00000008" />
+            <!-- 右边图片按钮 -->
+            <flag name="rightImgBtn" value="0x00000010" />
+        </attr>
+
+        <!-- 标题中左边图片 -->
+        <attr name="ctTitleLeftImg" format="reference" />
+        <!-- 标题中右边图片 -->
+        <attr name="ctTitleRightImg" format="reference" />
+        <!-- 左边按钮文字 -->
+        <attr name="ctTitleLeftText" format="string" />
+        <!-- 右边按钮文字 -->
+        <attr name="ctTitleRightText" format="string" />
+        <!-- 是否保留状态栏高度 -->
+        <attr name="ctTitleKeepStatusBar" format="boolean" />
+    </declare-styleable>
+</resources>

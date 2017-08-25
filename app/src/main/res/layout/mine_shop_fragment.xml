@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 我的店铺界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="我的店铺" />
+
+    <!-- 主体内容 -->
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:id="@+id/shop_ptr_scrollview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_app"
+        ptr:ptrMode="pullFromStart"
+        >
+
+        <LinearLayout
+            android:id="@+id/shop_layout_detail"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:paddingBottom="@dimen/view_margin"
+                android:paddingLeft="@dimen/view_padding_double"
+                android:paddingRight="@dimen/view_margin_double"
+                android:paddingTop="@dimen/view_margin">
+
+                <!--店铺logo-->
+                <FrameLayout
+                    android:id="@+id/mine_shop_layout_logo"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginRight="@dimen/view_margin"
+                    android:background="@drawable/rebate_mine_toux_bg">
+
+                    <com.meg7.widget.CircleImageView
+                        android:id="@+id/shop_img_logo"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/rebate_mine_shop"
+                        />
+
+                </FrameLayout>
+
+                <!--店铺名称-->
+                <TextView
+                    android:id="@+id/shop_tv_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:layout_toRightOf="@id/mine_shop_layout_logo"
+                    android:text="XXXXXXXX"
+                    android:maxLines="2"
+                    android:minLines="2"
+                    android:ellipsize="end"
+                    android:textColor="@color/text_title_black"
+                    android:textSize="@dimen/text_34" />
+
+                <!--店铺地址-->
+                <TextView
+                    android:id="@+id/shop_tv_address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/shop_tv_name"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:layout_toRightOf="@id/mine_shop_layout_logo"
+                    android:text="XXXXXX"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+            </RelativeLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+
+            <!--收藏与折扣信息-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="65dp"
+                android:background="@color/bg_white"
+                android:orientation="horizontal">
+
+
+                <!--收藏-->
+                <TextView
+                    android:id="@+id/shop_tv_collect_count"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="收藏\nXXX"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+                <!--垂直分隔线-->
+                <include
+                    layout="@layout/common_split_line_v_mtb_less" />
+
+                <!--折扣-->
+                <TextView
+                    android:id="@+id/shop_tv_discount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="折扣(折)\nXXX"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+                <!--垂直分隔线-->
+                <include
+                    layout="@layout/common_split_line_v_mtb_less" />
+
+                <!--总额度-->
+                <TextView
+                    android:id="@+id/shop_tv_total_limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="总额度(元)\nXXX"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+                <!--垂直分隔线-->
+                <include
+                    layout="@layout/common_split_line_v_mtb_less" />
+
+                <!--当前额度-->
+                <TextView
+                    android:id="@+id/shop_tv_current_limit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="当前额度(元)\nXXX"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="@dimen/view_padding_less"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingTop="@dimen/view_padding_less"
+                android:text="店铺管理"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_26" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--店铺管理功能-->
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/bg_white">
+
+
+                <TextView
+                    android:id="@+id/mine_shop_opt_orders"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="订单管理"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawableTop="@drawable/rebate_mine_shop_icon_order"
+                    android:padding="@dimen/view_padding"
+                    android:drawablePadding="@dimen/drawable_padding"/>
+
+                <include layout="@layout/common_split_line_v_mtb" />
+
+                <TextView
+                    android:id="@+id/mine_shop_opt_shop_detail"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="店铺信息"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawableTop="@drawable/rebate_mine_shop_icon_details"
+                    android:padding="@dimen/view_padding"
+                    android:drawablePadding="@dimen/drawable_padding" />
+
+                <include layout="@layout/common_split_line_v_mtb" />
+
+                <TextView
+                    android:id="@+id/mine_shop_opt_shop_qr_code"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="收款二维码"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawableTop="@drawable/rebate_mine_shop_icon_qr_code"
+                    android:padding="@dimen/view_padding"
+                    android:drawablePadding="@dimen/drawable_padding" />
+
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="85dp"
+                android:background="@color/bg_white">
+
+
+                <TextView
+                    android:id="@+id/mine_shop_opt_payment_for_goods"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="店铺货款"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawableTop="@drawable/rebate_mine_shop_icon_qr_loan"
+                    android:padding="@dimen/view_padding"
+                    android:drawablePadding="@dimen/drawable_padding"/>
+
+                <include layout="@layout/common_split_line_v_mtb" />
+
+                <TextView
+                    android:id="@+id/mine_shop_opt_record_order"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="店铺录单"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawableTop="@drawable/rebate_mine_shop_icon_single"
+                    android:padding="@dimen/view_padding"
+                    android:drawablePadding="@dimen/drawable_padding" />
+
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text=""
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+        </LinearLayout>
+
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+
+</LinearLayout>

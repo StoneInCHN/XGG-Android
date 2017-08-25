@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rebate_rebate_bg_mine"
+    android:orientation="vertical"
+    >
+
+    <!-- 背景 -->
+    <!--<ImageView-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:contentDescription=""-->
+    <!--android:scaleType="fitXY"-->
+    <!--android:src="@drawable/rebate_rebate_bg_mine"-->
+    <!--/>-->
+
+    <!-- 我的分红界面，布局 -->
+
+    <FrameLayout
+        android:id="@+id/bonus_mine_table_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_rebate_details_bg"
+        >
+
+        <!-- 统计日期 -->
+        <TextView
+            android:id="@+id/bonus_mine_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:singleLine="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_22"
+            />
+
+        <LinearLayout
+            android:id="@+id/bonus_mine_table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:orientation="vertical"
+            >
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border"
+                >
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_mine_bonus_lefen"
+                    android:text="分红金额："
+                    />
+
+                <TextView
+                    android:id="@+id/bonus_mine_bonus_lefen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38"
+                    android:layout_alignParentBottom="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border"
+                >
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_mine_total_money"
+                    android:text="总消费金额："
+                    />
+
+                <TextView
+                    android:id="@+id/bonus_mine_total_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0元"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38"
+                    android:layout_alignParentBottom="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                >
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_mine_max_bonus_lefen"
+                    android:text="最高分红金额："
+                    />
+
+                <TextView
+                    android:id="@+id/bonus_mine_max_bonus_lefen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:text="0"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38"
+                    android:layout_alignParentBottom="true"
+                    />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/bonus_mine_statistics_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="55dp"
+        android:background="@drawable/rebate_rebate_bg_yellow"
+        android:orientation="horizontal"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/text_black_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="积分"
+                />
+
+            <TextView
+                android:id="@+id/bonus_mine_score"
+                style="@style/text_red_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rebate_rebate_line"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/text_black_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="乐心"
+                />
+
+            <TextView
+                android:id="@+id/bonus_mine_lenxin"
+                style="@style/text_red_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rebate_rebate_line"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/text_black_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="乐豆"
+                />
+
+            <TextView
+                android:id="@+id/bonus_mine_lendou"
+                style="@style/text_red_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"
+                />
+
+        </LinearLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="3dp"
+            android:layout_marginTop="3dp"
+            android:background="@drawable/rebate_rebate_line"
+            />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                style="@style/text_black_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="乐分"
+                />
+
+            <TextView
+                android:id="@+id/bonus_mine_lenfen"
+                style="@style/text_red_28"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="0"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

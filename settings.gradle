@@ -1,0 +1,4 @@
+include ':app', ':datalib', ':appbase', ':takephoto_library'
+include ':paymentPlatform2'
+include ':developtools'
+include ':zXingDialog'

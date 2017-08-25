@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/index_select_city_locate_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:orientation="horizontal"
+        android:background="@color/bg_white"
+        android:gravity="center_vertical"
+        >
+        <TextView
+            android:id="@+id/index_select_city_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_black_28"
+            android:drawableLeft="@drawable/rebate_public_icon_location"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:text="自动定位"
+            android:drawablePadding="@dimen/drawable_padding"
+            />
+
+        <TextView
+            android:id="@+id/index_select_city_no_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_gray_26"
+            android:text="失败，请重试"
+            android:layout_marginLeft="@dimen/view_margin_double"
+            />
+
+    </LinearLayout>
+    <include layout="@layout/common_split_line_double"/>
+
+    <!-- 热门城市 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        >
+
+        <TextView
+            android:id="@+id/index_select_city_hot_city_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_red_28"
+            android:text="热门城市"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="5dp"
+            />
+
+        <!-- 热门城市列表 -->
+        <com.hentica.app.lib.view.ChildGridView
+            android:id="@+id/index_select_city_hot_city_grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:numColumns="3"
+            android:layout_below="@+id/index_select_city_hot_city_label"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_marginLeft="45dp"
+            android:layout_marginRight="45dp"
+            android:layout_marginBottom="@dimen/view_margin"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

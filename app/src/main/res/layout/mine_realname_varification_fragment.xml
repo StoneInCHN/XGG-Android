@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:lnv="http://schemas.android.com/apk/res-auto"
+              xmlns:title="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:ctTitleText="实名认证"
+        title:ctTitleRightText="说明"
+        title:ctTitleVisibleBtns="leftImgBtn|title|rightTextBtn"
+        >
+
+    </com.hentica.app.widget.view.TitleViewWhite>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:background="@color/bg_white">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_app"
+                android:gravity="center"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_24"
+                android:paddingBottom="@dimen/view_padding_less"
+                android:paddingTop="@dimen/view_padding_less"
+                android:text="@string/tip_real_name_verification"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                style="@style/line.btn_edt"
+                android:id="@+id/verification_lnv_name"
+                lnv:lineContentHint="真实姓名"
+                lnv:lineTitleText="真实姓名"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                style="@style/line.btn_edt"
+                android:id="@+id/verification_lnv_number"
+                lnv:lineContentHint="身份证号"
+                lnv:lineTitleText="身份证号"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <include layout="@layout/common_split_line_long_mt_less"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:lineSpacingExtra="@dimen/view_padding_less"
+                android:padding="@dimen/view_padding"
+                android:text="@string/tip_real_name_verification_2"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/view_margin"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:id="@+id/img_sample"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/rebate_mine_bank_idcard_sample"/>
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/rebate_mine_bank_idcard_frame"/>
+
+                <LinearLayout
+                    android:layout_width="263dp"
+                    android:layout_height="332.5dp"
+                    android:layout_alignBottom="@id/img_sample"
+                    android:layout_alignLeft="@id/img_sample"
+                    android:layout_alignRight="@id/img_sample"
+                    android:layout_alignTop="@id/img_sample"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/img_idcard_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:padding="1dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_idcard_tip_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="@dimen/view_padding"
+                            android:drawableTop="@drawable/rebate_mine_bank_idcard_add"
+                            android:text="@string/tip_real_name_verification_upload_id_card_1"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_idcard_delete_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:src="@drawable/rebate_mine_comment_picture_delete"
+                            android:visibility="gone"/>
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0dp"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:id="@+id/img_idcard_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:padding="1dp"
+                            />
+
+                        <TextView
+                            android:id="@+id/tv_idcard_tip_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:drawablePadding="@dimen/view_padding"
+                            android:drawableTop="@drawable/rebate_mine_bank_idcard_add"
+                            android:text="@string/tip_real_name_verification_upload_id_card_2"
+                            />
+
+                        <ImageView
+                            android:id="@+id/img_idcard_delete_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:src="@drawable/rebate_mine_comment_picture_delete"
+                            android:visibility="gone"/>
+                    </FrameLayout>
+                </LinearLayout>
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_red"
+                android:padding="@dimen/view_padding"
+                android:text="下一步"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_36"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

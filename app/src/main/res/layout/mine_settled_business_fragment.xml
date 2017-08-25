@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 入驻商户界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="新增商家" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/bg_app"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp">
+
+                <!--店铺logo-->
+                <ImageView
+                    android:id="@+id/shop_img_logo"
+                    android:layout_width="match_parent"
+                    android:layout_height="220dp"
+                    android:contentDescription="@string/null_des"/>
+
+                <!--店铺logo提示文字-->
+                <TextView
+                    android:id="@+id/shop_tv_logo_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:drawablePadding="@dimen/view_padding"
+                    android:drawableTop="@drawable/rebate_mine_shop_system_image"
+                    android:text="请上传店铺logo或店铺图片"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28"/>
+
+                <include
+                    layout="@layout/common_split_line_long"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.1dp"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <!--手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/shop_edt_phone"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺联系人手机号"
+                lnv:lineTitleText="手机号"/>
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/shop_tv_phone"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺联系人手机号"
+                lnv:lineTitleText="手机号"
+                android:visibility="gone"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                android:paddingTop="@dimen/view_padding_less"
+                android:paddingBottom="@dimen/view_padding_less"
+                android:text="@string/text_add_shop"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_24"
+                android:lineSpacingExtra="2dp"
+                android:background="@color/bg_white"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--店铺名称-->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/shop_edt_shop_name"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺名称"
+                lnv:lineTitleText="店铺名称"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--行业类别-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/shop_lnv_category"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="行业类别"
+                lnv:lineTitleText="行业类别"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--店铺折扣-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/shop_lnv_discount"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="店铺折扣"
+                lnv:lineTitleText="店铺折扣"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--店铺名称-->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/shop_edt_shop_phone"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺电话"
+                lnv:lineTitleText="店铺电话"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--店铺所在地-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/shop_lnv_location"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="店铺所在地"
+                lnv:lineTitleText="店铺所在地"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--定位-->
+            <include layout="@layout/mine_shop_location"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/shop_edt_shop_license_number"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="营业执照号"
+                lnv:lineTitleText="营业执照号"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--营业执照照片-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:orientation="vertical"
+                android:padding="@dimen/view_padding">
+                <!--营业执照照片提示文字-->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/view_margin"
+                    android:text="@string/mine_shop_checkin_license_photo"
+                    android:textColor="@color/text_black"/>
+                <!--营业执照照片-->
+                <ImageView
+                    android:id="@+id/shop_img_license"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@drawable/rebate_mine_comment_picture_add"/>
+
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--承诺书-->
+            <include layout="@layout/mine_shop_photos"
+                     android:id="@+id/commitment_photos"
+                />
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--环境照片-->
+            <include layout="@layout/mine_shop_photos"
+                     android:id="@+id/environment_photos"
+                />
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--店铺简介-->
+            <include layout="@layout/mine_shop_description"/>
+
+            <include layout="@layout/common_split_line_long"/>
+
+            <!--服务协议-->
+            <RadioButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:checked="true"
+                android:padding="@dimen/view_padding"
+                android:text="同意《入驻商户服务协议》"/>
+
+            <!--入驻按钮-->
+            <Button
+                android:id="@+id/shop_btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_red"
+                android:padding="@dimen/view_padding"
+                android:text="申请审核"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_36"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+</LinearLayout>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!--背景图片适配-->
+    <View
+        android:id="@+id/mine_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="#FDB177"
+        android:visibility="gone" />
+
+    <!--背景、登录、头像-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/rebate_mine_bg"
+        android:orientation="vertical">
+
+        <!--用户信息-->
+        <RelativeLayout
+            android:id="@+id/mine_layout_profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_weight="1">
+
+            <!--头像背景框-->
+            <RelativeLayout
+                android:id="@+id/mine_layout_icon"
+                android:layout_width="90dp"
+                android:layout_height="90dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:background="@drawable/rebate_mine_toux">
+                <!--头像-->
+                <com.meg7.widget.CircleImageView
+                    android:id="@+id/mine_img_icon"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_centerInParent="true"
+                    android:src="@drawable/rebate_mine_head_bg_acquiescent" />
+
+            </RelativeLayout>
+
+            <!--点击登录提示-->
+            <TextView
+                android:id="@+id/mine_tv_login_tip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@id/mine_layout_icon"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_marginTop="35dp"
+                android:layout_toRightOf="@id/mine_layout_icon"
+                android:text="点击登录"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:visibility="visible" />
+
+            <LinearLayout
+                android:id="@+id/mine_layout_profile_detail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="@dimen/view_margin_less"
+                android:layout_toRightOf="@id/mine_layout_icon"
+                android:orientation="vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <!--商家标志-->
+                    <TextView
+                        android:id="@+id/mine_profile_tv_seller_label"
+                        android:layout_width="42.5dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginRight="@dimen/view_margin_less"
+                        android:background="@drawable/shape_bg_white_bd_1px_red_rad_4"
+                        android:gravity="center"
+                        android:text="商家"
+                        android:textColor="@color/text_red"
+                        android:textSize="@dimen/text_22"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/mine_profile_tv_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text='昵称'
+                        android:textColor="@color/text_white"
+                        android:textSize="@dimen/text_34" />
+
+                </LinearLayout>
+
+                <!--代理商标志-->
+                <TextView
+                    android:id="@+id/mine_profile_tv_agent_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_less"
+                    android:background="@drawable/rebate_mine_agent4"
+                    android:gravity="center_vertical"
+                    android:paddingLeft="28dp"
+                    android:text="省代理"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_26"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/mine_profile_tv_recommond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_less"
+                    android:text="推荐人：XXX"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_28"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/mine_profile_tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/view_margin_less"
+                    android:text="XXXXXXXXXXX"
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_28" />
+
+            </LinearLayout>
+
+            <!--修改资料-->
+            <TextView
+                android:id="@+id/mine_btn_edit_profile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/view_margin"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:drawableRight="@drawable/rebate_public_next_white"
+                android:padding="@dimen/view_padding"
+                android:text="修改资料"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:background="@drawable/rebate_mine_line" />
+
+        <!--统计-->
+        <LinearLayout
+            android:id="@+id/mine_layout_statistics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/mine_opt_scores"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/view_padding_less"
+                android:paddingBottom="@dimen/view_padding"
+                android:paddingTop="@dimen/view_padding"
+                android:text="积分\n0"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28" />
+
+            <Button
+                android:id="@+id/mine_opt_lx"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/view_padding_less"
+                android:padding="@dimen/view_padding"
+                android:text="乐心\n0"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28" />
+
+            <Button
+                android:id="@+id/mine_opt_ld"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/view_padding_less"
+                android:padding="@dimen/view_padding"
+                android:text="乐豆\n0"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28" />
+
+            <Button
+                android:id="@+id/mine_opt_lf"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@null"
+                android:gravity="center"
+                android:lineSpacingExtra="@dimen/view_padding_less"
+                android:padding="@dimen/view_padding"
+                android:text="乐分\n0"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+
+        android:id="@+id/mine_ptr_scv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_app"
+        android:clipToPadding="true"
+        android:fitsSystemWindows="true"
+        android:scrollbars="none"
+        ptr:ptrMode="pullFromStart">
+
+        <!--用户操作功能-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/bg_white"
+            android:orientation="vertical">
+
+            <!--会员身份，商家、业务员，代理商-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/layout_member_info"
+                android:visibility="gone"
+                >
+
+                <include layout="@layout/common_split_line_long_mt_less"/>
+
+                <!--我是商家 -->
+                <com.hentica.app.widget.view.lineview.LineViewText
+                    android:id="@+id/mine_lnv_seller"
+                    style="@style/line.btn_next"
+                    lnv:lineContentText=""
+                    lnv:lineTitleText="我是商家"/>
+
+                <include layout="@layout/common_split_line_long"
+                    android:id="@+id/divider_seller"/>
+
+                <!--我是业务员 -->
+                <com.hentica.app.widget.view.lineview.LineViewText
+                    android:id="@+id/mine_lnv_salesman"
+                    style="@style/line.btn_next"
+                    lnv:lineContentText=""
+                    lnv:lineTitleText="我是业务员" />
+
+                <include layout="@layout/common_split_line_long"
+                         android:id="@+id/divider_sales_man" />
+
+                <!--我是代理商 -->
+                <com.hentica.app.widget.view.lineview.LineViewText
+                    android:id="@+id/mine_lnv_agency"
+                    style="@style/line.btn_next"
+                    lnv:lineContentText=""
+                    lnv:lineTitleText="我是代理商" />
+
+                <include layout="@layout/common_split_line_long"
+                         android:id="@+id/divider_agency" />
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_long_mt_less" />
+
+            <!--推荐有礼 -->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_suggest"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="推荐有礼" />
+
+            <include layout="@layout/common_split_line_long" />
+            <!--我的订单 -->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_orders"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="我的订单" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--我的订单 -->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_bank_card"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="我的银行卡" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--我的店铺 -->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_shop"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="我的店铺"
+                android:visibility="gone"/>
+
+            <include layout="@layout/common_split_line_long"
+                android:visibility="gone"/>
+
+            <!--我的收藏 -->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_collections"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="我的收藏" />
+
+            <include layout="@layout/common_split_line_double" />
+
+            <!--用户帮助-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_helps"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="用户帮助" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--关于我们-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_about"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="关于我们" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--设置-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_lnv_setting"
+                style="@style/line.btn_next"
+                lnv:lineContentText=""
+                lnv:lineTitleText="设置" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <RelativeLayout
+                android:id="@+id/mine_lnv_services"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/view_padding">
+
+                <TextView
+                    android:id="@+id/mine_tv_tel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="客服电话"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+                <TextView
+                    android:id="@+id/mine_tv_phone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:drawableRight="@drawable/rebate_public_next"
+                    android:text=""
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/text_24" />
+
+                <TextView
+                    android:id="@+id/mine_tv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/mine_tv_tel"
+                    android:layout_marginTop="@dimen/view_margin_less"
+                    android:text="注：服务时间为9:00-17:50"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/text_24" />
+
+            </RelativeLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+        </LinearLayout>
+
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+</LinearLayout>

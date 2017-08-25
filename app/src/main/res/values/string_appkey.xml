@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--TODO 修改第3方SDK的id -->
+    <!--微信登录与分享key-->
+    <string name="WeiX_AppId">wx8a45d94b37c548c7</string>
+    <string name="WeiX_AppSecret">34ab52cf4e21871586e4b0e904a70b30</string>
+
+    <!--QQ登录与分享key 没有此功能-->
+    <!--<string name="QQ_AppId">1105905221</string>-->
+    <!--<string name="Tencent_AppId">tencent1105905221</string>-->
+    <!--<string name="QQ_AppKey">TFNASgy6YVAJrwQZ</string>-->
+
+    <!--微博登录与分享key-->
+    <!--<string name="WeiB_AppId">333900906</string>-->
+    <!--<string name="WeiB_AppSecret">0fe03f996c725f91d778080f8c38b346</string>-->
+
+    <!--云客服appid 没有此功能-->
+    <!--<string name="kf5_AppId">0015823cf5dbfee24cf048c1159188094a8bc696044c3ea4</string>-->
+    <!--客服地址 没有此功能-->
+    <!--<string name="kf5_address">changchewang.kf5.com</string>-->
+
+    <!--个推 没有此功能-->
+    <!--<string name="geTui_AppID">wxKIiDLEZu9SaliDYRAM16</string>-->
+    <!--<string name="geTui_AppKey">aLmajxrfMm7WhpOVAFauf2</string>-->
+    <!--<string name="geTui_AppSecret">UmGTch2hAG6JekR6uFd8h</string>-->
+    <!--<string name="geTui_MasterSecret">6jDD5K7nyuAnOV2L6iRry</string>-->
+
+    <!-- bugly -->
+    <string name="bugly_appid">0228835e1f</string>
+    <string name="bugly_appkey">53842a3e-7439-4713-9fd4-d7d83989bce5</string>
+
+    <!-- 极光推送 -->
+    <string name="jPush_AppKey">fb84065aa9b2d9586d971c02</string>
+    <string name="jPush_MasterSecret">8fe6b44b92bbde5262d944b5</string>
+    <!-- 百度 -->
+    <string name="baidu_map">tOvGl584qxbm7aTVlPAiw3nGEZcFFfFt</string>
+    <!-- 友盟 -->
+    <string name="umeng_key">59296d9507fe652a78000dbe</string>
+
+</resources>

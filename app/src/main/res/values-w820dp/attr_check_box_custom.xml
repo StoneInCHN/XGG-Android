@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="check_box_custom">
+        <!-- 行属性 -->
+        <attr name="android:enabled" />
+
+        <!--标题相关属性-->
+        <attr name="boxTextSize" format="dimension|reference"></attr>
+        <attr name="boxTextColor" format="color|reference"></attr>
+        <attr name="boxText" format="string|reference"></attr>
+        <attr name="boxDrawRight" format="reference"></attr>
+
+    </declare-styleable>
+
+</resources>

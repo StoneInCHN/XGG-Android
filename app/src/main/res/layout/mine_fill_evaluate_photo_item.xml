@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <RelativeLayout
+        android:id="@+id/evaluate_item_photo_layout"
+        android:layout_width="80dp"
+        android:layout_height="80dp" >
+
+        <!-- 图片 -->
+        <ImageView
+            android:id="@+id/e07_item_photo_img"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/null_des"
+            android:scaleType="centerCrop" />
+
+        <!-- 删除按钮 -->
+        <ImageButton
+            android:id="@+id/e07_item_del_photo_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:src="@drawable/rebate_mine_comment_picture_delete"
+            android:background="@null"
+            android:contentDescription="@string/null_des"
+            />
+
+        <ProgressBar
+            android:id="@+id/e07_item_progress"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:visibility="gone"/>
+
+    </RelativeLayout>
+
+    <!-- 添加图片按钮 -->
+    <ImageView
+        android:id="@+id/evaluate_add_photo_btn"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@drawable/rebate_mine_comment_picture_add"
+        android:scaleType="fitXY"
+        android:background="@null"
+        android:contentDescription="@string/null_des"
+        android:visibility="gone"
+        />
+
+</RelativeLayout>

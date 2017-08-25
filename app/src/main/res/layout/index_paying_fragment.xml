@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    >
+
+    <!-- 买单界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="正在支付"
+        title:ctTitleVisibleBtns="title"
+        />
+
+    <TextView
+        android:id="@+id/tv_count"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="@dimen/text_34"
+        android:textColor="@color/text_red"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/common_title"
+        android:layout_marginTop="50dp"/>
+
+    <ImageView
+        android:id="@+id/img_time"
+        android:layout_centerHorizontal="true"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/rebate_time1"
+        android:layout_below="@id/tv_count"
+        android:layout_marginTop="@dimen/view_margin_double"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="正在刷新状态..."
+        android:textSize="@dimen/text_34"
+        android:textColor="@color/text_black"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/img_time"
+        android:layout_marginTop="@dimen/view_margin_double"
+        />
+
+</RelativeLayout>

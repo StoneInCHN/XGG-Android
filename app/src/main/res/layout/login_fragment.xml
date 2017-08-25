@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:title="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/rebate_login_bg">
+
+    <!-- 登录界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleView
+        android:id="@+id/common_title"
+        title:ctTitleText="登录"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        title:ctTitleLeftImg="@drawable/rebate_public_back3"
+        android:background="@color/transparent"/>
+
+    <ImageView
+        android:id="@+id/login_img_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rebate_public_login_logo"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="90dp"/>
+
+
+    <!--登录区域-->
+    <LinearLayout
+        android:layout_below="@id/login_img_logo"
+        android:layout_marginTop="50dp"
+        android:layout_width="265dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_centerInParent="true">
+
+
+        <!--电话号码-->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="35dp">
+
+            <ImageView
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rebate_login_line"
+                android:layout_gravity="right|bottom"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                >
+
+                <!--电话号码-->
+
+                <EditText
+                    android:id="@+id/login_edt_phone"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/transparent"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:drawableLeft="@drawable/rebate_login_icon_number"
+                    android:drawablePadding="13dp"
+                    android:text=""
+                    android:textColor="@color/text_white"
+                    android:textSize="@dimen/text_28"
+                    android:hint="手机号"
+                    android:textColorHint="@color/text_white"
+                    android:inputType="phone"
+                    android:maxLength="11"
+                    android:lines="1"
+                    />
+
+                <TextView
+                    android:id="@+id/login_btn_phone_delete"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rebate_login_delete2"
+                    android:visibility="gone"
+                    />
+
+                <Button
+                    android:id="@+id/login_btn_send_sms"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="发送"
+                    android:minWidth="0dp"
+                    android:minHeight="0dp"
+                    android:textSize="@dimen/text_28"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/rebate_login_button_send"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="gone"
+                    />
+
+            </LinearLayout>
+
+        </FrameLayout>
+
+        <!--验证码-->
+        <FrameLayout
+            android:id="@+id/login_layout_sms"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/view_margin_double"
+            android:visibility="gone">
+
+            <ImageView
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rebate_login_line"
+                android:layout_gravity="bottom|right"/>
+
+            <!--验证码-->
+            <EditText
+                android:id="@+id/login_edt_sms"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:drawableLeft="@drawable/rebate_login_icon_verification"
+                android:drawablePadding="13dp"
+                android:text=""
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:hint="验证码"
+                android:textColorHint="@color/text_white"
+                android:lines="1"
+                />
+
+        </FrameLayout>
+
+        <!--密码-->
+        <FrameLayout
+            android:id="@+id/login_layout_pwd"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:layout_marginTop="@dimen/view_margin_double"
+            android:visibility="visible">
+
+            <ImageView
+                android:layout_width="237dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rebate_login_line"
+                android:layout_gravity="bottom|right"/>
+
+            <!--密码-->
+            <EditText
+                android:id="@+id/login_edt_pwd"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp"
+                android:drawableLeft="@drawable/rebate_login_icon_password"
+                android:drawablePadding="13dp"
+                android:text=""
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:hint="密码"
+                android:textColorHint="@color/text_white"
+                android:lines="1"
+                android:inputType="textPassword"
+                />
+
+        </FrameLayout>
+
+        <!--找回密码-->
+        <TextView
+            android:id="@+id/login_btn_find_pwd"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="忘记密码？"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_24"
+            android:paddingTop="@dimen/view_padding"
+            android:paddingBottom="@dimen/view_padding"
+            android:layout_gravity="right"/>
+
+        <Button
+            android:id="@+id/login_btn_login"
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:background="@drawable/rebate_selector_public_botton_complete_white"
+            android:text="登录"
+            android:textSize="@dimen/text_28"
+            android:layout_marginTop="@dimen/view_margin"
+            android:textColor="@color/text_black"/>
+
+        <FrameLayout
+            android:layout_width="218dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/view_margin_double"
+            android:layout_gravity="center_horizontal"
+            >
+
+            <!--登录方式切换按钮-->
+            <ToggleButton
+                android:id="@+id/login_togbtn_login_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:background="@drawable/rebate_selector_login_button_little"
+                android:textOn="验证码登录"
+                android:textOff="密码登录"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:checked="true"/>
+
+
+            <Button
+                android:id="@+id/login_btn_regist"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:background="@drawable/rebate_selector_login_button_little"
+                android:layout_gravity="right"
+                android:text="注册账号"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"/>
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

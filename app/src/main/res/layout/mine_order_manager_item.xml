@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:descendantFocusability="blocksDescendants"
+    >
+
+    <include layout="@layout/common_split_line_long"
+        android:id="@+id/mine_item_top_div_1"/>
+
+    <include layout="@layout/common_split_line_long_mt_less"
+        android:id="@+id/mine_item_top_div_2" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:orientation="vertical"
+            android:paddingBottom="9dp"
+            android:paddingTop="9dp">
+
+            <TextView
+                android:id="@+id/item_tv_customer_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXXX"
+                android:textColor="@color/text_title_black"
+                android:textSize="@dimen/text_34"/>
+
+            <TextView
+                android:id="@+id/item_tv_status"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:text="XXXX"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_24"
+                android:visibility="visible"/>
+
+        </FrameLayout>
+
+        <include
+            layout="@layout/common_split_line_long"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginLeft="@dimen/view_margin"/>
+
+        <TextView
+            android:id="@+id/item_tv_sn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="9dp"
+            android:text="订单编号：XXXXXXXX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"/>
+
+        <TextView
+            android:id="@+id/item_tv_date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="9dp"
+            android:text="消费时间：XXXXXXXX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"/>
+
+        <TextView
+            android:id="@+id/item_tv_score"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="9dp"
+            android:text="赠送积分：XXX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"/>
+
+        <TextView
+            android:id="@+id/item_tv_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="9dp"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="9dp"
+            android:text="支付金额：￥XXX.XX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"/>
+
+        <include
+            layout="@layout/common_split_line_long"
+            android:layout_width="match_parent"
+            android:layout_height="0.1dp"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:id="@+id/layout_options_divider"/>
+
+        <LinearLayout
+            android:id="@+id/layout_options"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginBottom="9dp"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_marginTop="9dp"
+            android:orientation="horizontal">
+
+
+            <Button
+                android:id="@+id/item_btn_reply"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="9dp"
+                android:background="@drawable/rebate_selector_public_botton_small_order_white"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="立即回复"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_28"
+                android:visibility="visible"/>
+
+            <Button
+                android:id="@+id/item_btn_call"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rebate_selector_public_botton_small_order_red"
+                android:minHeight="0dp"
+                android:minWidth="0dp"
+                android:text="联系电话"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+</LinearLayout>

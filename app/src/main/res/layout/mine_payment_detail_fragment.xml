@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleText="货款明细"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:id="@+id/mine_payment_detail_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/bg_white"
+                >
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_margin"
+                    >
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_income_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:text="实际收益："
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_38"
+                        android:textColor="@color/text_red"
+                        android:layout_marginLeft="100dp"
+                        android:layout_alignBaseline="@+id/mine_payment_detail_income_title"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_margin"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:text="贷款编号："
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_sn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:layout_marginLeft="100dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_margin"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:text="总收益："
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_all_income"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:layout_marginLeft="100dp"
+                        />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginRight="@dimen/view_margin"
+                    android:layout_marginTop="@dimen/view_margin"
+                    android:layout_marginBottom="@dimen/view_margin"
+                    android:background="@drawable/rebate_mine_bank2"
+                    >
+
+                    <!-- 银行图标 -->
+                    <ImageView
+                        android:id="@+id/mine_payment_detail_icon"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="@dimen/view_margin"
+                        android:src="@drawable/rebate_mine_bank_card"
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:layout_toRightOf="@+id/mine_payment_detail_icon"
+                        android:layout_marginTop="@dimen/view_margin"
+                        android:layout_marginLeft="@dimen/view_margin"
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_card_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginTop="@dimen/view_margin"
+                        android:layout_marginRight="@dimen/view_margin"
+                        />
+
+                    <TextView
+                        android:id="@+id/mine_payment_detail_card_number"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        style="@style/text_black_28"
+                        android:layout_alignBottom="@+id/mine_payment_detail_icon"
+                        android:layout_alignLeft="@+id/mine_payment_detail_name"
+                        android:layout_alignStart="@+id/mine_payment_detail_name"
+                        />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+            <include layout="@layout/common_split_line_double"/>
+
+            <com.hentica.app.lib.view.ChildListView
+                android:id="@+id/mine_payment_detail_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:listSelector="@color/transparent"
+                android:divider="@null"
+                />
+
+        </LinearLayout>
+
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+
+</LinearLayout>

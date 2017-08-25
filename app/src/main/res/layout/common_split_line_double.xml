@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_app">
+
+    <!-- 公用分割线，（双横线） -->
+    <include layout="@layout/common_split_line_long" />
+
+    <include layout="@layout/common_split_line_long"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:layout_marginTop="@dimen/view_margin_less"/>
+
+</LinearLayout>

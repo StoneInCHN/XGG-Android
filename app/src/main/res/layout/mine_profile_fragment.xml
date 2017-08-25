@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 修改资料界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="修改信息" />
+
+    <!-- 主体内容 -->
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/bg_app"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:id="@+id/mine_layout_icon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/bg_white"
+                android:padding="@dimen/view_padding">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_vertical"
+                    android:drawableRight="@drawable/rebate_public_next"
+                    android:text="头像"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+                <!--店铺logo-->
+
+                <!--店铺logo-->
+                <FrameLayout
+                    android:id="@+id/mine_shop_layout_logo"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_gravity="right"
+                    android:layout_marginRight="@dimen/view_margin_double"
+                    android:background="@drawable/rebate_mine_head_bgred">
+
+                    <com.meg7.widget.CircleImageView
+                        android:id="@+id/profile_img_icon"
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/rebate_mine_head_bg_acquiescent" />
+
+                </FrameLayout>
+
+            </FrameLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--账号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_account"
+                style="@style/line.btn_edt"
+                lnv:lineTitleText="账号" />
+
+            <include layout="@layout/common_split_line_long" />
+
+
+            <!--昵称-->
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/common_line_height"
+                android:background="@color/bg_white">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:text="昵称"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_28" />
+
+                <EditText
+                    android:id="@+id/mine_profile_edt_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/transparent"
+                    android:gravity="right|center_vertical"
+                    android:paddingLeft="@dimen/view_padding"
+                    android:paddingRight="@dimen/view_padding"
+                    android:text="12313213"
+                    android:hint="昵称"
+                    android:singleLine="true"
+                    android:maxLength="15"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/text_24" />
+
+            </FrameLayout>
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--所在地区-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_location"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="所在地区"
+                lnv:lineTitleText="所在地区" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--登录密码-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_login_pwd"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="登录密码"
+                lnv:lineTitleText="登录密码" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--支付密码-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_pay_pwd"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="支付密码"
+                lnv:lineTitleText="支付密码" />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--微信绑定-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_bind_wechat"
+                style="@style/line.btn_next"
+                lnv:lineContentHint="微信绑定"
+                lnv:lineTitleText="微信绑定"
+                android:visibility="gone"/>
+
+            <include layout="@layout/common_split_line_long"
+                android:visibility="gone"/>
+
+
+            <!--更换手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/mine_profile_lnv_change_phone"
+                style="@style/line.btn_next"
+                lnv:lineTitleText="更换手机号" />
+
+            <include layout="@layout/common_split_line_long" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <!--退出账号按钮-->
+    <Button
+        android:id="@+id/mine_profile_btn_logout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_public_big_button"
+        android:text="退出账号"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_36"
+        android:visibility="gone" />
+
+</LinearLayout>

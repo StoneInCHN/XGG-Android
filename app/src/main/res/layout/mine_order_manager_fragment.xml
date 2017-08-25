@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 订单管理界面，布局 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="85dp"
+        android:background="@color/bg_white"
+        android:paddingBottom="@dimen/view_padding"
+        android:paddingTop="@dimen/view_padding">
+
+        <!--订单数量-->
+        <TextView
+            android:id="@+id/order_tv_order_count"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="订单\nXXX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"
+            android:lineSpacingExtra="@dimen/view_padding_less"/>
+
+        <include layout="@layout/common_split_line_v" />
+
+        <!--总金额-->
+        <TextView
+            android:id="@+id/order_tv_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="总额(元)\nXXX.XX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"
+            android:lineSpacingExtra="@dimen/view_padding_less" />
+
+        <include layout="@layout/common_split_line_v" />
+
+        <!--未结算数量-->
+        <TextView
+            android:id="@+id/order_tv_unclear_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="未结算(元)\nXXX.XX"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"
+            android:lineSpacingExtra="@dimen/view_padding_less" />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <!-- 主体内容 -->
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="@color/bg_white"
+        android:paddingRight="@dimen/view_padding"
+        android:paddingLeft="@dimen/view_padding"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <com.hentica.app.lib.view.CustomViewPager
+        android:id="@+id/order_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</LinearLayout>

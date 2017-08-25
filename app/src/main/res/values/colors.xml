@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#2D68D1</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 背景 -->
+    <color name="bg_app">#ffFAFAFA</color>   <!-- app通用背景 -->
+    <color name="bg_white">#ffffffff</color> <!-- 白色背景 -->
+    <color name="bg_blue">#ff1456aa</color>  <!-- 蓝色背景 -->
+    <color name="bg_black">#ff000000</color> <!-- 黑色背景 -->
+    <color name="bg_block_transparent_gray">#22000000</color> <!-- 通用块背景 -->
+    <color name="bg_gray">#FFFAFAFA</color>
+    <color name="bg_red">#FF4946</color>
+    <color name="bg_divider">#E6E6E6</color>
+
+    <!-- 文字 -->
+    <color name="text_title_black">#ff000000</color>    <!-- 标题字体（每个界面标题栏） -->
+    <color name="text_black">#ff585657</color>           <!-- 系统字体（大部分字体）-->
+    <color name="text_gray">#999999</color>            <!-- 浅灰色，最下栏工具栏名字，提示语言，后缀 -->
+    <color name="text_white">#ffffffff</color>           <!-- 白色，标题、按钮、标签 -->
+    <color name="text_red">#e71810</color>              <!-- 红色，最下栏工具栏名字，提示语言，其他 -->
+    <color name="text_blue">#2d68d1</color>            <!-- 一些特殊标注字体 -->
+    <color name="text_orange">#ffff992c</color>         <!-- 橙色，标题，按钮，标签 -->
+
+    <!-- 背景色 -->
+    <color name="transparent">#00000000</color>       <!-- 透明色 -->
+    <color name="transparent_gray">#4d000000</color> <!-- 半透明色，对话框背景 -->
+    <color name="btn_bg_normal">#00000000</color>    <!-- 按钮普通背景 -->
+    <color name="btn_bg_press">#55000000</color>     <!-- 按钮按下背景 -->
+</resources>

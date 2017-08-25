@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 修改资料界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="更换手机号" />
+
+    <!-- 主体内容 -->
+
+    <TextView
+        android:id="@+id/tv_current_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_app"
+        android:padding="@dimen/view_padding"
+        android:text="当前手机号："
+        android:gravity="center"
+        android:textColor="@color/text_gray"
+        android:textSize="@dimen/text_28"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <include layout="@layout/login_account_input_fragment" />
+
+    <Button
+        android:id="@+id/find_pwd_btn_complete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/rebate_selector_public_botton_complete"
+        android:minHeight="0dp"
+        android:minWidth="0dp"
+        android:text="完成"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_28" />
+
+</LinearLayout>

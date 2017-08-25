@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="地址定位" />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <com.baidu.mapapi.map.MapView
+            android:id="@+id/mBaiduMap"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/rebate_public_icon_location1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_alignParentBottom="true"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:padding="@dimen/view_padding">
+
+        <Button
+            android:id="@+id/location_btn_confirm"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="确定"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_white"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:background="@drawable/rebate_selector_public_botton_small_order_red"
+            android:minWidth="0dp"
+            android:minHeight="0dp"/>
+
+        <TextView
+            android:id="@+id/location_tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_34"
+            android:textColor="@color/text_title_black"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/location_btn_confirm"/>
+
+        <TextView
+            android:id="@+id/location_tv_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_black"
+            android:layout_alignParentLeft="true"
+            android:layout_toLeftOf="@id/location_btn_confirm"
+            android:layout_below="@id/location_tv_name"
+            android:layout_marginTop="@dimen/view_margin"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

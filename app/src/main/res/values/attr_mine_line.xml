@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 我的，通用行控件属性 -->
+    <declare-styleable name="MineMainLine">
+
+        <!-- 标题 -->
+        <attr name="lineTitle" format="string|reference"/>
+        <attr name="lineTitleColor" format="color|reference"/>
+        <attr name="lineTitleSize" format="dimension|reference"/>
+
+        <!-- 内容 -->
+        <attr name="lineContent" format="string|reference"/>
+        <attr name="lineContentColor" format="color|reference"/>
+        <attr name="lineContentSize" format="dimension|reference"/>
+
+        <!-- 图标 -->
+        <attr name="lineLeftIcon" format="reference"/>
+        <attr name="lineRightIcon" format="reference"/>
+
+        <!-- 是否显示内容文字 -->
+        <attr name="showContent" format="boolean"/>
+        <!-- 是否显示左边图片 -->
+        <attr name="showLeftIcon" format="boolean"/>
+        <!-- 是否显示右边图片 -->
+        <attr name="showRightIcon" format="boolean"/>
+        <!-- 是否显示下方横线 -->
+        <attr name="showBottomLine" format="boolean"/>
+
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:title="http://schemas.android.com/apk/res-auto"
+              xmlns:lnv="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="店铺录单" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/tip_shop_record_order_tip"
+                android:gravity="center"
+                android:padding="@dimen/view_padding"
+                android:background="@color/bg_app"
+                android:textSize="@dimen/text_24"
+                android:textColor="@color/text_gray"/>
+
+            <!--店铺名称-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_seller_name"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺名称"
+                lnv:lineTitleText="店铺名称"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <!--店铺名称-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_seller_address"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺地址"
+                lnv:lineTitleText="店铺地址"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <!--店铺名称-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_seller_owner"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="店铺法人"
+                lnv:lineTitleText="店铺法人"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <include layout="@layout/common_split_line_long_mt_less" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/lnv_customer_mobile"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="手机号"
+                lnv:lineTitleText="消费者手机号"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_customer_nickname"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="昵称"
+                lnv:lineTitleText="消费者昵称"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_customer_realname"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="消费者姓名"
+                lnv:lineTitleText="消费者姓名"
+                android:visibility="gone"
+                />
+            <include layout="@layout/common_split_line_long"
+                     android:id="@+id/divider_customer_realname"
+                android:visibility="gone"/>
+
+            <include layout="@layout/common_split_line_long_mt_less" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewEdit
+                android:id="@+id/lnv_custom_amount"
+                style="@style/line.btn_edt"
+                lnv:lineContentHint="消费金额"
+                lnv:lineTitleText="消费金额"
+                lnv:lineContentInputType="numberDecimal"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                android:id="@+id/lnv_seller_discount"
+                style="@style/line.btn_next"
+                lnv:lineContentHint=""
+                lnv:lineTitleText="商家折扣"
+                />
+
+            <include layout="@layout/common_split_line_long" />
+
+            <!--消费者手机号-->
+            <com.hentica.app.widget.view.lineview.LineViewText
+                style="@style/line.btn_edt"
+                android:id="@+id/lnv_rangli_amount"
+                lnv:lineContentHint=""
+                lnv:lineTitleText="让利金额"
+                />
+            <include layout="@layout/common_split_line_long" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:background="@color/bg_app" />
+
+            <include layout="@layout/common_split_line_long" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_cart_count"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="购物车(X)"
+                    android:gravity="center_horizontal"
+                    android:textSize="@dimen/text_24"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:drawablePadding="@dimen/drawable_padding"
+                    android:drawableTop="@drawable/rebate_public_shopping_cart"
+                    android:background="@color/bg_white"/>
+
+                <Button
+                    android:id="@+id/btn_add_shop_cart"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="加入购物车"
+                    android:textSize="@dimen/text_36"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/rebate_selector_public_botton_small_cart1"/>
+
+                <Button
+                    android:id="@+id/btn_add_record_order"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="立即录单"
+                    android:textSize="@dimen/text_36"
+                    android:textColor="@color/text_white"
+                    android:background="@drawable/rebate_selector_public_botton_small_cart"/>
+
+            </LinearLayout>
+            
+        </LinearLayout>
+        
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 我的订单界面，布局 -->
+
+    <!-- 标题栏 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <com.hentica.app.widget.view.TitleViewWhite
+            android:id="@+id/common_title"
+            title:ctTitleText=""
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"/>
+
+        <!-- 切换指示标题 -->
+        <net.lucode.hackware.magicindicator.MagicIndicator
+            android:id="@+id/order_main_tab_title"
+            android:layout_width="200dp"
+            android:layout_height="@dimen/common_line_height"
+            android:layout_alignBottom="@id/common_title"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+    <!-- ViewPager -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/order_main_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

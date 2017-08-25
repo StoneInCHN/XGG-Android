@@ -1,0 +1,25 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="HenticaAppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+
+        <item name="vpiCirclePageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+    </style>
+
+    <!-- 下拉菜单checkbox样式 -->
+    <style name="common_pull_down_check">
+        <item name="android:button">@null</item>
+        <item name="android:padding">0dp</item>
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:textColor">@drawable/rebate_selector_text_black_red</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:drawableRight">@drawable/rebate_selector_homepage_screening_down_red</item>
+        <item name="android:drawablePadding">@dimen/drawable_padding</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+</resources>

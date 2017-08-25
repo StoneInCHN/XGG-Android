@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/view_margin_less"
+    android:background="@color/bg_white"
+    android:descendantFocusability="blocksDescendants"
+    android:orientation="vertical"
+    >
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        >
+        <!-- 订单名称 -->
+        <TextView
+            android:id="@+id/mine_orders_item_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="好上好鱼嘴码头干锅烤鱼"
+            android:textColor="@color/text_normal"
+            android:textSize="@dimen/text_28"
+            />
+
+        <!-- 订单状态 -->
+        <TextView
+            android:id="@+id/mine_orders_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin"
+            android:text="待评价"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_28"
+            />
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_padding"
+        >
+        <!-- 图标 -->
+        <ImageView
+            android:id="@+id/mine_orders_icon"
+            android:layout_width="@dimen/common_head_icon_small_size"
+            android:layout_height="@dimen/common_head_icon_small_size"
+            android:contentDescription=""
+            android:scaleType="centerCrop"
+            />
+
+
+        <!-- 消费时间 -->
+        <TextView
+            android:id="@+id/mine_orders_time"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_toRightOf="@+id/mine_orders_icon"
+            android:text="消费时间："
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_26"
+            />
+
+        <!-- 赠送积分 -->
+        <TextView
+            android:id="@+id/mine_orders_retun_integral"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/mine_orders_time"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/mine_orders_icon"
+            android:text="赠送积分：200"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_26"
+            />
+        <!-- 支付金额 -->
+        <TextView
+            android:id="@+id/mine_orders_pay_price"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/mine_orders_retun_integral"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginRight="@dimen/view_margin"
+            android:layout_marginTop="5dp"
+            android:layout_toRightOf="@+id/mine_orders_icon"
+            android:text="支付金额：￥100"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_26"
+            />
+
+
+    </RelativeLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <!-- 操作按钮栏 -->
+    <LinearLayout
+        android:id="@+id/layout_options"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal"
+        >
+
+        <!-- 立即评价 -->
+        <TextView
+            android:id="@+id/mine_orders_comment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin"
+            android:background="@drawable/rebate_selector_public_botton_small_order_white"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="立即评价"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_28"
+            android:visibility="gone"
+            />
+        <!-- 查看评价 -->
+        <TextView
+            android:id="@+id/mine_orders_see_comment_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin"
+            android:background="@drawable/rebate_selector_public_botton_small_order_white"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="查看评价"
+            android:textColor="@color/text_red"
+            android:textSize="@dimen/text_28"
+            android:visibility="gone"
+            />
+
+        <!-- 再次消费 -->
+        <TextView
+            android:id="@+id/mine_orders_buy_agin_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin"
+            android:background="@drawable/rebate_selector_public_botton_small_order_red"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="再次消费"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_28"
+            />
+
+    </LinearLayout>
+
+    <FrameLayout
+        android:id="@+id/mine_orders_bottom_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <include layout="@layout/common_split_line_double"/>
+    </FrameLayout>
+
+</LinearLayout>

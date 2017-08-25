@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<com.hentica.app.widget.view.ptrview.CustomPtrListView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/common_ptr_lv"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    ptr:ptrMode="both"
+    ptr:ptrAnimationStyle="flip"
+    android:dividerHeight="0dp"
+    android:divider="@null"
+    />

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical" android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/bg_white">
+
+    <com.meg7.widget.CircleImageView
+        android:id="@+id/mine_item_img_icon"
+        android:layout_width="42dp"
+        android:layout_height="42dp"
+        android:layout_marginLeft="@dimen/view_margin_double"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:layout_marginRight="@dimen/view_margin"/>
+
+    <TextView
+        android:id="@+id/mine_item_tv_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXX"
+        android:textSize="@dimen/text_34"
+        android:textColor="@color/text_black"
+        android:layout_toRightOf="@id/mine_item_img_icon"
+        android:layout_alignTop="@id/mine_item_img_icon"/>
+
+    <TextView
+        android:id="@+id/mine_item_tv_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mine_item_tv_name"
+        android:layout_below="@id/mine_item_tv_name"
+        android:text="XXXX"
+        android:textSize="@dimen/text_24"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:textColor="@color/text_gray"/>
+
+    <TextView
+        android:id="@+id/mine_item_tv_score"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@id/mine_item_tv_name"
+        android:layout_below="@id/mine_item_tv_time"
+        android:text="累计收益乐分："
+        android:textSize="@dimen/text_28"
+        android:textColor="@color/text_black"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:paddingBottom="@dimen/view_padding_less"/>
+
+    <!--会员、商家-->
+    <TextView
+        android:id="@+id/mine_item_tv_type"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXX"
+        android:textSize="@dimen/text_28"
+        android:textColor="@color/text_gray"
+        android:layout_marginRight="13dp"
+        android:layout_centerVertical="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="13dp"/>
+
+    <include layout="@layout/common_split_line_long"
+             android:layout_width="match_parent"
+             android:layout_height="0.1dp"
+             android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

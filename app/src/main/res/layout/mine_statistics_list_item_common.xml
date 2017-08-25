@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--积分、乐分、乐豆统计item-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white">
+
+    <include layout="@layout/common_split_line_long"
+        android:id="@+id/mine_statistics_top_div_1"/>
+
+    <include layout="@layout/common_split_line_long_mt_less"
+        android:id="@+id/mine_statistics_top_div_2"
+        android:visibility="gone"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding"
+        >
+
+        <!--图片-->
+        <ImageView
+            android:id="@+id/item_img_icon"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:scaleType="centerCrop"/>
+        <!--标题-->
+        <TextView
+            android:id="@+id/item_tv_name"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/view_margin_less"
+            android:singleLine="true"
+            android:ellipsize="end"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_title_black"
+            />
+
+        <TextView
+            android:id="@+id/item_tv_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XX"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_gray"
+            android:layout_gravity="center_vertical"
+            android:visibility="gone"
+            />
+
+    </LinearLayout>
+
+    <!--统计信息-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:layout_marginBottom="@dimen/view_margin_less"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding"
+        >
+
+        <!--本次增加乐心与总乐心-->
+        <TextView
+            android:id="@+id/mine_tv_add_lexin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="+X\nX"
+            android:gravity="right"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_red"
+            android:layout_gravity="right"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:layout_marginLeft="@dimen/view_margin"
+            />
+
+        <TextView
+            android:id="@+id/mine_tv_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toLeftOf="@id/mine_tv_add_lexin"
+            android:layout_alignParentLeft="true"
+            android:text="XXXX-XX-XX XX:XX\n积分：XXX"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_black"
+            android:lineSpacingExtra="@dimen/view_padding_less"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+</LinearLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_white"
+    android:orientation="vertical">
+
+    <!-- 修改资料界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="微信绑定" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_padding"
+        android:text="绑定微信后，能提现在此账户，还可以接受微信到账通知哦！"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_28" />
+
+    <!--头像背景框-->
+    <RelativeLayout
+        android:id="@+id/mine_layout_icon"
+        android:layout_width="104dp"
+        android:layout_height="104dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/view_margin_double"
+        android:background="@drawable/rebate_mine_head_bgred">
+        <!--头像-->
+        <com.meg7.widget.CircleImageView
+            android:id="@+id/mine_img_icon"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/rebate_mine_head_bg_acquiescent" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/view_margin_double"
+        android:text="提现微信账号："
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_28" />
+
+    <TextView
+        android:id="@+id/bind_tv_nickname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/view_margin"
+        android:text="XXXX"
+        android:textColor="@color/text_title_black"
+        android:textSize="@dimen/text_38" />
+
+
+    <!--解除授权-->
+    <Button
+        android:id="@+id/bind_btn_unbind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rebate_selectorpublic_botton_big_red"
+        android:text="解除授权"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_36"
+        android:layout_marginTop="50dp"/>
+
+    <!--重新授权-->
+    <Button
+        android:id="@+id/bind_btn_rebind"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:background="@drawable/rebate_selector_public_botton_big_white"
+        android:text="重新授权"
+        android:textColor="@color/text_red"
+        android:textSize="@dimen/text_36"
+        android:layout_marginTop="30dp"/>
+
+</LinearLayout>

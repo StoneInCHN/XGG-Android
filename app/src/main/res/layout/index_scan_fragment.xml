@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout 
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <!-- 扫一扫 -->
+
+
+    <!-- 摄像机图片 -->
+    <FrameLayout
+        android:id="@+id/index_scan_camera_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleText="扫一扫"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <!-- 主体内容 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/common_title"
+        android:layout_above="@+id/view1"
+        >
+        <!-- 蒙层上 -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/index_scan_scan_frame_img"
+            android:background="@color/transparent_gray"
+            />
+        <!-- 蒙层下 -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@+id/index_scan_scan_frame_img"
+            android:background="@color/transparent_gray"
+            />
+        <!-- 蒙层左 -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/index_scan_scan_frame_img"
+            android:layout_alignBottom="@+id/index_scan_scan_frame_img"
+            android:layout_toLeftOf="@+id/index_scan_scan_frame_img"
+            android:background="@color/transparent_gray"
+            />
+
+        <!-- 蒙层右 -->
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/index_scan_scan_frame_img"
+            android:layout_alignBottom="@+id/index_scan_scan_frame_img"
+            android:layout_toRightOf="@+id/index_scan_scan_frame_img"
+            android:background="@color/transparent_gray"
+            />
+
+        <!-- 扫描框 -->
+        <ImageView
+            android:id="@+id/index_scan_scan_frame_img"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/rebate_mine_qr_code_scan_frame"
+            android:contentDescription="@string/null_des"
+            />
+
+        <!-- 扫描线范围 -->
+        <FrameLayout
+            android:id="@+id/index_scan_scan_img_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@+id/index_scan_scan_frame_img"
+            android:layout_alignBottom="@+id/index_scan_scan_frame_img"
+            android:layout_alignLeft="@+id/index_scan_scan_frame_img"
+            android:layout_alignRight="@+id/index_scan_scan_frame_img"
+            >
+            <!-- 扫描线 -->
+            <ImageView
+                android:id="@+id/index_scan_scan_move_img"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/rebate_mine_qr_code_scan_line"
+                android:contentDescription="@string/null_des"
+                />
+        </FrameLayout>
+
+        <!-- 文字提示 -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/index_scan_scan_frame_img"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="@dimen/view_padding"
+            android:paddingRight="@dimen/view_padding"
+            android:background="@drawable/rebate_mine_qr_code_scan_bg"
+            android:gravity="center"
+            android:text="扫描商家的二维码即可下单"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_28"
+            />
+
+    </RelativeLayout>
+
+    <!-- 下方蒙层2，下方要多一些 -->
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="80dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/transparent_gray"
+        />
+
+</RelativeLayout>

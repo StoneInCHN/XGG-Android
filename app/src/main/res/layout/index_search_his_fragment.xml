@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- 沉浸式标题 -->
+        <View
+            android:id="@+id/title_status_bar_view"
+            android:layout_width="match_parent"
+            android:layout_height="18dp"
+            android:background="@color/bg_red"
+            android:visibility="gone"/>
+
+        <!-- 搜索栏 -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:background="@color/bg_red">
+
+            <!-- 返回按钮 -->
+            <ImageButton
+                android:id="@+id/index_search_his_back_btn"
+                style="@style/common_title_left_btn"
+                android:layout_width="@dimen/title_btn_width"
+                android:layout_height="@dimen/title_btn_height"
+                android:contentDescription="@string/null_des"
+                android:src="@drawable/rebate_public_back3"
+                />
+
+            <EditText
+                android:id="@+id/index_search_his_search_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/rebate_public_icon_search_bg1"
+                android:paddingLeft="@dimen/view_padding"
+                android:drawablePadding="@dimen/drawable_padding"
+                android:textSize="@dimen/text_26"
+                android:textColor="@color/text_white"
+                android:hint="搜索"
+                android:textColorHint="@color/text_white"
+                android:gravity="center_vertical"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"/>
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom">
+                <include layout="@layout/common_split_line_long"/>
+            </FrameLayout>
+
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/index_search_his_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_gray"
+            android:text="搜索记录"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_marginLeft="@dimen/view_margin"
+            />
+
+        <!-- 搜索历史列表 -->
+        <com.hentica.app.widget.view.ptrview.CustomPtrListView
+            android:id="@+id/index_search_his_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:divider="@null"
+            android:listSelector="@color/transparent"
+            ptr:ptrAnimationStyle="flip"/>
+
+    </LinearLayout>
+
+    <!-- 清除历史记录 -->
+    <TextView
+        android:id="@+id/index_search_his_clear_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_28"
+        android:textColor="@color/text_red"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal|bottom"
+        android:layout_marginBottom="45dp"
+        android:text="清除历史记录"
+        android:background="@drawable/rebate_selector_public_botton_big_white"/>
+
+</FrameLayout>

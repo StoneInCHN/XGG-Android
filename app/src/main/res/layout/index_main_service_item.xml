@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 服务列表 -->
+    <com.hentica.app.lib.view.ChildGridView
+        android:id="@+id/index_main_service_item_grid"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:numColumns="5"
+        >
+
+    </com.hentica.app.lib.view.ChildGridView>
+
+</LinearLayout>

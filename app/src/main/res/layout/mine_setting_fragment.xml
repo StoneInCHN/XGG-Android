@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical">
+
+    <!-- 设置界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="设置" />
+
+    <FrameLayout
+        android:id="@+id/setting_layout_update"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_line_height"
+            android:drawableLeft="@drawable/rebate_mine_update"
+            android:paddingLeft="@dimen/view_padding"
+            android:text="版本更新"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_black"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/drawable_padding"
+            />
+
+        <TextView
+            android:id="@+id/setting_tv_version_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXX"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_gray"
+            android:layout_gravity="right|center_vertical"
+            android:drawableRight="@drawable/rebate_public_next"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:layout_marginRight="30dp"/>
+
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <FrameLayout
+        android:id="@+id/setting_layout_clear"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/rebate_mine_delete"
+            android:paddingLeft="@dimen/view_padding"
+            android:paddingRight="@dimen/view_padding"
+            android:text="清除缓存"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_black"
+            android:gravity="center_vertical"
+            android:drawablePadding="@dimen/drawable_padding"
+            />
+
+        <TextView
+            android:id="@+id/setting_tv_cache_size"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="XXX"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_gray"
+            android:layout_gravity="right|center_vertical"
+            android:drawableRight="@drawable/rebate_public_next"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:layout_marginRight="30dp"/>
+
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+</LinearLayout>

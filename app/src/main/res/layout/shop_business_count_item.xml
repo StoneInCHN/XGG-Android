@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="@dimen/view_margin"
+        >
+
+        <com.meg7.widget.CircleImageView
+            android:id="@+id/shop_business_count_head"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:contentDescription=""
+            android:layout_marginRight="@dimen/view_margin"
+            android:visibility="gone"
+            />
+
+        <TextView
+            android:id="@+id/shop_business_count_area"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            style="@style/text_gray_28"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="XX"
+            android:layout_gravity="center_vertical"
+            />
+
+        <TextView
+            android:id="@+id/shop_business_count_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_gray_28"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="￥XXXXX"
+            android:layout_gravity="center_vertical|right"
+            />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+</LinearLayout>

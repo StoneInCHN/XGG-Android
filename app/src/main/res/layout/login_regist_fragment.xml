@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <!-- 注册界面，布局 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_login_register_bg">
+
+
+        <!-- 标题栏 -->
+        <com.hentica.app.widget.view.TitleView
+            android:id="@+id/common_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/transparent"
+            title:ctTitleLeftImg="@drawable/rebate_public_back3"
+            title:ctTitleText="注册账号" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rebate_public_login_logo"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@id/common_title"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="@dimen/view_padding_less"
+        android:paddingBottom="@dimen/view_padding_less"
+        android:background="@color/bg_app"
+        android:text="手机号即登录账号，我们将发送验证码到此号码"
+        android:gravity="center"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <include layout="@layout/login_account_input_fragment"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="@dimen/view_margin"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:orientation="horizontal"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="@dimen/view_margin_double"
+            android:paddingBottom="@dimen/view_padding"
+            android:paddingTop="@dimen/view_padding"
+            android:text="推荐人手机号"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28" />
+
+        <EditText
+            android:id="@+id/account_edt_recommond_phone"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@null"
+            android:hint="选填"
+            android:maxLength="11"
+            android:maxLines="1"
+            android:text=""
+            android:textColor="@color/text_gray"
+            android:textColorHint="@color/text_gray"
+            android:textSize="@dimen/text_24" />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_app">
+
+        <Button
+            android:id="@+id/regist_btn_complete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@drawable/rebate_selector_public_botton_complete"
+            android:minHeight="0dp"
+            android:minWidth="0dp"
+            android:text="完成"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_28"
+            android:layout_centerInParent="true"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/common_line_height"
+            android:orientation="horizontal"
+            android:layout_below="@id/regist_btn_complete"
+            android:layout_centerHorizontal="true">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_line_height"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="轻触“完成”按钮，即表示你同意"
+                android:textColor="@color/text_gray"
+                android:textSize="@dimen/text_24" />
+
+            <TextView
+                android:id="@+id/regist_btn_license"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_line_height"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="《软件许可及服务协议》"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_24" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

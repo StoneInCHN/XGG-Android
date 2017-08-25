@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 筛选布局 -->
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/index_business_list_filter_view"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    android:orientation="vertical"
+    android:clickable="true"
+    >
+
+    <TextView
+        android:id="@+id/index_business_list_filter_title"
+        style="@style/text_red_28"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_margin"
+        android:text="特色服务"
+        />
+
+    <!-- wifi -->
+    <CheckBox
+        android:id="@+id/index_business_list_filter_wifi_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/index_business_list_filter_title"
+        android:layout_marginBottom="@dimen/view_margin_double"
+        android:layout_marginLeft="40dp"
+        android:background="@drawable/rebate_selector_homepage_city"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="wifi"
+        android:textColor="@drawable/rebate_selector_text_black_red"
+        android:textSize="@dimen/text_28"
+        />
+
+    <!-- 免费停车 -->
+    <CheckBox
+        android:id="@+id/index_business_list_filter_pass_check"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/index_business_list_filter_title"
+        android:layout_marginBottom="@dimen/view_margin_double"
+        android:layout_marginLeft="@dimen/view_margin_double"
+        android:layout_toRightOf="@+id/index_business_list_filter_wifi_check"
+        android:background="@drawable/rebate_selector_homepage_city"
+        android:button="@null"
+        android:gravity="center"
+        android:padding="0dp"
+        android:text="免费停车"
+        android:textColor="@drawable/rebate_selector_text_black_red"
+        android:textSize="@dimen/text_28"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/index_business_list_filter_wifi_check"
+        >
+
+        <include layout="@layout/common_split_line_long"/>
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:layout_below="@+id/index_business_list_filter_wifi_check"
+        >
+        <!-- 重置 -->
+        <TextView
+            android:id="@+id/index_business_list_filter_reset_btn"
+            style="@style/text_black_28"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:paddingLeft="@dimen/view_padding_double"
+            android:paddingRight="@dimen/view_padding_double"
+            android:text="重置"
+            />
+
+        <!-- 完成 -->
+        <TextView
+            android:id="@+id/index_business_list_filter_complete_btn"
+            style="@style/text_red_28"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:gravity="center"
+            android:paddingLeft="@dimen/view_padding_double"
+            android:paddingRight="@dimen/view_padding_double"
+            android:text="完成"
+            />
+
+    </FrameLayout>
+
+</RelativeLayout>

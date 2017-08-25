@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/filter_ckb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_selector_homepage_city"
+        android:button="@null"
+        android:gravity="center"
+        android:paddingBottom="@dimen/view_padding"
+        android:paddingTop="@dimen/view_padding"
+        android:text="XX"
+        android:textColor="@drawable/rebate_selector_text_black_red"
+        android:textSize="@dimen/text_28"/>
+
+</LinearLayout>

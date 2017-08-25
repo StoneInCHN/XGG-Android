@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.fiveixlg.app.customer">
+
+    <!-- 查看网络状态 -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <!-- 联网 -->
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <!-- 加载文件系统 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"/>
+    <!-- 写文件 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <!-- QQ、QQ空间所需权限 -->
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <!-- 百度地图权限 -->
+    <uses-permission android:name="com.android.launcher.permission.READ_SETTINGS" />
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
+
+    <!--相机权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <!-- 个推SDK权限配置 开始 -->
+    <!-- 自定义权限 -->
+    <uses-permission android:name="getui.permission.GetuiService.com.fiveixlg.app.customer"/>
+    <!-- 替换为第三方应用的包名 -->
+    <permission
+        android:name="getui.permission.GetuiService.com.fiveixlg.app.customer"
+        android:protectionLevel="normal"/> <!-- 替换为第三方应用的包名 -->
+    <!-- 个推SDK权限配置 结束 -->
+
+    <application
+        android:name="com.hentica.app.framework.AppApplication"
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/HenticaAppTheme">
+
+        <activity android:name="com.hentica.app.framework.activity.WelcomeActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.hentica.app.framework.activity.FrameActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+
+
+        <activity android:name="com.hentica.app.module.mine.ui.MineProfileActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name="com.hentica.app.module.mine.ui.shop.MineShopDetailActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan"/>
+        <activity android:name="com.hentica.app.module.mine.ui.shop.MineSettledBusinessActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name="com.hentica.app.module.mine.ui.MineFillEvaluateActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan" />
+        <activity android:name="com.hentica.app.module.mine.ui.bank.RealNameVerificationActivity"
+                  android:windowSoftInputMode="stateHidden|adjustPan" />
+        <!-- 百度地图配置数据 -->
+        <!-- 正式key -->
+        <meta-data
+            android:name="com.baidu.lbsapi.API_KEY"
+            android:value="@string/baidu_map"/>
+
+        <!-- 百度定位服务 -->
+        <service
+            android:name="com.baidu.location.f"
+            android:enabled="true"
+            android:process=":remote"
+            android:permission="android.permission.BAIDU_LOCATION_SERVICE">
+            <intent-filter>
+                <action android:name="com.baidu.location.service_v2.6"></action>
+            </intent-filter>
+        </service>
+
+        <!-- 友盟反馈界面 -->
+        <activity android:name="com.umeng.fb.ConversationActivity"/>
+
+        <!--有盟分享 开始 -->
+        <!-- 有盟key -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="@string/umeng_key">
+        </meta-data>
+
+        <!-- 微信 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <!-- 有盟分享 结束 -->
+        <!-- 【第三方】支付 开始 -->
+
+
+        <!-- 微信支付 开始 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Translucent"/>
+
+        <receiver android:name=".AppRegister">
+            <intent-filter>
+                <action android:name="com.tencent.mm.plugin.openapi.Intent.ACTION_REFRESH_WXAPP"/>
+            </intent-filter>
+        </receiver>
+
+        <!-- 微信支付 结束 -->
+        <!-- 【第三方】支付 结束 -->
+
+
+        <receiver android:name="com.hentica.app.module.broadcast.BootReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <action android:name="android.intent.action.PACKAGE_REPLACED" />
+                <action android:name="com.hentica.app.donwload.complete" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

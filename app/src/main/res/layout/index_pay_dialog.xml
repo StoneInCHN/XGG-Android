@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_gray"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_alignParentBottom="true"
+        android:clickable="true"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:background="@color/bg_app"
+            >
+
+            <!-- 关闭 -->
+            <ImageView
+                android:id="@+id/pay_dialog_close_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/common_line_height"
+                android:textSize="@dimen/text_28"
+                android:textColor="@color/text_red"
+                android:gravity="center"
+                android:src="@drawable/rebate_public_back1"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                />
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@color/bg_white"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                style="@style/text_black_28"
+                android:layout_margin="@dimen/view_margin"
+                android:text="请输入支付密码"
+                />
+
+            <com.hentica.app.widget.view.PasswordEditText
+                android:id="@+id/pay_dialog_password_edit"
+                android:layout_width="240dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center_horizontal"
+                android:inputType="numberPassword"
+                style="@style/text_black_28"
+                android:layout_marginBottom="@dimen/view_margin"
+                android:background="@color/transparent"
+                />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

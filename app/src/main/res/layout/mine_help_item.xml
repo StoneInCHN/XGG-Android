@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/help_item_tv_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_padding"
+        android:text="XXXX"
+        android:textSize="@dimen/text_28"
+        android:textColor="@color/text_black"
+        android:drawableRight="@drawable/rebate_public_next"
+        android:background="@color/bg_white"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+</LinearLayout>

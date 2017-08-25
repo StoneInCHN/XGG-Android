@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?><!--店铺名称+定位按钮-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/common_line_height">
+
+    <com.hentica.app.widget.view.lineview.LineViewEdit
+        style="@style/line.btn_edt"
+        android:id="@+id/shop_location_lnv_address"
+        lnv:lineContentHint="店铺详情地址"
+        lnv:lineTitleText="详情地址" />
+
+    <TextView
+        android:id="@+id/shop_btn_location"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="80dp"
+        android:drawableLeft="@drawable/rebate_public_icon_location"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:paddingRight="@dimen/view_padding"
+        android:gravity="center"
+        android:text="定位"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray" />
+
+</RelativeLayout>

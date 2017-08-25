@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 筛选界面 -->
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_gray"
+    >
+    <!-- 筛选列表 -->
+    <com.hentica.app.widget.view.MaxListView
+        android:id="@+id/shop_business_center_filter_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:divider="@null"
+        android:listSelector="@color/transparent"
+        />
+
+</FrameLayout>

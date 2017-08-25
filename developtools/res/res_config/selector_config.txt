@@ -1,0 +1,25 @@
+# 这是注释，可用命令：
+#
+# image color
+# checked pressed enabled selected
+#
+# focused window_focused 
+# checkable activated active
+
+
+##################################################################
+# 按钮
+-----------
+com: 123
+to : ../../temp_out/res_selector/rebate_selector_public_botton_small_cart.xml
+tag: pressed(true), image(rebate_public_botton_small_cart_press)
+tag: image(rebate_public_botton_small_cart)
+
+
+# 按钮
+-----------
+com: 123
+to : ../../temp_out/res_selector/rebate_selector_public_botton_small_cart1.xml
+tag: pressed(true), image(rebate_public_botton_small_cart1_press)
+tag: image(rebate_public_botton_small_cart1)
+

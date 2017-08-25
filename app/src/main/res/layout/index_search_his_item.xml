@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <!-- 搜索关键字 -->
+    <TextView
+        android:id="@+id/index_search_his_key_word"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin"
+        style="@style/text_black_28"
+        android:text="鱼嘴码头干锅烤鱼"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding"
+        />
+
+    <!-- 搜索时间 -->
+    <TextView
+        android:id="@+id/index_search_his_date"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray"
+        android:paddingLeft="@dimen/view_padding"
+        android:paddingRight="@dimen/view_padding"
+        android:text="2017-03-12"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        >
+        <include layout="@layout/common_split_line_short"/>
+    </FrameLayout>
+
+</LinearLayout>

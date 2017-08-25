@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleVisibleBtns="leftImgBtn|title|rightTextBtn"
+        title:ctTitleText="店铺货款"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:background="@color/bg_white"
+        android:orientation="horizontal">
+
+        <!--消费总额-->
+        <TextView
+            android:id="@+id/tv_consume_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_28"/>
+
+        <include layout="@layout/common_split_line_v_mtb_less" />
+
+        <!--结算总额-->
+        <TextView
+            android:id="@+id/tv_balance_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:textSize="@dimen/text_28"/>
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <TextView
+        android:id="@+id/tv_description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_padding"
+        android:text="货款结算说明"
+        android:textColor="@color/text_red"
+        android:textSize="@dimen/text_26"
+        android:background="@color/bg_app"/>
+
+    <include layout="@layout/common_split_line_long" />
+    <com.hentica.app.widget.view.ptrview.CustomPtrListView
+        android:id="@+id/mine_payment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:listSelector="@color/transparent"
+        android:divider="@null"
+        />
+
+</LinearLayout>

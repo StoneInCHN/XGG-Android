@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 用于viewHolder -->
+    <item name="tagOfViewHolder" type="id"/>
+    <item name="viewPositionTag" type="id"/>
+
+</resources>

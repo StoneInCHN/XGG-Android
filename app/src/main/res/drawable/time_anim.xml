@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/rebate_time1" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time2" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time3" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time4" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time5" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time6" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time7" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time8" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time9" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time10" android:duration="100" />
+    <item android:drawable="@drawable/rebate_time11" android:duration="100" />
+
+</animation-list>

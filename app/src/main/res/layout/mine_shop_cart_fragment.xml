@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:title="http://schemas.android.com/apk/res-auto"
+              xmlns:ptr="http://schemas.android.com/apk/res-auto"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="录单购物车" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/tip_shop_record_order_tip"
+        android:gravity="center"
+        android:padding="@dimen/view_padding"
+        android:background="@color/bg_app"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrListView
+        android:id="@+id/shop_cart_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:dividerHeight="@dimen/view_padding_less"
+        ptr:ptrMode="both"
+        android:divider="@color/bg_app"
+        android:background="@color/bg_app"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:id="@+id/ckb_select_all"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:paddingLeft="@dimen/view_padding_double"
+            android:paddingRight="@dimen/view_padding_double"
+            android:button="@null"
+            android:drawableLeft="@drawable/rebate_selector_public_remind_select"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_26"
+            android:text="全选"/>
+
+        <TextView
+            android:id="@+id/tv_total_amount"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="合计："
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/view_padding"
+            android:textSize="@dimen/text_26"
+            android:textColor="@color/text_black"/>
+
+        <Button
+            android:id="@+id/btn_to_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rebate_selector_public_botton_small_cart"
+            android:maxWidth="0dp"
+            android:minHeight="0dp"
+            android:textSize="@dimen/text_36"
+            android:textColor="@color/text_white"
+            android:text="支付（0） "/>
+
+    </LinearLayout>
+
+</LinearLayout>

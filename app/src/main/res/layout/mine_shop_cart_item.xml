@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+    android:background="@color/bg_white">
+
+    <include layout="@layout/common_split_line_long" />
+
+    <CheckBox
+        android:id="@+id/ckb"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:button="@null"
+        android:drawableLeft="@drawable/rebate_selector_public_remind_select"
+        android:text="XXXX"
+        android:textColor="@color/text_title_black"
+        android:drawablePadding="@dimen/drawable_padding"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:textSize="@dimen/text_34"/>
+
+    <ImageView
+        android:id="@+id/img_delete"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/rebate_public_delete"
+        android:layout_alignParentTop="true"
+        android:layout_alignBottom="@id/ckb"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/view_padding"
+        android:paddingLeft="@dimen/view_padding"
+        />
+
+    <include layout="@layout/common_split_line_long"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@id/ckb"/>
+
+    <TextView
+        android:id="@+id/tv_customer_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXXXX"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_28"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@id/ckb"
+        android:layout_marginTop="@dimen/view_margin_less"/>
+
+    <TextView
+        android:id="@+id/tv_rangli_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXXXX"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_28"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@id/tv_customer_mobile"
+        android:layout_marginTop="@dimen/view_margin_less"/>
+
+    <TextView
+        android:id="@+id/tv_custom_amount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="XXXXXX"
+        android:textColor="@color/text_black"
+        android:textSize="@dimen/text_28"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_below="@id/tv_rangli_amount"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:layout_marginBottom="@dimen/view_margin_less"/>
+
+    <TextView
+        android:id="@+id/tv_custom_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/tv_customer_mobile"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/view_margin"
+        android:text="XXXX-XX-XX"/>
+
+    <include layout="@layout/common_split_line_long"
+        android:layout_width="match_parent"
+        android:layout_height="1px"
+        android:layout_alignParentBottom="true"/>
+
+
+
+</RelativeLayout>

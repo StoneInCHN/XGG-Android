@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 全部评价界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleText="全部评价"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <LinearLayout
+        android:id="@+id/index_all_comment_more_comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:background="@color/bg_white"
+        android:orientation="horizontal"
+        >
+
+        <RatingBar
+            android:id="@+id/index_all_comment_rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:numStars="5"
+            style="@style/roomRatingBar"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:isIndicator="true"
+            />
+
+        <TextView
+            android:id="@+id/index_all_comment_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_26"
+            android:textColor="@color/text_red"
+            android:text="4.9分"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/view_margin"
+            />
+
+        <TextView
+            android:id="@+id/index_all_comment_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_black"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/view_margin"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:text="34条评论"
+            />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrListView
+        android:id="@+id/index_all_comment_comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@null"
+        android:listSelector="@color/transparent"
+        />
+
+
+</LinearLayout>

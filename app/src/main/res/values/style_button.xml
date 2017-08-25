@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 通用button样式 -->
+    <style name="button" parent="HenticaAppTheme">
+        <item name="android:textSize">@dimen/text_24</item>
+        <item name="android:textColor">@color/text_white</item>
+    </style>
+
+    <!-- 标题栏按钮 -->
+    <style name="button.title">
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/text_white</item>
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:minWidth">@dimen/title_btn_width</item>
+        <item name="android:height">@dimen/title_btn_height</item>
+        <item name="android:paddingLeft">@dimen/view_padding</item>
+        <item name="android:paddingRight">@dimen/view_padding</item>
+    </style>
+
+    <!-- 标题栏返回按钮 -->
+    <style name="button.title.back">
+        <!--<item name="android:scaleType">fitStart</item>-->
+<!--        <item name="android:paddingLeft">10dp</item>
+        <item name="android:paddingTop">17dp</item>
+        <item name="android:paddingBottom">17dp</item>
+        <item name="android:paddingRight">25dp</item>-->
+    </style>
+
+    <!-- 普通文字按钮 -->
+    <style name="button.text_btn" parent="button.title">
+        <!-- TODO 文字按钮也要设置一个背景 -->
+        <item name="android:background">@null</item>
+        <item name="android:textColor">@color/text_normal</item>
+    </style>
+
+</resources>

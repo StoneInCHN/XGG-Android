@@ -1,0 +1,169 @@
+apply plugin: 'com.android.application'
+apply plugin: 'android-apt'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "24.0.1"
+
+    signingConfigs {
+        release {
+            storeFile file('D:/sign/5ixlgcustomer.jks')
+            keyAlias '5ixlg'
+            keyPassword '5ixlgcustomer'
+            storePassword '5ixlgcustomer'
+        }
+        debug {
+            storeFile file('D:/sign/5ixlgcustomer.jks')
+            keyAlias '5ixlg'
+            keyPassword '5ixlgcustomer'
+            storePassword '5ixlgcustomer'
+        }
+    }
+
+    defaultConfig {
+        applicationId "com.fiveixlg.app.customer"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 10029
+        versionName "1.0.13"
+        signingConfig signingConfigs.release
+//         Enabling multidex support.
+        multiDexEnabled true
+
+//        ndk {
+            //选择要添加的对应cpu类型的.so库。
+//            abiFilters 'armeabi', 'armeabi-v7a', 'armeabi-v8a'
+            // 还可以添加 'x86', 'x86_64', 'mips', 'mips64'
+//        }
+
+        manifestPlaceholders = [
+                JPUSH_PKGNAME : applicationId,
+                JPUSH_APPKEY : "fb84065aa9b2d9586d971c02", //JPush上注册的包名对应的appkey替换appkey
+                JPUSH_CHANNEL : "developer-default", //暂时填写默认值即可.
+        ]
+
+    }
+
+    buildTypes {
+        debug{
+            manifestPlaceholders = [BUGLY_VERSION: buglyVersion("release")]
+            signingConfig signingConfigs.release
+        }
+        release {
+//            minifyEnabled true
+//            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            manifestPlaceholders = [BUGLY_VERSION: buglyVersion("release")]
+            signingConfig signingConfigs.release
+        }
+    }
+
+    lintOptions {
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+}
+
+repositories {
+
+    // ????????
+    flatDir {
+        dirs '../libs'
+    }
+
+    maven { url "https://jitpack.io" }
+}
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    compile 'com.android.support:support-v4:23.+'
+    compile 'com.android.support:appcompat-v7:23.+'
+    compile 'com.android.support:recyclerview-v7:23.+'
+    // ????
+    testCompile 'junit:junit:4.12'
+    testCompile 'org.robolectric:robolectric:3.1.2'
+    // ?????
+    compile project(':datalib')
+    // ??????
+    compile 'com.androidquery:androidQuery:1.0.1'
+    // ?????
+    compile 'com.davemorrissey.labs.subscaleview:largeImageViewLib:1.0.2'
+    // ?????
+    compile 'com.litesuits.http:liteHttpLib:1.0.3'
+    // ???????
+    compile 'com.handmark.pulltorefresh.library:pullToRefreshLibrary:1.0.1'
+    // ????
+    compile 'kankan.wheel.widget:wheel:1.0.1'
+    // ??????? + ???????ListView
+    //    compile 'cn.swu.pulltorefreshswipemenulistview:pullToRefreshSwipeMenuListView:1.0.1'
+    // ???????GridView
+    compile 'com.tonicartos:stickygridheaders:1.0.1'
+    // ???????ListView
+    compile 'de.halfbit:pinned-section-listview:1.0.0'
+    // bugly
+    compile 'com.tencent.bugly:crashreport:latest.release'
+    // ???dex???
+    compile 'com.android.support:multidex:1.0.1'
+    // ??????????
+    compile 'com.jakewharton:butterknife:8.4.0'
+    apt 'com.jakewharton:butterknife-compiler:8.4.0'
+    // ????????
+    compile 'com.hentica.app.lib:viewpagerindicator:2.4.1'
+    // gson
+    compile 'com.google.code.gson:gson:2.6.2'
+    // orm
+    compile 'com.litesuits.orm:android-lite-orm:1.9.1'
+    // umeng
+    compile(name: 'umengSocialSdkLibrary-release', ext: 'aar')
+    compile(name: 'weixinlib-release', ext: 'aar')
+    compile(name: 'umengSocialSdkLibrary-release', ext: 'aar')
+    //
+    compile(name: 'baidumapapi_base_v4_0_0', ext: 'jar')
+    compile(name: 'baidumapapi_cloud_v4_0_0', ext: 'jar')
+    compile(name: 'baidumapapi_map_v4_0_0', ext: 'jar')
+    compile(name: 'baidumapapi_radar_v4_0_0', ext: 'jar')
+    compile(name: 'baidumapapi_search_v4_0_0', ext: 'jar')
+    compile(name: 'baidumapapi_util_v4_0_0', ext: 'jar')
+    compile 'com.mostafagazar:customshapeimageview:1.0.4'
+    compile(name: 'locSDK_6.13', ext: 'jar')
+    //云客服
+    //    compile 'com.chosen.kf5sdk:kf5sdklibrary:1.5.8'
+    //    compile 'org.apache.ant:ant:1.8.0'
+    //个推
+    //    compile(name: 'geTuiPushSDK-release', ext: 'aar')
+    compile project(':paymentPlatform2')
+    compile project(':appbase')
+    compile project(':zXingDialog')
+    compile project(path: ':zXingDialog')
+    //    极光推送
+    compile 'cn.jiguang.sdk:jpush:3.0.3'
+    // 此处以JPush 3.0.3 版本为例。
+    compile 'cn.jiguang.sdk:jcore:1.1.1'
+    // 此处以JCore 1.1.1 版本为例。
+    compile 'com.squareup.okhttp3:okhttp:3.6.0'
+    compile files('libs/BestpaySDK_V3.0.4.jar')
+    compile project(':takephoto_library')
+    compile 'com.github.hackware1993:MagicIndicator:1.5.0'
+    compile 'org.greenrobot:eventbus:3.0.0'
+    compile 'com.hentica.app.lib:henticaLib:0.0.16'
+}
+
+// bugly ????
+def buglyVersion(String buildType){
+
+    String version;
+
+    if(buildType.equals('release')){
+
+        String timeStr = new Date().format("yyyy-MM-dd HH:mm", TimeZone.getTimeZone("GMT+8"));
+        version = "${buildType}: ${timeStr}";
+    }else {
+
+        String timeStr = new Date().format("yyyy-MM-dd", TimeZone.getTimeZone("GMT+8"));
+        version = "${buildType}: ${timeStr}";
+    }
+
+    return version;
+}

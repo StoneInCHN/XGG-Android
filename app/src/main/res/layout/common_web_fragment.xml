@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:title="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+    >
+
+    <!-- 我的账户 -->
+
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@null"
+        title:ctTitleVisibleBtns="title|leftImgBtn"
+        />
+
+    <!-- 分割线 -->
+    <ImageView
+        android:id="@+id/store_split_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/common_title"
+        android:background="@null"
+        android:contentDescription=""
+        />
+
+    <!-- 图文详情内容 -->
+
+    <!-- 错误提示显示 -->
+    <include
+        android:id="@+id/include_failed_view"
+        layout="@layout/common_empty_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/store_split_line"
+        android:visibility="gone"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/store_split_line"
+        android:layout_toEndOf="@+id/include_failed_view"
+        android:layout_toRightOf="@+id/include_failed_view"
+        >
+
+        <WebView
+            android:id="@+id/common_web_webview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            />
+
+        <!-- 返回按钮 -->
+        <ImageButton
+            android:id="@+id/common_web_webview_back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:contentDescription=""
+            android:background="@color/transparent"
+            android:visibility="gone"
+            />
+
+    </FrameLayout>
+
+
+</RelativeLayout>

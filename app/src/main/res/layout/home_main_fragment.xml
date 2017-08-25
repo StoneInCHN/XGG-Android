@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+              android:orientation="vertical"
+    >
+
+    <!-- 首页，布局 -->
+
+    <!-- 左右滑动 -->
+    <com.hentica.app.lib.view.CustomViewPager
+        android:id="@+id/main_viewPager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_above="@+id/main_bottom_radio_group"
+        android:padding="0dp"
+        android:background="@color/bg_white"
+        />
+
+    <!-- 分割线 -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/main_bottom_radio_group"
+        android:contentDescription=""
+        android:background="@null"
+        />
+
+    <!-- 导航栏 -->
+    <RadioGroup
+        android:id="@+id/main_bottom_radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:orientation="horizontal"
+        android:checkedButton="@+id/home_main_mine_radio"
+        android:padding="0dp"
+        android:background="@color/bg_white"
+        >
+
+        <RadioButton
+            android:id="@+id/main_bottom_tab_index"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rebate_selector_public_tool_bar_icon_homepage"
+            android:text="首页"
+            android:gravity="center"
+            android:textSize="@dimen/text_22"
+            android:textColor="@drawable/rebate_selector_text_black_red"
+            android:padding="0dp"
+            />
+
+        <RadioButton
+            android:id="@+id/main_bottom_tab_bonus"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rebate_selector_public_tool_bar_icon_bonus"
+            android:text="分红"
+            android:gravity="center"
+            android:textSize="@dimen/text_22"
+            android:textColor="@drawable/rebate_selector_text_black_red"
+            android:padding="0dp"
+            />
+
+        <RadioButton
+            android:id="@+id/main_bottom_tab_mine"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:button="@null"
+            android:drawableTop="@drawable/rebate_selector_public_tool_bar_icon_mine"
+            android:text="我的"
+            android:gravity="center"
+            android:textSize="@dimen/text_22"
+            android:textColor="@drawable/rebate_selector_text_black_red"
+            android:padding="0dp"
+            />
+
+    </RadioGroup>
+
+</LinearLayout>

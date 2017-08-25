@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    
+    <!-- 标题样式 -->
+    
+    <!-- 大标题文字 -->
+    <style name="common_title_text" parent="HenticaAppTheme">
+        <item name="android:textSize">@dimen/text_38</item>
+        <item name="android:textColor">@color/text_title_black</item>
+    </style>
+
+    <!-- 标题栏按钮，建议使用button.title -->
+    <style name="common_title_btn" parent="button.title">
+    </style>
+
+    <!-- 标题栏返回按钮，建议使用button.title.back -->
+    <style name="common_title_left_btn" parent="button.title.back">
+    </style>
+
+    <!-- 普通文字按钮，建议使用button.text_btn -->
+    <style name="common_text_btn" parent="button.text_btn">
+    </style>
+    
+</resources>

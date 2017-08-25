@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--乐分统计界面-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_white">
+
+        <!--垂直分隔线-->
+        <include layout="@layout/common_split_line_v_mtb_less"
+                 android:id="@+id/div_h"
+                 android:layout_width="0.1dp"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_marginTop="@dimen/view_margin_less"
+                 android:layout_marginBottom="@dimen/view_margin_less"/>
+
+        <View
+            android:id="@+id/div_v"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+
+        <!--标签1-->
+        <TextView
+            android:id="@+id/mine_statistics_tv_label_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toLeftOf="@id/div_h"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@id/div_v"
+            android:layout_marginBottom="2dp"
+            android:paddingTop="@dimen/view_padding"/>
+
+        <TextView
+            android:id="@+id/mine_statistics_tv_value_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_red"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toLeftOf="@id/div_h"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/div_v"
+            android:layout_marginTop="2dp"
+            android:paddingBottom="@dimen/view_padding"/>
+
+        <!--标签2-->
+        <TextView
+            android:id="@+id/mine_statistics_tv_label_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toRightOf="@id/div_h"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/div_v"
+            android:layout_marginBottom="2dp"
+            android:paddingTop="@dimen/view_padding"/>
+
+        <TextView
+            android:id="@+id/mine_statistics_tv_value_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_red"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toRightOf="@id/div_h"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/div_v"
+            android:layout_marginTop="2dp"
+            android:paddingBottom="@dimen/view_padding"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/indicator"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:paddingRight="@dimen/view_margin"
+        android:paddingLeft="@dimen/view_margin"
+        android:background="@color/bg_white"></net.lucode.hackware.magicindicator.MagicIndicator>
+
+    <include layout="@layout/common_split_line_long" />
+l.
+    <com.hentica.app.lib.view.CustomViewPager
+        android:id="@+id/lefen_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!--提现按钮 -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/lefen_btn_transfer"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rebate_selector_public_big_button"
+            android:text="转账"
+            android:textSize="@dimen/text_36"
+            android:textColor="@color/text_white"/>
+
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/bg_white"
+            />
+
+        <Button
+            android:id="@+id/lefen_btn_withdrawals"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rebate_selector_public_big_button"
+            android:text="提现"
+            android:textSize="@dimen/text_36"
+            android:textColor="@color/text_white"/>
+
+    </LinearLayout>
+
+</LinearLayout>

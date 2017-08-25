@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 警告框 -->
+    <FrameLayout
+        android:id="@+id/dlg_encourage_rlayout_normal"
+        android:layout_width="375dp"
+        android:layout_height="427dp"
+        android:layout_centerInParent="true"
+        android:background="@drawable/rebate_public_remind_frame1"
+        >
+
+
+        <ImageView
+            android:id="@+id/dialog_encourage_title_img_close"
+            android:layout_width="33dp"
+            android:layout_height="33dp"
+            android:layout_marginRight="35dp"
+            android:paddingBottom="2dp"
+            android:src="@drawable/rebate_public_remind_close2"
+            android:layout_marginTop="55dp"
+            android:layout_gravity="right"
+            />
+
+        <TextView
+            android:id="@+id/dialog_encourage_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textSize="@dimen/text_34"
+            android:textColor="@color/text_white"
+            android:text="恭喜您！获得一笔鼓励金"
+            android:layout_marginBottom="102dp"
+            />
+
+        <!-- 金额 -->
+        <LinearLayout
+            android:id="@+id/dialog_encourage_amount_layout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:layout_marginTop="200dp"
+            >
+
+            <TextView
+                android:id="@+id/dialog_encourage_price_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="XXX"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_72"
+                />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_34"
+                android:textColor="@color/text_red"
+                android:text="乐豆"
+                android:layout_marginLeft="3dp"
+                />
+
+        </LinearLayout>
+
+
+        <!-- 查看累积积分 -->
+        <TextView
+            android:id="@+id/dialog_encourage_see_score_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_28"
+            android:layout_marginBottom="28dp"
+            android:text="XXXX"
+            />
+
+    </FrameLayout>
+
+</RelativeLayout>

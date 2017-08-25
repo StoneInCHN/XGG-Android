@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <!-- 警告框 -->
+    <LinearLayout
+        android:id="@+id/dlg_alert_rlayout_normal"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:minHeight="200dp"
+        android:visibility="visible"
+        android:background="@drawable/shape_bg_white_rad_15dp"
+        android:orientation="vertical"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="49dp">
+
+            <TextView
+                android:id="@+id/dialog_alert_title_text"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:gravity="center_vertical"
+                android:text="提示"
+                android:textSize="@dimen/text_30"
+                android:textColor="@color/text_red"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="@dimen/view_margin_double"/>
+
+            <ImageView
+                android:id="@+id/dialog_alert_title_img_close"
+                android:layout_width="wrap_content"
+                android:layout_height="49dp"
+                android:src="@drawable/rebate_public_remind_close"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="@dimen/view_margin"
+                android:paddingBottom="2dp"/>
+
+        </RelativeLayout>
+
+        <include layout="@layout/common_split_line_long"
+            android:visibility="visible"/>
+
+        <!-- 显示内容内容 -->
+        <TextView
+            android:id="@+id/dialog_alert_content_text"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_centerHorizontal="true"
+            android:minHeight="40dp"
+            android:minLines="2"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_black"
+            android:paddingTop="@dimen/view_padding"
+            android:paddingBottom="@dimen/view_padding"
+            android:paddingRight="@dimen/view_padding_double"
+            android:paddingLeft="@dimen/view_padding_double"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingBottom="@dimen/view_padding_double">
+            <!-- 确定按钮 -->
+
+            <Button
+                android:id="@+id/dialog_alert_sure_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_margin_double"
+                android:layout_marginRight="@dimen/view_margin"
+                android:text="确认"
+                android:minHeight="0dp"
+                android:textColor="@color/text_red"
+                android:textSize="@dimen/text_28"
+                android:visibility="visible"
+                android:background="@drawable/rebate_selector_public_botton_remind_botton_ok"/>
+
+            <!-- 取消按钮 -->
+            <Button
+                android:id="@+id/dialog_alert_cancel_btn"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_marginRight="@dimen/view_margin_double"
+                android:text="取消"
+                android:minHeight="0dp"
+                android:textColor="@color/text_white"
+                android:textSize="@dimen/text_28"
+                android:visibility="visible"
+                android:background="@drawable/rebate_selector_public_botton_remind_botton_cancel"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

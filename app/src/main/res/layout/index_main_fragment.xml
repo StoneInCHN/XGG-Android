@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:lnv="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 首页界面，布局 -->
+    <!-- 沉浸式标题 -->
+    <View
+        android:id="@+id/common_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:background="@color/transparent"
+        android:visibility="gone"
+        />
+
+    <!-- 顶端banner -->
+    <FrameLayout
+        android:id="@+id/index_main_banner_layout"
+        android:layout_width="match_parent"
+        android:layout_height="220dp"
+        >
+
+        <!-- banner图片viewpager -->
+        <android.support.v4.view.ViewPager
+            android:id="@+id/index_main_banner_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+        </android.support.v4.view.ViewPager>
+
+
+        <LinearLayout
+            android:id="@+id/index_main_banner_opt_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="@dimen/view_margin_double"
+            android:gravity="center_vertical"
+            >
+
+            <!-- 城市选择按钮 -->
+            <CheckBox
+                android:id="@+id/index_main_city_check"
+                android:layout_width="107dp"
+                android:layout_height="wrap_content"
+                android:button="@null"
+                android:padding="0dp"
+                android:drawableLeft="@drawable/rebate_homepage_icon_location"
+                android:textSize="@dimen/text_30"
+                android:textColor="@color/text_white"
+                android:text="成都"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:drawableRight="@drawable/rebate_homepage_choose_city"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:drawablePadding="@dimen/drawable_padding"
+                />
+
+            <FrameLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_marginRight="@dimen/view_margin"
+                >
+                <!-- 搜索栏 -->
+                <TextView
+                    android:id="@+id/index_main_search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rebate_public_icon_search_bg"
+                    android:gravity="center_vertical"
+                    android:textSize="@dimen/text_24"
+                    android:textColor="@color/text_gray"
+                    android:text=""
+                    android:paddingRight="30dp"
+                    android:singleLine="true"
+                    android:ellipsize="end"
+                    />
+
+                <!-- 搜索图标 -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:contentDescription=""
+                    android:src="@drawable/rebate_public_icon_search1"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="5dp"
+                    />
+
+            </FrameLayout>
+
+            <!-- 二维码 -->
+            <ImageButton
+                android:id="@+id/index_main_scan_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription=""
+                android:src="@drawable/rebate_public_icon_scan"
+                android:padding="0dp"
+                android:background="@color/transparent"
+                />
+
+            <!-- 通知 -->
+            <ImageButton
+                android:id="@+id/index_main_msg_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription=""
+                android:src="@drawable/rebate_public_icon_message"
+                android:padding="0dp"
+                android:background="@color/transparent"
+                android:visibility="gone"
+                />
+
+        </LinearLayout>
+
+        <com.viewpagerindicator.CirclePageIndicator
+            android:id="@+id/index_main_banner_pager_indicator"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_alignParentBottom="true"
+            android:layout_gravity="bottom"
+            />
+
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_double"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:id="@+id/index_main_sroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <!-- 周边服务布局 -->
+            <LinearLayout
+                android:id="@+id/index_main_service_layout"
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:background="@color/bg_white"
+                android:orientation="vertical"
+                >
+
+                <!-- banner图片viewpager -->
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/index_main_service_view_pager"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+
+                    >
+                </android.support.v4.view.ViewPager>
+
+                <com.viewpagerindicator.CirclePageIndicator
+                    android:id="@+id/index_main_service_pager_indicator"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:layout_gravity="bottom"
+                    />
+
+            </LinearLayout>
+
+            <!-- 商家列表布局 -->
+            <LinearLayout
+                android:id="@+id/index_main_business_list_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+
+                <include layout="@layout/common_split_line_double"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/title_index_section_height"
+                    >
+
+                    <com.hentica.app.widget.view.lineview.LineViewText
+                        android:id="@+id/index_main_business_list_title"
+                        style="@style/line.btn_next"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@color/bg_white"
+                        lnv:lineContentText="查看更多"
+                        lnv:lineContentTextColor="@color/text_black"
+                        lnv:lineContentTextSize="@dimen/text_24"
+                        lnv:lineTitleText="推荐商家"
+                        lnv:lineTitleTextColor="@color/text_black"
+                        />
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/rebate_homepage_recommend_red"
+                        />
+                </FrameLayout>
+
+                <include layout="@layout/common_split_line_long"/>
+
+                <!-- 商家列表 -->
+                <com.hentica.app.lib.view.ChildListView
+                    android:id="@+id/index_main_business_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:listSelector="@color/transparent"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+
+
+</LinearLayout>

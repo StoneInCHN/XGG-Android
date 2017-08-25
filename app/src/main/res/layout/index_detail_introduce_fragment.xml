@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 详情介绍界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        title:ctTitleText="详情介绍"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <!-- 标题 -->
+            <TextView
+                android:id="@+id/index_detail_introduce_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_38"
+                android:textColor="@color/text_black"
+                android:text="标题"
+                android:layout_marginTop="@dimen/view_margin"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                />
+
+            <!-- 日期 -->
+            <TextView
+                android:id="@+id/index_detail_introduce_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_gray_28"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:text="2017-01-13"
+                android:layout_marginTop="@dimen/view_margin"
+                />
+
+            <!-- 内容 -->
+            <TextView
+                android:id="@+id/index_detail_introduce_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                style="@style/text_black_28"
+                android:lineSpacingExtra="3dp"
+                android:layout_marginTop="@dimen/view_margin"
+                android:paddingBottom="@dimen/view_padding"
+                />
+
+            <!-- 图片 -->
+            <ImageView
+                android:id="@+id/index_detail_introduce_img"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:layout_marginTop="@dimen/view_margin"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_marginRight="@dimen/view_margin"
+                android:scaleType="fitXY"
+                android:layout_marginBottom="50dp"
+                />
+
+        </LinearLayout>
+
+        <include layout="@layout/common_split_line_long"/>
+
+    </com.hentica.app.widget.view.ptrview.CustomPtrScrollView>
+
+</LinearLayout>

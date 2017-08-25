@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 通用字体风格(黑色，28号) -->
+    <style name="text_black_28">
+        <item name="android:textSize">@dimen/text_28</item>
+        <item name="android:textColor">@color/text_black</item>
+    </style>
+
+    <!-- 通用字体风格(灰色，28号) -->
+    <style name="text_gray_28">
+        <item name="android:textSize">@dimen/text_28</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+
+    <!-- 通用字体风格(灰色，26号) -->
+    <style name="text_gray_26">
+        <item name="android:textSize">@dimen/text_26</item>
+        <item name="android:textColor">@color/text_gray</item>
+    </style>
+    <!-- 通用字体风格(红色，28号) -->
+    <style name="text_red_28">
+        <item name="android:textSize">@dimen/text_28</item>
+        <item name="android:textColor">@color/text_red</item>
+    </style>
+
+
+</resources>

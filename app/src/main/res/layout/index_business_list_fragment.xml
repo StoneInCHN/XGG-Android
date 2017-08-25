@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/bg_app">
+
+    <!-- 商家列表界面，布局 -->
+    <!-- 沉浸式标题 -->
+    <View
+        android:id="@+id/common_status_bar"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:visibility="gone"
+        android:background="@color/bg_red"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:background="@color/bg_red"
+        >
+        <!-- 返回按钮 -->
+        <ImageButton
+            android:id="@+id/index_business_list_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:background="@color/transparent"
+            android:src="@drawable/rebate_public_back3"
+            android:layout_gravity="center_vertical"
+            android:padding="@dimen/view_padding"
+            />
+        <!-- 搜索栏 -->
+        <TextView
+            android:id="@+id/index_business_list_search_btn"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rebate_public_icon_search_bg1"
+            android:textSize="@dimen/text_26"
+            android:textColor="@color/text_white"
+            android:textColorHint="@color/text_white"
+            android:padding="8dp"
+            android:singleLine="true"
+            android:text=""
+            />
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:orientation="horizontal"
+        android:clickable="false"
+        >
+        <!-- 城市 -->
+        <FrameLayout
+            android:id="@+id/index_business_list_city_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            >
+
+            <CheckBox
+                android:id="@+id/index_business_list_area_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/common_pull_down_check"
+                android:text="地区"
+                />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription=""
+            android:background="@drawable/rebate_public_line2"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            />
+
+        <!-- 分类 -->
+        <FrameLayout
+            android:id="@+id/index_business_list_class_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            >
+
+            <CheckBox
+                android:id="@+id/index_business_list_class_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/common_pull_down_check"
+                android:text="分类"
+                />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription=""
+            android:background="@drawable/rebate_public_line2"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            />
+
+        <!-- 优先级 -->
+        <FrameLayout
+            android:id="@+id/index_business_list_priority_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            >
+
+            <CheckBox
+                android:id="@+id/index_business_list_priority_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/common_pull_down_check"
+                android:text="距离优先"
+                />
+
+        </FrameLayout>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:contentDescription=""
+            android:background="@drawable/rebate_public_line2"
+            android:layout_marginTop="3dp"
+            android:layout_marginBottom="3dp"
+            />
+
+        <!-- 优先级 -->
+        <FrameLayout
+            android:id="@+id/index_business_list_filter_frame"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:clickable="false"
+            >
+
+            <CheckBox
+                android:id="@+id/index_business_list_filter_check"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/common_pull_down_check"
+                android:text="筛选"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+            <com.hentica.app.widget.view.ptrview.CustomPtrListView
+                android:id="@+id/index_business_list_ptr_listview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@null"
+                android:listSelector="@color/transparent"
+                />
+
+            <!-- 筛选界面 -->
+            <FrameLayout
+                android:id="@+id/index_business_list_filter_layout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/transparent_gray"
+                android:visibility="gone"
+                >
+
+                <!-- 筛选列表 -->
+                <com.hentica.app.widget.view.MaxListView
+                    android:id="@+id/index_business_list_filter_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:listSelector="@color/transparent"
+                    android:divider="@null"
+                    android:visibility="gone"
+                    android:clickable="true"
+                    />
+
+                <!-- 筛选界面 -->
+                <com.hentica.app.module.index.view.BusinessFilterView
+                    android:id="@+id/index_business_list_filter_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    />
+
+            </FrameLayout>
+
+        </FrameLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

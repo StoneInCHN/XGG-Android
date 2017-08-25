@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="6dp"
+    android:gravity="center_horizontal"
+    >
+
+
+    <!-- 图标 -->
+    <ImageView
+        android:id="@+id/index_main_service_item_grid_item_img"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:contentDescription=""
+        android:src="@drawable/rebate_homepage_classify_icon_food"
+        />
+
+    <!-- 名称 -->
+    <TextView
+        android:id="@+id/index_main_service_item_grid_item_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/text_black_28"
+        android:text=""
+        android:layout_marginTop="6dp"
+        />
+
+
+</LinearLayout>

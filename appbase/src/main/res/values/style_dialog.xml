@@ -1,0 +1,45 @@
+<resources>
+    
+    <!-- 普通对话框 -->
+    <style name="usual_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.6</item>
+    </style>
+
+    <!-- 全屏对话框 -->
+    <style name="full_screen_dialog" parent="@android:style/Theme.Dialog">
+
+        <!-- 全屏 -->
+        <item name="android:windowFullscreen">true</item>
+        <!-- 无边框 -->
+        <item name="android:windowFrame">@null</item>
+        <!-- 是否浮现在activity之上 -->
+        <item name="android:windowIsFloating">false</item>
+        <!-- 半透明 -->
+        <item name="android:windowIsTranslucent">true</item>
+        <!-- 有标题 -->
+        <item name="android:windowNoTitle">true</item>
+        <!-- 背景 -->
+        <item name="android:windowBackground">@android:color/transparent</item>
+    </style>
+
+    <!-- 搜索对话框 -->
+    <style name="search_dialog" parent="full_screen_dialog"></style>
+
+    <!-- 警告对话框 -->
+    <style name="alert_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:backgroundDimEnabled">true</item>
+    </style>
+
+</resources>

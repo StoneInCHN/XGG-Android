@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_gray">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/bg_white"
+        android:clickable="true"
+        >
+
+       <LinearLayout
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:orientation="horizontal"
+           android:gravity="center_vertical"
+           android:layout_marginTop="@dimen/view_margin_double"
+           >
+
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               style="@style/text_black_28"
+               android:text="开始日期"
+               android:layout_marginLeft="@dimen/view_margin"
+               />
+
+           <TextView
+               android:id="@+id/shop_business_center_filter_start_edit"
+               android:layout_width="0dp"
+               android:layout_height="wrap_content"
+               android:layout_weight="1"
+               android:background="@drawable/rebate_public_time_line"
+               android:layout_marginLeft="@dimen/view_margin"
+               android:layout_marginRight="@dimen/view_margin"
+               android:gravity="center_vertical"
+               android:paddingLeft="@dimen/view_padding"
+               android:paddingRight="@dimen/view_padding"
+               android:hint="选择开始日期"
+               style="@style/text_gray_28"
+               />
+
+       </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="@dimen/view_margin_double"
+            android:layout_marginBottom="@dimen/view_margin"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/text_black_28"
+                android:text="结束日期"
+                android:layout_marginLeft="@dimen/view_margin"
+                />
+
+            <TextView
+                android:id="@+id/shop_business_center_filter_end_edit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_public_time_line"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_marginRight="@dimen/view_margin"
+                android:gravity="center_vertical"
+                android:paddingLeft="@dimen/view_padding"
+                android:paddingRight="@dimen/view_padding"
+                android:hint="选择结束日期"
+                style="@style/text_gray_28"
+                />
+
+        </LinearLayout>
+
+        <include layout="@layout/common_split_line_long"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            >
+
+            <TextView
+                android:id="@+id/shop_business_center_filter_reset"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                style="@style/text_black_28"
+                android:gravity="center"
+                android:text="重置"
+                />
+
+            <TextView
+                android:id="@+id/shop_business_center_filter_complete"
+                android:layout_width="55dp"
+                android:layout_height="match_parent"
+                style="@style/text_red_28"
+                android:gravity="center"
+                android:layout_gravity="right"
+                android:text="完成"
+                />
+
+        </FrameLayout>
+
+    </LinearLayout>
+
+</FrameLayout>

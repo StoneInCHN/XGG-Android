@@ -1,0 +1,6 @@
+1：修改包名。
+2：HomeMainFragment中添加保模块主界面。
+3：WelcomeFragment中添加引导页。
+4：LaunchUtils中初始化第3方包。
+5：修改string_appkey中3方包申请的key。
+6：修改developtools中各功能相关参数。

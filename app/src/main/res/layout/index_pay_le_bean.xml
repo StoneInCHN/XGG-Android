@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--乐豆抵扣-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="@color/bg_white"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        
+        <TextView
+            android:id="@+id/tv_label_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乐豆抵扣"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="@dimen/view_margin"/>
+
+        <ImageView
+            android:id="@+id/img_tip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/rebate_homepage_exclamatory"
+            android:paddingLeft="@dimen/view_padding_less"
+            android:paddingRight="@dimen/view_padding_less"
+            android:paddingTop="@dimen/view_padding"
+            android:paddingBottom="@dimen/view_padding"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/tv_label_1"/>
+        
+        <TextView
+            android:id="@+id/tv_le_bean_amount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="乐豆余额：XX.XXXX"
+            android:textSize="@dimen/text_28"
+            android:textColor="@color/text_red"
+            android:layout_centerInParent="true"/>
+        
+        <com.hentica.app.widget.view.ClickCheckBox
+            android:id="@+id/ckb_le_bean_pay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@null"
+            android:background="@drawable/rebate_selector_homepage_switch"
+            android:layout_alignParentRight="true"
+            android:layout_margin="@dimen/view_margin"
+            />
+        
+    </RelativeLayout>
+
+    <!--输入乐豆抵扣数据-->
+    <EditText
+        android:id="@+id/edt_le_bean_input_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/view_padding"
+        android:background="@color/transparent"
+        android:inputType="numberDecimal"
+        android:textSize="@dimen/text_28"
+        android:textColor="@color/text_black"
+        android:hint="0.0000"
+        android:textColorHint="@color/text_gray"
+        android:enabled="false"/>
+
+    <include layout="@layout/common_split_line_long" />
+
+</LinearLayout>

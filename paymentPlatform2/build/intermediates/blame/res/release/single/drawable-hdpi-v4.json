@@ -1,0 +1,14 @@
+[
+    {
+        "merged": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\msp_demo_title.png",
+        "source": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\src\\main\\res\\drawable-hdpi\\msp_demo_title.png"
+    },
+    {
+        "merged": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\msp_demo_title_bg.png",
+        "source": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\src\\main\\res\\drawable-hdpi\\msp_demo_title_bg.png"
+    },
+    {
+        "merged": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\build\\intermediates\\res\\merged\\release\\drawable-hdpi-v4\\msp_icon.png",
+        "source": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\src\\main\\res\\drawable-hdpi\\msp_icon.png"
+    }
+]

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/view_padding"
+    android:background="@color/bg_white">
+
+    <TextView
+        android:id="@+id/tv_photos_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="环境照片"
+        android:textColor="@color/text_black"
+        android:layout_marginBottom="@dimen/view_margin"/>
+
+    <com.hentica.app.lib.view.ChildGridView
+        android:id="@+id/photos_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:listSelector="@color/transparent"
+        android:numColumns="4"/>
+
+</LinearLayout>

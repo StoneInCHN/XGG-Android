@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/transparent_gray" >
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <LinearLayout
+        android:id="@+id/dialog_select_llayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <!--  百度地图 -->
+
+        <Button
+            android:id="@+id/dialog_navigate_baidu_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:background="@color/bg_white"
+            android:text="百度地图"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28" />
+
+        <include layout="@layout/common_split_line_long"/>
+
+        <!-- 高德地图 -->
+
+        <Button
+            android:id="@+id/dialog_navigate_gaode_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:background="@color/bg_white"
+            android:text="高德地图"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28" />
+
+        <include layout="@layout/common_split_line_long"/>
+
+        <!-- 取消 -->
+
+        <Button
+            android:id="@+id/dialog_navigate_cancel_btn"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/common_line_height"
+            android:background="@color/bg_white"
+            android:text="取消"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28" />
+    </LinearLayout>
+
+</RelativeLayout>

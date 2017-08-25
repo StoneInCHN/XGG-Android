@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cCheck="http://schemas.android.com/apk/res-auto"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="营业中心" />
+
+    <!-- 条件选择栏 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:orientation="horizontal"
+        android:background="@color/bg_white"
+        >
+
+        <!-- 省 -->
+        <com.hentica.app.widget.view.CustomCheckBox
+            android:id="@+id/business_center_pro_check"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            cCheck:boxText="省"
+            cCheck:boxTextColor="@color/text_gray"
+            cCheck:boxTextSize="@dimen/text_28"
+            cCheck:boxDrawRight="@drawable/rebate_homepage_screening_down"
+            />
+
+        <!-- 市 -->
+        <com.hentica.app.widget.view.CustomCheckBox
+            android:id="@+id/business_center_city_check"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            cCheck:boxText="市"
+            cCheck:boxTextColor="@color/text_gray"
+            cCheck:boxTextSize="@dimen/text_28"
+            cCheck:boxDrawRight="@drawable/rebate_homepage_screening_down"
+            />
+
+        <!-- 区 -->
+        <com.hentica.app.widget.view.CustomCheckBox
+            android:id="@+id/business_center_county_check"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            cCheck:boxText="区"
+            cCheck:boxTextColor="@color/text_gray"
+            cCheck:boxTextSize="@dimen/text_28"
+            cCheck:boxDrawRight="@drawable/rebate_homepage_screening_down"
+            />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <net.lucode.hackware.magicindicator.MagicIndicator
+        android:id="@+id/shop_business_center_indicator"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:background="@color/bg_white"
+        />
+
+    <!-- viewpager -->
+    <android.support.v4.view.ViewPager
+        android:id="@+id/shop_business_center_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

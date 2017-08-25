@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- 用于viewHolder -->
+    <item name="tagOfViewHolder" type="id"/>
+
+    <!-- 用于adapter中自动设置的viewHolder -->
+    <item name="tagOfAdapterHolder" type="id"/>
+
+    <!-- 用于viewPagerTagId -->
+    <item name="viewPagerTagId" type="id"/>
+
+    <!-- 用于在View中记录位置 -->
+    <item name="tagOfViewPosition" type="id"></item>
+
+    <!-- 用于记录省id -->
+    <item name="tagOfProId" type="id"></item>
+
+    <!-- 用于记录市id -->
+    <item name="tagOfCityId" type="id"></item>
+
+    <!-- 用于记录筛选名字id -->
+    <item name="tagOfNameId" type="id"></item>
+
+    <!-- 用于记录筛选值id -->
+    <item name="tagOfValueId" type="id"></item>
+
+    <!-- 用于记录筛数据id -->
+    <item name="tagOfDataId" type="id"></item>
+
+</resources>

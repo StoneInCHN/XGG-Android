@@ -1,0 +1,51 @@
+# 参数说明 
+# --package 包名 --title 标题 --className 类名 --layoutName 布局文件名 --user 作者
+
+# 主界面
+
+# 登录
+--package login.ui --title 登录界面              --className LoginFragment                 --layoutName login_fragment
+--package login.ui --title 注册界面                --className LoginRegistFragment               --layoutName login_regist_fragment
+--package login.ui --title 密码找回界面             --className LoginFindPwdFragment               --layoutName login_find_pwd_fragment
+
+# 首页
+--package index.ui  --title 首页界面           --className IndexMainFragment                         --layoutName index_main_fragment
+--package index.ui  --title 选择城市界面           --className IndexSelectCityFragment                         --layoutName index_select_city_fragment
+--package index.ui  --title 商家详情界面           --className IndexBusinessDetailFragment                         --layoutName index_business_detail_fragment
+--package index.ui  --title 商家地址界面           --className IndexBusinessAddrFragment                         --layoutName index_business_addr_fragment
+--package index.ui  --title 全部评价界面           --className IndexAllCommentFragment                         --layoutName index_all_comment_fragment
+--package index.ui  --title 商家列表界面           --className IndexBusinessListFragment                         --layoutName index_business_list_fragment
+--package index.ui  --title 买单界面           --className IndexPayFragment                         --layoutName index_pay_fragment
+--package index.ui  --title 详情介绍界面           --className IndexDetailIntroduceFragment                         --layoutName index_detail_introduce_fragment
+
+# 分红
+--package bonus.ui  --title 分红主界面             --className BonusMainFragment                --layoutName bonus_main_fragment
+--package bonus.ui  --title 我的分红界面          --className BonusMineFragment                --layoutName bonus_mine_fragment
+--package bonus.ui  --title 全国分红界面           --className BonusCountryFragment                --layoutName bonus_country_fragment
+
+# 我的
+--package mine.ui  --title 我的主界面             --className MineMainFragment                --layoutName mine_main_fragment
+--package mine.ui  --title 修改资料界面             --className MineFillInfoFragment                --layoutName mine_fill_info_fragment
+--package mine.ui  --title 积分界面             --className MineIntegralFragment                --layoutName mine_integral_fragment
+--package mine.ui  --title 乐心界面             --className MineLexinFragment                --layoutName mine_lexin_fragment
+--package mine.ui  --title 乐分界面             --className MineLefenFragment                --layoutName mine_lefen_fragment
+--package mine.ui  --title 提现界面             --className MineWithdrawalsFragment                --layoutName mine_withdrawals_fragment
+--package mine.ui  --title 推荐有礼界面             --className MineRecommendFragment                --layoutName mine_recommend_fragment
+--package mine.ui  --title 推荐记录界面             --className MineRecommendHisFragment                --layoutName mine_recommend_his_fragment
+--package mine.ui  --title 我的订单界面             --className MineOrdersFragment                --layoutName mine_orders_fragment
+--package mine.ui  --title 订单详情界面             --className MineOrderDetailFragment                --layoutName mine_order_detail_fragment
+--package mine.ui  --title 发表评价界面             --className MineFillEvaluateFragment                --layoutName mine_fill_evaluate_fragment
+--package mine.ui  --title 评价详情界面             --className MineEvaluateDetailFragment                --layoutName mine_evaluate_detail_fragment
+--package mine.ui  --title 我的收藏界面             --className MineCollectFragment                --layoutName mine_collect_fragment
+--package mine.ui  --title 入驻商户界面             --className MineSettledBusinessFragment                --layoutName mine_settled_business_fragment
+--package mine.ui  --title 入驻审核中界面             --className MineSettleCheckingFragment                --layoutName mine_settle_checking_fragment
+--package mine.ui  --title 我的店铺界面             --className MineShopFragment                --layoutName mine_shop_fragment
+--package mine.ui  --title 订单管理界面             --className MineOrderManagerFragment                --layoutName mine_order_manager_fragment
+--package mine.ui  --title 订单详情界面             --className MineOrderDetailFragment                --layoutName mine_order_detail_fragment
+--package mine.ui  --title 回复评价界面             --className MineReplyFragment                --layoutName mine_reply_fragment
+--package mine.ui  --title 店铺信息界面             --className MineShopInfoFragment                --layoutName mine_shop_info_fragment
+--package mine.ui  --title 地址定位界面             --className MineLoactionFragment                --layoutName mine_location_fragment
+--package mine.ui  --title 收款二维码界面             --className MineReceiveQrCodeFragment                --layoutName mine_receive_qr_code_fragment
+--package mine.ui  --title 用户帮助界面             --className MineHelpFragment                --layoutName mine_help_fragment
+--package mine.ui  --title 设置界面             --className MineSettingFragment                --layoutName mine_setting_fragment
+--package mine.ui  --title 修改密码界面             --className MineChangePasswordFragment                --layoutName mine_change_password_fragment

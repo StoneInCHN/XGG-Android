@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/view_padding"
+    android:paddingRight="@dimen/view_padding"
+    android:background="@color/bg_app"
+    >
+
+    <!-- 消费额头信息 -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_mine_page1"
+        android:layout_marginTop="@dimen/view_margin_double"
+        >
+
+        <!-- 日期 -->
+        <TextView
+            android:id="@+id/shop_trading_volume_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_red_28"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:text="XXXX-XX-XX"
+            />
+
+        <!-- 总额 -->
+        <TextView
+            android:id="@+id/shop_trading_volume_total"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/text_red_28"
+            android:layout_gravity="center_vertical|right"
+            android:layout_marginRight="@dimen/view_margin"
+            android:text="￥XXXX"
+            />
+
+    </FrameLayout>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_mine_page2"
+        >
+
+        <!-- 交易列表 -->
+        <com.hentica.app.lib.view.ChildListView
+            android:id="@+id/shop_trading_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:listSelector="@color/transparent"
+            android:divider="@null"
+            android:layout_marginBottom="18dp"
+            android:scrollbars="none"
+            />
+    </FrameLayout>
+
+
+
+</LinearLayout>

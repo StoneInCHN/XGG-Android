@@ -1,0 +1,35 @@
+# 这是注释
+# *表示要忽略的文件
+
+# 要拷贝的文件
+--fromDir  ../../../../../../art/切图/
+--toDir    ../../temp_out/drawable-xhdpi
+--preName  rebate_
+
+# *表示要忽略的文件
+*../../../../../art/切图/icon
+*../../../../../art/切图/公用public/加载
+*../../../../../art/切图/公用public/刷新
+*../../../../../art/切图/公用public/刷新/刷新动画.gif
+*../../../../../art/切图/欢迎页
+*../../../../../art/切图/首次启动界面
+*../../../../../art/切图/宣传图片/480x800
+*../../../../../art/切图/宣传图片/1242x2208
+*../../../../../art/切图/宣传图片/2048x2732
+*../../../../../art/切图/公用public/public_icon_search_bg.png
+
+# 特殊路径
+../../../../../../art/切图/icon/android/48.png ../../temp_out/drawable-mdpi/ic_launcher.png
+../../../../../../art/切图/icon/android/72.png ../../temp_out/drawable-hdpi/ic_launcher.png
+../../../../../../art/切图/icon/android/96.png ../../temp_out/drawable-xhdpi/ic_launcher.png
+../../../../../../art/切图/icon/android/144.png ../../temp_out/drawable-xxhdpi/ic_launcher.png
+
+../../../../../../art/切图/欢迎页/欢迎页2_640x960.png ../../temp_out/drawable-hdpi/welcome.png
+../../../../../../art/切图/欢迎页/欢迎页2_640x1136.png ../../temp_out/drawable-xhdpi/welcome.png
+../../../../../../art/切图/欢迎页/欢迎页2_750x1334.png ../../temp_out/drawable-xxhdpi/welcome.png
+
+../../../../../../art/切图/首次启动界面/首次启动750x1334_1.png ../../temp_out/drawable-xxhdpi/welcome_1.png
+../../../../../../art/切图/首次启动界面/首次启动750x1334_2.png ../../temp_out/drawable-xxhdpi/welcome_2.png
+../../../../../../art/切图/首次启动界面/首次启动750x1334_3.png ../../temp_out/drawable-xxhdpi/welcome_3.png
+
+

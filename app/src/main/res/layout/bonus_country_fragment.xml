@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/rebate_rebate_bg_country"
+    android:orientation="vertical">
+
+
+    <FrameLayout
+        android:id="@+id/bonus_country_info_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/rebate_rebate_details_bg">
+
+        <!-- 统计日期 -->
+        <TextView
+            android:id="@+id/bonus_country_date1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:gravity="center"
+            android:text="XXXXXXXXXX"
+            android:singleLine="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_22" />
+
+        <LinearLayout
+            android:id="@+id/bonus_country_table_one"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="13dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_total_money"
+                    android:text="全国消费总额：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_total_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="0元"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_total_people"
+                    android:layout_alignParentBottom="true"
+                    android:text="全国消费总人数：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_total_people"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="0人"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_good_business"
+                    android:layout_alignParentBottom="true"
+                    android:text="全国联盟商家：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_good_business"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentBottom="true"
+                    android:text="0家"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_total_good_money"
+                    android:text="分红金额：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_total_good_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0元"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+
+    </FrameLayout>
+
+
+    <FrameLayout
+        android:id="@+id/bonus_country_info_two"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/view_margin_double"
+        android:background="@drawable/rebate_rebate_details_bg">
+
+        <!-- 统计日期 -->
+        <TextView
+            android:id="@+id/bonus_country_date2"
+            android:text="XXXXXXXXXX"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:singleLine="true"
+            android:textColor="@color/text_white"
+            android:textSize="@dimen/text_22"
+            android:gravity="center"/>
+
+        <LinearLayout
+            android:id="@+id/bonus_country_table_two"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|bottom"
+            android:layout_marginBottom="13dp"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border"
+                android:visibility="invisible">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_total_bonus_lexin"
+                    android:text="累计分红乐心：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_total_bonus_lexin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:background="@drawable/rebate_bottom_border">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_total_consume"
+                    android:text="累计消费：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_total_consume"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0元"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:visibility="visible">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_bonus_lefen"
+                    android:text="当日乐心价值："/>
+
+                <TextView
+                    android:id="@+id/bonus_country_bonus_lefen"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38"/>
+
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginLeft="43dp"
+                android:layout_marginRight="43dp"
+                android:layout_weight="1"
+                android:visibility="invisible">
+
+                <TextView
+                    style="@style/text_black_28"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/bonus_country_good_money"
+                    android:text="分红金额：" />
+
+                <TextView
+                    android:id="@+id/bonus_country_good_money"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:text="0元"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_38" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </FrameLayout>
+
+</LinearLayout>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:title="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_app"
+    android:orientation="vertical"
+    >
+
+    <!-- 选择城市界面，布局 -->
+
+    <!-- 标题栏 -->
+    <com.hentica.app.widget.view.TitleViewWhite
+        android:id="@+id/common_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        title:ctTitleText="城市"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+            <FrameLayout
+                android:layout_width="255dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="18dp"
+                android:layout_marginTop="18dp"
+                >
+                <!-- 搜索栏 -->
+                <EditText
+                    android:id="@+id/index_select_city_search_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rebate_public_icon_search_bg2"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:hint="城市"
+                    android:paddingLeft="8dp"
+                    android:paddingRight="30dp"
+                    android:singleLine="true"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/text_24"
+                    />
+
+                <!-- 搜索图标 -->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical|right"
+                    android:layout_marginRight="8dp"
+                    android:contentDescription=""
+                    android:src="@drawable/rebate_public_icon_search2"
+                    />
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                >
+
+                <include layout="@layout/common_split_line_long"/>
+
+                <!-- 城市列表 -->
+                <com.hentica.app.widget.view.ptrview.CustomPtrListView
+                    android:id="@+id/index_select_city_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:divider="@null"
+                    android:listSelector="@color/transparent"
+                    />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- 右边索引栏 -->
+        <com.hentica.app.widget.view.SideBar
+            android:id="@+id/index_select_city_slide_bar"
+            android:layout_width="25dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="18dp"
+            />
+
+        <!-- 选中文字大提示 -->
+        <TextView
+            android:id="@+id/index_select_city_tip"
+            android:layout_width="80dp"
+            android:layout_height="80dp"
+            android:layout_centerInParent="true"
+            android:layout_gravity="center"
+            android:background="#33000000"
+            android:gravity="center"
+            android:text="A"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28"
+            android:textStyle="bold"
+            android:visibility="gone"
+            />
+    </FrameLayout>
+</LinearLayout>

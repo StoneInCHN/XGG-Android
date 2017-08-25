@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/index_business_detail_more_comment_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_index_section_height"
+        android:background="@color/bg_white"
+        android:orientation="horizontal"
+        >
+
+        <RatingBar
+            android:id="@+id/index_business_detail_rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:numStars="5"
+            style="@style/roomRatingBar"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:isIndicator="true"
+            />
+
+        <TextView
+            android:id="@+id/index_business_detail_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="@dimen/text_26"
+            android:textColor="@color/text_red"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/view_margin"
+            />
+
+        <TextView
+            android:id="@+id/index_business_detail_comment_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_black"
+            android:drawableRight="@drawable/rebate_public_next"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="@dimen/view_margin"
+            android:drawablePadding="@dimen/drawable_padding"
+            />
+
+    </LinearLayout>
+
+    <include layout="@layout/common_split_line_long"/>
+
+    <com.hentica.app.lib.view.ChildListView
+        android:id="@+id/index_business_detail_comment_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:divider="@null"
+        android:listSelector="@color/transparent"
+        >
+
+    </com.hentica.app.lib.view.ChildListView>
+
+</LinearLayout>

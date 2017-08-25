@@ -1,0 +1,13 @@
+#这是注释，可添加多个文件及引用，用分割线分割
+-------------------------------------
+#时景_搜索栏背景
+src=../../../../../../art/元素/公用/public_popuppng.png
+target=../../temp_out/res_9_png/pecc_public_popuppng.9.png
+
+#缩放区域
+left = [20-514]
+top = [20-630]
+
+#文字区域
+right = [0-534]
+bottom = [0-650]

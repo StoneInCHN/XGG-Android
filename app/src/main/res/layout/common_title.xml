@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+    <!-- 沉浸式标题 -->
+    <View
+        android:id="@+id/title_status_bar_view"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:visibility="gone"/>
+
+    <RelativeLayout
+        android:id="@+id/common_title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/title_layout_height"
+        android:padding="0dp">
+
+        <!-- 左边文字按钮 -->
+        <Button
+            android:id="@+id/common_title_left_btn"
+            style="@style/common_title_btn"
+            android:layout_width="@dimen/title_btn_width"
+            android:layout_height="@dimen/title_btn_height"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:text="左边"
+            android:visibility="gone"/>
+
+        <!-- 返回按钮 -->
+
+        <!-- 标题 -->
+
+        <!-- 右边文字按钮 -->
+        <Button
+            android:id="@+id/common_title_right_btn"
+            style="@style/common_title_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/title_btn_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="右边"
+            android:visibility="gone"/>
+
+        <!-- 右侧图片按钮 -->
+        <ImageButton
+            android:id="@+id/common_title_right_btn_img"
+            style="@style/common_title_btn"
+            android:layout_width="@dimen/title_btn_height"
+            android:layout_height="@dimen/title_btn_height"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:contentDescription="@string/null_des"
+            android:paddingLeft="@dimen/view_padding"
+            android:paddingRight="@dimen/view_padding"
+            android:paddingTop="0dp"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/common_title_text"
+            style="@style/common_title_text"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:singleLine="true"
+            android:gravity="center"
+            android:ellipsize="end"
+            android:text="标题"
+            android:textColor="@color/text_white"
+            android:visibility="visible"/>
+
+        <ImageButton
+            android:id="@+id/common_title_left_btn_back"
+            style="@style/common_title_left_btn"
+            android:layout_width="@dimen/title_btn_width"
+            android:layout_height="@dimen/title_btn_height"
+            android:contentDescription="@string/null_des"
+            android:src="@drawable/rebate_public_back1"
+            android:layout_below="@+id/common_title_left_btn"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            />
+
+    </RelativeLayout>
+
+    <!-- 底端分割线 -->
+    <TextView
+        android:id="@+id/common_title_under_line"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#E5E5E5"
+        android:visibility="gone"/>
+</LinearLayout>

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 首页商家列表布局 -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/bg_white"
+        android:padding="@dimen/view_padding"
+        >
+
+        <FrameLayout
+            android:id="@+id/layout_index_main_business_list_item_img"
+            android:layout_width="@dimen/common_img_list_size"
+            android:layout_height="@dimen/common_img_list_size">
+
+            <ImageView
+                android:id="@+id/index_main_business_list_item_img"
+                android:layout_width="@dimen/common_img_list_size"
+                android:layout_height="@dimen/common_img_list_size"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:contentDescription=""
+                android:scaleType="centerCrop"
+                />
+
+        </FrameLayout>
+
+
+        <!-- 图片 -->
+        <LinearLayout
+            android:id="@+id/layout_info"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@id/layout_index_main_business_list_item_img"
+            android:layout_alignParentRight="true"
+            android:layout_alignTop="@id/layout_index_main_business_list_item_img"
+            android:layout_toRightOf="@id/layout_index_main_business_list_item_img"
+            android:orientation="vertical">
+
+
+            <FrameLayout
+                android:id="@+id/index_main_business_list_item_layout1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_toRightOf="@+id/layout_index_main_business_list_item_img"
+                android:gravity="bottom"
+                android:orientation="horizontal"
+                >
+
+                <!-- 名称 -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/tv_bean_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="3dp"
+                        android:src="@drawable/rebate_public_ledou"
+                        android:layout_gravity="center_vertical"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/index_main_business_list_item_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="55dp"
+                        android:ellipsize="end"
+                        android:singleLine="true"
+                        android:text="马上好鱼嘴码头干锅鱼火锅串串"
+                        android:textColor="@color/text_title_black"
+                        android:textSize="@dimen/text_34"
+                        />
+
+                </LinearLayout>
+
+                <!-- 距离 -->
+                <TextView
+                    android:id="@+id/index_main_business_list_item_distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|bottom"
+                    android:text="2.3km"
+                    android:textColor="@color/text_gray"
+                    android:textSize="@dimen/text_24"
+                    />
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:id="@+id/index_main_business_list_item_layout2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_weight="1"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                >
+
+                <!-- 商家标签 -->
+                <TextView
+                    android:id="@+id/index_main_business_list_item_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/rebate_homepage_main_sell"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:singleLine="true"
+                    android:text="主营"
+                    android:textColor="@color/text_red"
+                    android:textSize="@dimen/text_22"
+                    />
+                <!-- 评分 -->
+                <TextView
+                    android:id="@+id/index_main_business_list_item_score"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:ellipsize="end"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:text="4.9分"
+                    android:textColor="@color/text_black"
+                    android:textSize="@dimen/text_22"
+                    />
+                <!-- 价格 -->
+                <TextView
+                    android:id="@+id/index_main_business_list_item_price"
+                    style="@style/text_black_28"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="@dimen/view_margin"
+                    android:layout_marginRight="55dp"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="right|center_vertical"
+                    android:singleLine="true"
+                    android:text="人均18元"
+                    />
+            </LinearLayout>
+
+            <!-- 地址 -->
+            <TextView
+                android:id="@+id/index_main_business_list_item_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/layout_index_main_business_list_item_img"
+                android:layout_marginLeft="@dimen/view_margin"
+                android:layout_toRightOf="@+id/layout_index_main_business_list_item_img"
+                android:drawableLeft="@drawable/rebate_public_icon_location"
+                android:drawablePadding="3dp"
+                android:ellipsize="end"
+                android:singleLine="true"
+                android:text="成都市天府新区华府大道392号"
+                android:textColor="@color/text_black"
+                android:textSize="@dimen/text_26"
+                />
+
+        </LinearLayout>
+
+        <!-- 折扣信息 -->
+        <TextView
+            android:id="@+id/index_main_business_list_item_discount"
+            style="@style/text_red_28"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/layout_index_main_business_list_item_img"
+            android:layout_marginLeft="@dimen/view_margin"
+            android:layout_marginTop="@dimen/view_margin"
+            android:layout_toRightOf="@+id/layout_index_main_business_list_item_img"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:text="消费100赠送20积分"
+            />
+
+    </RelativeLayout>
+
+    <include layout="@layout/common_split_line_double"/>
+</LinearLayout>

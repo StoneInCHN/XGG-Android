@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--白色背景，边框1px、红色，半径4dp-->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <stroke android:color="#CDCDCD" android:width="1px" />
+
+    <solid android:color="@color/transparent" />
+
+</shape>

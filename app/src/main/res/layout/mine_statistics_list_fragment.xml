@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ptr="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:id="@+id/layout_statistics_top"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:orientation="horizontal"
+        android:background="@color/bg_white">
+
+        <!--垂直分隔线-->
+        <include layout="@layout/common_split_line_v_mtb_less"
+            android:id="@+id/div_h"
+            android:layout_width="0.1dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="@dimen/view_margin_less"
+            android:layout_marginBottom="@dimen/view_margin_less"/>
+
+        <View
+            android:id="@+id/div_v"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_centerVertical="true"/>
+
+        <!--标签1-->
+        <TextView
+            android:id="@+id/mine_statistics_tv_label_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toLeftOf="@id/div_h"
+            android:layout_alignParentLeft="true"
+            android:layout_above="@id/div_v"
+            android:layout_marginBottom="2dp"
+            android:paddingTop="@dimen/view_padding"/>
+
+        <TextView
+            android:id="@+id/mine_statistics_tv_value_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_red"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toLeftOf="@id/div_h"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@id/div_v"
+            android:layout_marginTop="2dp"
+            android:paddingBottom="@dimen/view_padding"/>
+
+        <!--标签2-->
+        <TextView
+            android:id="@+id/mine_statistics_tv_label_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_28"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toRightOf="@id/div_h"
+            android:layout_alignParentRight="true"
+            android:layout_above="@id/div_v"
+            android:layout_marginBottom="2dp"
+            android:paddingTop="@dimen/view_padding"/>
+
+        <TextView
+            android:id="@+id/mine_statistics_tv_value_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:textSize="@dimen/text_24"
+            android:textColor="@color/text_red"
+            android:lineSpacingExtra="@dimen/view_padding_less"
+            android:gravity="center"
+            android:background="@color/transparent"
+            android:layout_toRightOf="@id/div_h"
+            android:layout_alignParentRight="true"
+            android:layout_below="@id/div_v"
+            android:layout_marginTop="2dp"
+            android:paddingBottom="@dimen/view_padding"/>
+
+    </RelativeLayout>
+
+    <include layout="@layout/common_split_line_long" />
+
+    <TextView
+        android:id="@+id/mine_statistics_tv_tip"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="注：满XXX自动转换为X乐心。"
+        android:layout_marginTop="@dimen/view_margin_less"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray"
+        android:paddingTop="0dp"
+        android:paddingBottom="0dp"
+        android:paddingLeft="@dimen/view_padding"
+        android:visibility="gone"/>
+
+    <include layout="@layout/common_split_line_long_mt_less"
+        android:id="@+id/divider_1"/>
+
+    <com.hentica.app.widget.view.ptrview.CustomPtrListView
+        android:id="@+id/mine_statistics_ptr_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        ptr:ptrMode="both"
+        android:divider="@null"
+        android:dividerHeight="0dp"/>
+
+</LinearLayout>

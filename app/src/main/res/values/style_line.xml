@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 行 -->
+    <style name="line">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="line.normal" >
+        <item name="lineContentDrawablePadding">@dimen/view_margin</item>
+        <item name="lineContentTextColor">@color/text_gray</item>
+        <item name="lineContentTextColorHint">@color/text_gray</item>
+        <item name="lineContentTextSize">@dimen/text_24</item>
+        <item name="lineTitleDrawablePadding">@dimen/view_margin</item>
+        <item name="lineTitleTextColor">@color/text_black</item>
+        <item name="lineTitleTextSize">@dimen/text_28</item>
+        <item name="android:paddingLeft">@dimen/view_padding</item>
+        <item name="android:paddingRight">@dimen/view_padding</item>
+    </style>
+
+    <!-- 带箭头 -->
+    <style name="line.btn_next" parent="line.normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_line_height</item>
+        <item name="lineContentDrawableRight">@drawable/rebate_public_next</item>
+        <item name="android:background">@color/bg_white</item>
+    </style>
+
+    <!-- 不带箭头 -->
+    <style name="line.btn_edt" parent="line.normal">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">@dimen/common_line_height</item>
+        <item name="lineContentDrawablePadding">@dimen/view_margin</item>
+        <item name="lineContentTextColor">@color/text_gray</item>
+        <item name="lineContentTextColorHint">@color/text_gray</item>
+        <item name="lineContentTextSize">@dimen/text_24</item>
+        <item name="lineTitleDrawablePadding">@dimen/view_margin</item>
+        <item name="lineTitleTextColor">@color/text_black</item>
+        <item name="lineTitleTextSize">@dimen/text_28</item>
+        <item name="android:paddingLeft">@dimen/view_padding</item>
+        <item name="android:paddingRight">@dimen/view_padding</item>
+        <item name="android:background">@color/bg_white</item>
+    </style>
+</resources>

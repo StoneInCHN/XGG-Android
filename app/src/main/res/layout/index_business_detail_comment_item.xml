@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/bg_white"
+    >
+
+    <!-- 头像 -->
+    <com.meg7.widget.CircleImageView
+        android:id="@+id/index_business_detail_comment_item_head"
+        android:layout_width="@dimen/common_head_icon_small_size"
+        android:layout_height="@dimen/common_head_icon_small_size"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginTop="5dp"
+        />
+    <!-- 昵称 -->
+    <TextView
+        android:id="@+id/index_business_detail_comment_item_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/index_business_detail_comment_item_head"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginRight="@dimen/view_margin"
+        android:textSize="@dimen/text_34"
+        android:textColor="@color/text_black"
+        android:singleLine="true"
+        android:ellipsize="end"
+        />
+    <!-- 日期 -->
+    <TextView
+        android:id="@+id/index_business_detail_comment_item_date"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray"
+        android:layout_toRightOf="@+id/index_business_detail_comment_item_head"
+        android:layout_below="@+id/index_business_detail_comment_item_name"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginTop="3dp"
+        />
+
+    <RatingBar
+        android:id="@+id/index_business_detail_comment_item_rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:numStars="5"
+        style="@style/roomRatingBar"
+        android:layout_below="@+id/index_business_detail_comment_item_name"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/view_margin"
+        android:isIndicator="true"
+        android:layout_marginTop="1.5dp"
+        />
+    <!-- 内容 -->
+    <TextView
+        android:id="@+id/index_business_detail_comment_item_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_26"
+        android:textColor="@color/text_black"
+        android:layout_toRightOf="@+id/index_business_detail_comment_item_head"
+        android:layout_below="@+id/index_business_detail_comment_item_date"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="@dimen/view_margin"
+        android:lineSpacingExtra="3dp"
+        />
+    <!-- 图片列表 -->
+    <com.hentica.app.lib.view.ChildGridView
+        android:id="@+id/index_business_detail_comment_item_img_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:numColumns="3"
+        android:verticalSpacing="10dp"
+        android:layout_toRightOf="@+id/index_business_detail_comment_item_head"
+        android:layout_below="@+id/index_business_detail_comment_item_content"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginRight="@dimen/view_margin"
+        android:layout_marginTop="5dp"
+        android:paddingBottom="5dp"
+        />
+
+
+    <!-- 商家回复 -->
+    <TextView
+        android:id="@+id/index_business_detail_comment_item_replay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_26"
+        android:textColor="@color/text_black"
+        android:layout_toRightOf="@+id/index_business_detail_comment_item_head"
+        android:layout_below="@+id/index_business_detail_comment_item_img_grid"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:paddingBottom="5dp"
+        android:layout_marginRight="@dimen/view_margin"
+        android:lineSpacingExtra="3dp"
+        android:visibility="visible"
+        android:text="XXXX"
+        />
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        >
+        <include layout="@layout/common_split_line_long"/>
+    </FrameLayout>
+
+</RelativeLayout>

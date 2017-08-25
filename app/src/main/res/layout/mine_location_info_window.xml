@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rebate_homepage_map_address_box"
+    >
+
+    <!-- 地址 -->
+    <TextView
+        android:id="@+id/info_window_address_text"
+        android:layout_width="215dp"
+        android:layout_height="wrap_content"
+        android:lines="2"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginTop="@dimen/view_margin"
+        style="@style/text_black_28"
+        android:text="地址：成都市武侯区交子大道177号附5号"
+        android:ellipsize="end"
+        />
+
+    <!-- 距离 -->
+    <TextView
+        android:id="@+id/info_window_distance_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/text_24"
+        android:textColor="@color/text_gray"
+        android:text="距离：2.29公里"
+        android:layout_below="@+id/info_window_address_text"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_marginTop="5dp"
+        />
+
+    <!-- 导航按钮 -->
+    <TextView
+        android:id="@+id/info_window_navigate_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rebate_selector_homepage_map_address_box_button"
+        android:gravity="center"
+        android:textColor="@color/text_white"
+        android:textSize="@dimen/text_28"
+        android:text="到这去"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/view_margin"
+        android:layout_toRightOf="@+id/info_window_address_text"
+        />
+
+</RelativeLayout>
