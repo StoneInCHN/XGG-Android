@@ -30,7 +30,7 @@ public class JsonBodyCreater implements HttpBodyCreater {
         StringBody body = new StringBody(new Gson().toJson(paramMap));
         body.setContentType(Consts.MIME_TYPE_JSON);
         //打印请求参数
-        LogUtils.e("Request", body.getString());
+        LogUtils.i("Request", body.getString());
         return body;
     }
 
