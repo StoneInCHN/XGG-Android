@@ -748,9 +748,10 @@ public class FragmentJumpUtil {
      * @param from
      * @param sellerId
      */
-    public static void toShopCartFragment(UsualFragment from, long sellerId) {
+    public static void toShopCartFragment(UsualFragment from, long sellerId, String sellerName) {
         Intent intent = new Intent();
         intent.putExtra(MineShopCartFragment.SELLER_ID, sellerId);
+        intent.putExtra(MineShopCartFragment.SELLER_NAME, sellerName);
         from.startFrameActivity(MineShopCartFragment.class, intent);
     }
 
@@ -772,10 +773,12 @@ public class FragmentJumpUtil {
      * @param from
      * @param orderSn
      */
-    public static void toRecordOrderPayFragment(UsualFragment from, String orderSn, String sellerId) {
+    public static void toRecordOrderPayFragment(UsualFragment from, String orderSn, String sellerId, String sellerName, String amount) {
         Intent intent = new Intent();
         intent.putExtra(MineShopPaymentFragment.DATA_ORDER_SN, orderSn);
         intent.putExtra(MineShopPaymentFragment.DATA_SELLER_ID, sellerId);
+        intent.putExtra(MineShopPaymentFragment.DATA_SELLER_NAME, sellerName);
+        intent.putExtra(MineShopPaymentFragment.DATA_AMOUNT, amount);
         from.startFrameActivity(MineShopPaymentFragment.class, intent);
     }
 

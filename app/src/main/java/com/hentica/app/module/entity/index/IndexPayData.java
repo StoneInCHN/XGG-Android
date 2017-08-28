@@ -66,6 +66,8 @@ public class IndexPayData {
     private String payType;
     private String signMsg;
     private String payH5orderUrl;
+    //九派支付相关字段
+    private int quickPayChannel;
 
     public String getAppid() {
         return appid;
@@ -401,5 +403,13 @@ public class IndexPayData {
 
     public void setPayH5orderUrl(String mPayH5orderUrl) {
         payH5orderUrl = mPayH5orderUrl;
+    }
+
+    public int getQuickPayChannel() {
+        return quickPayChannel;
+    }
+
+    public void setQuickPayChannel(int quickPayChannel) {
+        this.quickPayChannel = quickPayChannel;
     }
 }

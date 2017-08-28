@@ -2,7 +2,6 @@ package com.hentica.app.module.index;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
-import android.text.TextUtils;
 import android.view.KeyEvent;
 import android.view.View;
 import android.webkit.WebView;
@@ -13,6 +12,7 @@ import com.fiveixlg.app.customer.R;
 import com.hentica.app.framework.data.Constants;
 import com.hentica.app.module.common.ui.CommonWebFragment;
 import com.hentica.app.util.IntentUtil;
+import com.hentica.app.util.WebHost;
 import com.hentica.app.widget.view.TitleView;
 
 import butterknife.BindView;
@@ -28,8 +28,10 @@ public class TlPayWebFragment extends CommonWebFragment {
     TitleView mTitleView;
     @BindView(R.id.common_web_webview_back_btn)
     ImageButton mBackBtn;
-
-    /** 支付成功跳转url */
+    private WebHost webHost;
+    /**
+     * 支付成功跳转url
+     */
     public static final String INTENT_PICKUP_URL = "INTENT_PICKUP_URL";
 
     private String mPickUpUrl;
@@ -44,13 +46,25 @@ public class TlPayWebFragment extends CommonWebFragment {
     protected void initView() {
         super.initView();
         // 隐藏返回按钮
-        mTitleView.getLeftImageBtn().setVisibility(View.GONE);
+//        mTitleView.getLeftImageBtn().setVisibility(View.GONE);
+        //        if (mPickUpUrl == null || TextUtils.isEmpty(mPickUpUrl)) {
+        webHost = new WebHost(getActivity());
+        mRichDetailWebView.addJavascriptInterface(webHost, "Android");
+        webHost.setPaySuccessCallBack(new WebHost.PaySuccessCallBack() {
+            @Override
+            public void onClick() {
+
+            }
+        });
+//        }
     }
 
-    /** 屏蔽系统返回功能 */
+    /**
+     * 屏蔽系统返回功能
+     */
     @Override
     public boolean onKeyDown(int keyCode, KeyEvent event) {
-        if(keyCode == KeyEvent.KEYCODE_BACK){
+        if (keyCode == KeyEvent.KEYCODE_BACK) {
             return true;
         }
         return super.onKeyDown(keyCode, event);
@@ -83,9 +97,9 @@ public class TlPayWebFragment extends CommonWebFragment {
 
                     showFailedView(-1);
                 }
-                if(mRichDetailWebView.canGoBack()){
+                if (mRichDetailWebView.canGoBack()) {
                     mBackBtn.setVisibility(View.GONE);
-                }else {
+                } else {
                     mBackBtn.setVisibility(View.VISIBLE);
                 }
             }
@@ -114,12 +128,12 @@ public class TlPayWebFragment extends CommonWebFragment {
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if(url.contains("baidu.com")){
+                if (url.contains("baidu.com")) {
                     // 支付成功
                     getActivity().setResult(Constants.ACTIVITY_RESULT_CODE_TL_PAY);
                     finish();
                     return false;
-                }else {
+                } else {
                     return super.shouldOverrideUrlLoading(view, url);
                 }
             }

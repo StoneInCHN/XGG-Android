@@ -17,6 +17,7 @@ import com.hentica.app.module.common.listener.ListenerAdapter;
 import com.hentica.app.module.common.listener.UsualDataBackListener;
 import com.hentica.app.module.entity.index.IndexPayData;
 import com.hentica.app.module.entity.index.IndexPayTypeListData;
+import com.hentica.app.module.login.business.LoginModel;
 import com.hentica.app.module.manager.pay.AbsPayData;
 import com.hentica.app.module.manager.pay.AlipyPayData;
 import com.hentica.app.module.manager.pay.IPayListener;
@@ -28,7 +29,9 @@ import com.hentica.app.module.mine.ui.adapter.PaymentAdapter;
 import com.hentica.app.util.FragmentJumpUtil;
 import com.hentica.app.util.IntentUtil;
 import com.hentica.app.util.StringUtil;
+import com.hentica.app.util.baidumap.IpAddressUtil;
 import com.hentica.app.util.event.DataEvent;
+import com.hentica.app.util.request.HostUtil;
 import com.hentica.app.util.request.Request;
 import com.hentica.app.widget.dialog.SelfAlertDialogHelper;
 import com.hentica.app.widget.view.TitleView;
@@ -42,21 +45,27 @@ import java.util.List;
  * Created by Snow on 2017/5/25 0025.
  */
 
-public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListData> implements PtrView<IndexPayTypeListData>{
+public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListData> implements PtrView<IndexPayTypeListData> {
 
     private PaymentPtrPresenter mPaymentPtrPresenter;
     public static final String DATA_ORDER_SN = "orderSn";//订单编号
-    public static final String DATA_SELLER_ID = "sellerId";//订单编号
+    public static final String DATA_SELLER_ID = "sellerId";//商家编号
+    public static final String DATA_SELLER_NAME = "sellerName";//商家名称
+    public static final String DATA_AMOUNT = "amount";//消费金额
     private String mOrderSn = "";
     private String mSellerId = "";
+    private String mSellerName = "";
+    private String mAmount = "";
 
-    /** 是否正在请求网络 */
+    /**
+     * 是否正在请求网络
+     */
     private boolean mIsLoading;
 
     @Override
     public void onResume() {
         super.onResume();
-        if(!mIsLoading){
+        if (!mIsLoading) {
             dismissLoadingDialog();
         }
     }
@@ -78,7 +87,7 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
         });
     }
 
-    private void showAlertDialog(){
+    private void showAlertDialog() {
         SelfAlertDialogHelper.showDialog(getFragmentManager(), "确定要取消支付吗？", "马上支付", "我再想想",
                 new View.OnClickListener() {
                     @Override
@@ -102,6 +111,8 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
         IntentUtil intentUtil = new IntentUtil(intent);
         mOrderSn = intentUtil.getString(DATA_ORDER_SN);
         mSellerId = intentUtil.getString(DATA_SELLER_ID);
+        mAmount = intentUtil.getString(DATA_AMOUNT);
+        mSellerName = intentUtil.getString(DATA_SELLER_NAME);
     }
 
     @Override
@@ -252,12 +263,12 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
                     // 拼接网址
                     String url = getTlCertUrl(data);
                     // 请求支付
-                    FragmentJumpUtil.toTlPayWeb(getUsualFragment(),"",url,data.getPickupUrl());
+                    FragmentJumpUtil.toTlPayWeb(getUsualFragment(), "", url, data.getPickupUrl());
                     setResultListener(new OnActivityResultListener() {
                         @Override
                         public void onActivityResult(int requestCode, int resultCode, Intent intent) {
                             dismissLoadingDialog();
-                            if(resultCode == Constants.ACTIVITY_RESULT_CODE_TL_PAY){
+                            if (resultCode == Constants.ACTIVITY_RESULT_CODE_TL_PAY) {
                                 // 通联支付成功，跳转到订单管理
                                 tryToJumpOrderDetail();
                             }
@@ -279,10 +290,28 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
     }
 
     /**
-     * 获取通联网址
+     * 获取通联、九派、网址
      */
     private String getTlCertUrl(IndexPayData data) {
         StringBuilder sb = new StringBuilder();
+        if (data != null) {
+            switch (data.getQuickPayChannel()) {
+                case 0:
+                    createTlCertUrl(data, sb);
+                    break;
+                case 1:
+                    createJpCertUrl(data, sb);
+                    break;
+            }
+
+        }
+        return sb.toString();
+    }
+
+    /**
+     * 拼接通联url
+     */
+    private void createTlCertUrl(IndexPayData data, StringBuilder sb) {
         if (data != null) {
             sb.append(data.getPayH5orderUrl()).append("?")
                     .append("inputCharset").append("=").append(StringUtil.getNoNullString(data.getInputCharset())).append("&")
@@ -301,7 +330,33 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
                     .append("payType").append("=").append(StringUtil.getNoNullString(data.getPayType())).append("&")
                     .append("signMsg").append("=").append(StringUtil.getNoNullString(data.getSignMsg()));
         }
-        return sb.toString();
+    }
+
+    /**
+     * 拼接九派url
+     */
+    private void createJpCertUrl(IndexPayData data, StringBuilder sb) {
+        sb.append(HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(),
+                "/rebate-interface/jiupai/index.html")).append("?")
+                .append("userId").append("=").append(getUserId()).append("&")
+                .append("token").append("=").append(ApplicationData.getInstance().getToken()).append("&")
+                .append("amount").append("=").append(mAmount).append("&")
+                .append("clientIP").append("=").append(getIpAddress()).append("&")
+                .append("goodsName").append("=").append(mSellerName).append("&")
+                .append("orderSn").append("=").append(StringUtil.getNoNullString(mOrderSn + ""));
+
+    }
+    /**
+     * 获取用户id
+     */
+    private String getUserId() {
+        return LoginModel.getInstance().getLoginUserId();
+    }
+    /**
+     * 获取客户端ip地址
+     */
+    private String getIpAddress() {
+        return IpAddressUtil.getIPAddress(getActivity());
     }
 
     /**
@@ -314,12 +369,14 @@ public class MineShopPaymentFragment extends CommonPtrFragment<IndexPayTypeListD
         finish();
     }
 
-    /** 请求录单支付 */
-    private void requestPaySellerOrder(String payType, String payTypeId, Post.FullListener listener){
+    /**
+     * 请求录单支付
+     */
+    private void requestPaySellerOrder(String payType, String payTypeId, Post.FullListener listener) {
         String userId = ApplicationData.getInstance().getLoginUserId();
         mIsLoading = true;
         showLoadingDialog();
-        Request.getPaySellerOrder(userId, payType, payTypeId, mSellerId, mOrderSn,listener);
+        Request.getPaySellerOrder(userId, payType, payTypeId, mSellerId, mOrderSn, listener);
     }
 
     @Override

@@ -18,6 +18,7 @@ import android.widget.TextView;
 
 import com.androidquery.AQuery;
 import com.bestpay.plugin.Plugin;
+import com.fiveixlg.app.customer.R;
 import com.hentica.app.framework.data.ApplicationData;
 import com.hentica.app.framework.data.Constants;
 import com.hentica.app.lib.net.Post;
@@ -49,12 +50,13 @@ import com.hentica.app.util.ParseUtil;
 import com.hentica.app.util.PriceUtil;
 import com.hentica.app.util.StringUtil;
 import com.hentica.app.util.ViewUtil;
+import com.hentica.app.util.baidumap.IpAddressUtil;
 import com.hentica.app.util.event.DataEvent;
+import com.hentica.app.util.request.HostUtil;
 import com.hentica.app.util.request.Request;
 import com.hentica.app.widget.view.TitleView;
 import com.hentica.app.widget.view.lineview.LineViewEdit;
 import com.hentica.appbase.famework.adapter.QuickAdapter;
-import com.fiveixlg.app.customer.R;
 
 import org.greenrobot.eventbus.Subscribe;
 
@@ -236,7 +238,7 @@ public class IndexPayFragment extends BaseFragment implements I_IndexPayView {
                 //支付
                 double amount = Double.parseDouble(getAmount());
                 double deduceAmount = getDeduceAmountValue();
-                if (isBeanPay()){
+                if (isBeanPay()) {
                     //抵扣乐豆
                     if (deduceAmount == amount) {
                         //全额抵扣
@@ -484,6 +486,13 @@ public class IndexPayFragment extends BaseFragment implements I_IndexPayView {
     }
 
     /**
+     * 获取客户端ip地址
+     */
+    private String getIpAddress() {
+        return IpAddressUtil.getIPAddress(getActivity());
+    }
+
+    /**
      * 获取备注
      */
     private String getRemark() {
@@ -495,6 +504,13 @@ public class IndexPayFragment extends BaseFragment implements I_IndexPayView {
      */
     private String getSellerId() {
         return mBusinessData == null ? "" : mBusinessData.getId() + "";
+    }
+
+    /**
+     * 获取商家名称
+     */
+    private String getSellerName() {
+        return mBusinessData == null ? "" : mBusinessData.getName() + "";
     }
 
     /**
@@ -616,7 +632,7 @@ public class IndexPayFragment extends BaseFragment implements I_IndexPayView {
     }
 
     /**
-     * 创建通联快捷支付回调
+     * 创建通联（quickPayChannel==0）、九派（quickPayChannel==1）、快捷支付回调
      */
     private ListenerAdapter createTlCertListener() {
         return ListenerAdapter.createObjectListener(IndexPayData.class, new UsualDataBackListener<IndexPayData>(this) {
@@ -645,29 +661,59 @@ public class IndexPayFragment extends BaseFragment implements I_IndexPayView {
     }
 
     /**
-     * 获取通联网址
+     * 获取通联、九派、网址
      */
     private String getTlCertUrl(IndexPayData data) {
         StringBuilder sb = new StringBuilder();
         if (data != null) {
-            sb.append(data.getPayH5orderUrl()).append("?")
-                    .append("inputCharset").append("=").append(StringUtil.getNoNullString(data.getInputCharset())).append("&")
-                    .append("pickupUrl").append("=").append(StringUtil.getNoNullString(data.getPickupUrl())).append("&")
-                    .append("receiveUrl").append("=").append(StringUtil.getNoNullString(data.getReceiveUrl())).append("&")
-                    .append("version").append("=").append(StringUtil.getNoNullString(data.getVersion())).append("&")
-                    .append("language").append("=").append(StringUtil.getNoNullString(data.getLanguage())).append("&")
-                    .append("signType").append("=").append(StringUtil.getNoNullString(data.getSignType())).append("&")
-                    .append("merchantId").append("=").append(StringUtil.getNoNullString(data.getMerchantId())).append("&")
-                    .append("orderNo").append("=").append(StringUtil.getNoNullString(data.getOrderNo())).append("&")
-                    .append("orderAmount").append("=").append(StringUtil.getNoNullString(data.getOrderAmount())).append("&")
-                    .append("orderCurrency").append("=").append(StringUtil.getNoNullString(data.getOrderCurrency())).append("&")
-                    .append("orderDatetime").append("=").append(StringUtil.getNoNullString(data.getOrderDatetime())).append("&")
-                    .append("productName").append("=").append(StringUtil.getNoNullString(data.getProductName())).append("&")
-                    .append("ext1").append("=").append(StringUtil.getNoNullString(data.getExt1())).append("&")
-                    .append("payType").append("=").append(StringUtil.getNoNullString(data.getPayType())).append("&")
-                    .append("signMsg").append("=").append(StringUtil.getNoNullString(data.getSignMsg()));
+            switch (data.getQuickPayChannel()) {
+                case 0:
+                    createTlCertUrl(data, sb);
+                    break;
+                case 1:
+                    createJpCertUrl(data, sb);
+                    break;
+            }
+
         }
         return sb.toString();
+    }
+
+    /**
+     * 拼接通联url
+     */
+    private void createTlCertUrl(IndexPayData data, StringBuilder sb) {
+        sb.append(data.getPayH5orderUrl()).append("?")
+                .append("inputCharset").append("=").append(StringUtil.getNoNullString(data.getInputCharset())).append("&")
+                .append("pickupUrl").append("=").append(StringUtil.getNoNullString(data.getPickupUrl())).append("&")
+                .append("receiveUrl").append("=").append(StringUtil.getNoNullString(data.getReceiveUrl())).append("&")
+                .append("version").append("=").append(StringUtil.getNoNullString(data.getVersion())).append("&")
+                .append("language").append("=").append(StringUtil.getNoNullString(data.getLanguage())).append("&")
+                .append("signType").append("=").append(StringUtil.getNoNullString(data.getSignType())).append("&")
+                .append("merchantId").append("=").append(StringUtil.getNoNullString(data.getMerchantId())).append("&")
+                .append("orderNo").append("=").append(StringUtil.getNoNullString(data.getOrderNo())).append("&")
+                .append("orderAmount").append("=").append(StringUtil.getNoNullString(data.getOrderAmount())).append("&")
+                .append("orderCurrency").append("=").append(StringUtil.getNoNullString(data.getOrderCurrency())).append("&")
+                .append("orderDatetime").append("=").append(StringUtil.getNoNullString(data.getOrderDatetime())).append("&")
+                .append("productName").append("=").append(StringUtil.getNoNullString(data.getProductName())).append("&")
+                .append("ext1").append("=").append(StringUtil.getNoNullString(data.getExt1())).append("&")
+                .append("payType").append("=").append(StringUtil.getNoNullString(data.getPayType())).append("&")
+                .append("signMsg").append("=").append(StringUtil.getNoNullString(data.getSignMsg()));
+    }
+
+    /**
+     * 拼接九派url
+     */
+    private void createJpCertUrl(IndexPayData data, StringBuilder sb) {
+//        data.setPickupUrl("http://www.baidu.com");
+        sb.append(HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(),
+                "/rebate-interface/jiupai/index.html")).append("?")
+                .append("userId").append("=").append(getUserId()).append("&")
+                .append("token").append("=").append(ApplicationData.getInstance().getToken()).append("&")
+                .append("amount").append("=").append(getAmount()).append("&")
+                .append("clientIP").append("=").append(getIpAddress()).append("&")
+                .append("goodsName").append("=").append(getSellerName()).append("&")
+                .append("orderSn").append("=").append(StringUtil.getNoNullString(data.getOut_trade_no() + ""));
     }
 
     /**

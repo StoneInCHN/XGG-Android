@@ -33,8 +33,9 @@ import java.util.List;
  * Created by Snow on 2017/5/25 0025.
  */
 
-public class MineShopCartFragment extends BaseFragment implements PtrView<ResShpCartListData>, ShopCartView{
+public class MineShopCartFragment extends BaseFragment implements PtrView<ResShpCartListData>, ShopCartView {
 
+    public static final String SELLER_NAME = "sellerName";
     private CustomPtrListView mPtrListView;
 
     private ShopCartListPresenter mShopCartListPresenter;
@@ -47,6 +48,9 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
     public static final String SELLER_ID = "sellerId";//商户id
 
     private long sellerId = 0;
+
+    private String sellerName;
+    private double rebateAmount;
 
     @Override
     protected boolean hasTitleView() {
@@ -67,6 +71,7 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
     protected void handleIntentData(Intent intent) {
         super.handleIntentData(intent);
         sellerId = intent.getLongExtra(SELLER_ID, sellerId);
+        sellerName = intent.getStringExtra(SELLER_NAME);
     }
 
     @Override
@@ -102,9 +107,9 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
         ckbSelectAll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(ckbSelectAll.isChecked()){
+                if (ckbSelectAll.isChecked()) {
                     mAdapter.selectAll();
-                }else{
+                } else {
                     mAdapter.clearAllSelected();
                 }
             }
@@ -142,7 +147,7 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
             @Override
             public void onClick(View v) {
                 List<ResShpCartListData> selectedDatas = mAdapter.getSelectedDatas();
-                if(selectedDatas == null || selectedDatas.isEmpty()){
+                if (selectedDatas == null || selectedDatas.isEmpty()) {
                     showToast("未选择录单列表！");
                     return;
                 }
@@ -151,30 +156,31 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
         });
     }
 
-    private void showDeleteAlert(View.OnClickListener l){
+    private void showDeleteAlert(View.OnClickListener l) {
         SelfAlertDialogHelper.showDialog(getFragmentManager(), "确定要删除吗？删除后不可恢复！", l);
     }
 
     /**
      * 计算选中数据
      */
-    private void calculateSelected(){
+    private void calculateSelected() {
         //计算合计金额
         List<ResShpCartListData> selectedDatas = mAdapter.getSelectedDatas();
-        double rebateAmount = calculateRebateAmount(selectedDatas);
+        rebateAmount = calculateRebateAmount(selectedDatas);
         setTotalRebateAmount(rebateAmount);
         setViewText(String.format("支付（%d）", getSelectedCount(selectedDatas)), R.id.btn_to_pay);
     }
 
     /**
      * 计算让利金额合计
+     *
      * @param datas
      * @return
      */
-    private double calculateRebateAmount(List<ResShpCartListData> datas){
+    private double calculateRebateAmount(List<ResShpCartListData> datas) {
         double result = 0;
-        if(datas != null && !datas.isEmpty()){
-            for(ResShpCartListData data : datas){
+        if (datas != null && !datas.isEmpty()) {
+            for (ResShpCartListData data : datas) {
                 result += data.getRebateAmount();
             }
         }
@@ -183,9 +189,10 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
 
     /**
      * 设置合计让利金额
+     *
      * @param amount
      */
-    private void setTotalRebateAmount(double amount){
+    private void setTotalRebateAmount(double amount) {
         HtmlBuilder builder = HtmlBuilder.newInstance();
         builder.appendNormal("合计：").appendRed(String.format("￥%s", PriceUtil.format(amount)));
         setViewText(builder.create(), R.id.tv_total_amount);
@@ -193,10 +200,11 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
 
     /**
      * 获取选中数据
+     *
      * @param datas
      * @return
      */
-    private int getSelectedCount(List<ResShpCartListData> datas){
+    private int getSelectedCount(List<ResShpCartListData> datas) {
         return datas != null ? datas.size() : 0;
     }
 
@@ -225,13 +233,13 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
 
     @Override
     public void generateSuccess(ResGenerateOrder data) {
-        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), sellerId+"");
+        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), sellerId + "", sellerName, rebateAmount + "");
     }
 
     @Override
     public void finish() {
         super.finish();
-        if(mShopCartPresenter != null){
+        if (mShopCartPresenter != null) {
             mShopCartPresenter.detachView();
         }
     }
@@ -249,7 +257,7 @@ public class MineShopCartFragment extends BaseFragment implements PtrView<ResShp
 
 
     @Subscribe
-    public void onEvent(DataEvent.OnCloseRecordOrderFragmentEvent evet){
+    public void onEvent(DataEvent.OnCloseRecordOrderFragmentEvent evet) {
         finish();
     }
 }

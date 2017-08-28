@@ -38,7 +38,7 @@ import java.util.Locale;
  * Created by Snow on 2017/5/24 0024.
  */
 
-public class MineRecordOrderFragment extends BaseFragment implements RecordOrderView{
+public class MineRecordOrderFragment extends BaseFragment implements RecordOrderView {
 
     private RecordOrderPresenter mRecordOrderPresenter;
 
@@ -56,6 +56,7 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
     private double mSelectedDiscount;
 
     private double discountAmount;
+
     @Override
     public int getLayoutId() {
         return R.layout.mine_shop_record_order_fragment;
@@ -77,19 +78,19 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         title.setOnLeftImageBtnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(hasChanged()){
-                    SelfAlertDialogHelper.showDialog(getFragmentManager(), getString(R.string.alert_dialog_tips), new View.OnClickListener(){
+                if (hasChanged()) {
+                    SelfAlertDialogHelper.showDialog(getFragmentManager(), getString(R.string.alert_dialog_tips), new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
                             finish();
                         }
                     });
-                }else{
+                } else {
                     finish();
                 }
             }
         });
-        TextView rightTextBtn =title.getRightTextBtn();
+        TextView rightTextBtn = title.getRightTextBtn();
         rightTextBtn.setVisibility(View.VISIBLE);
         rightTextBtn.setText("订单");
         rightTextBtn.setTextColor(getResources().getColor(R.color.text_white));
@@ -104,11 +105,12 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
 
     /**
      * 判断是否已修改数据
+     *
      * @return
      */
-    private boolean hasChanged(){
-        if(!TextUtils.isEmpty(getCustomerMobile()) ||
-                !TextUtils.isEmpty(getAmountString())){
+    private boolean hasChanged() {
+        if (!TextUtils.isEmpty(getCustomerMobile()) ||
+                !TextUtils.isEmpty(getAmountString())) {
             return true;
         }
         return false;
@@ -147,10 +149,10 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         edtMobile.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(!hasFocus){
+                if (!hasFocus) {
                     //失去焦点，查询焦点信息
                     String mobile = edtMobile.getText().toString();
-                    if(!TextUtils.isEmpty(mobile)){
+                    if (!TextUtils.isEmpty(mobile)) {
                         mRecordOrderPresenter.getCustomerInfo(mobile);
                     }
                 }
@@ -158,12 +160,12 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         });
         LineViewEdit edtCustomAmount = getViews(R.id.lnv_custom_amount);
         final EditText edtAmount = edtCustomAmount.getContentTextView();
-        edtAmount.addTextChangedListener(new TextWatcherAdapter(){
+        edtAmount.addTextChangedListener(new TextWatcherAdapter() {
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
                 String text = s.toString();
                 int dotIndex = text.indexOf('.');
-                if(dotIndex > -1 && text.length() > dotIndex + 3){
+                if (dotIndex > -1 && text.length() > dotIndex + 3) {
                     String result = text.substring(0, text.length() - 1);
                     edtAmount.setText(result);
                     edtAmount.setSelection(result.length());
@@ -174,10 +176,10 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         edtAmount.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
-                if(hasFocus){
-                   return;
+                if (hasFocus) {
+                    return;
                 }
-                if(mSellerInfo == null){
+                if (mSellerInfo == null) {
                     return;
                 }
                 calculateDiscountAmount();
@@ -187,8 +189,8 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         getViews(R.id.btn_add_shop_cart).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkInputData()){
-                    if(mSellerInfo != null && mCustomerInfo != null){
+                if (checkInputData()) {
+                    if (mSellerInfo != null && mCustomerInfo != null) {
                         mRecordOrderPresenter.addOrderToShopCart(mSellerInfo.getId(), mCustomerInfo.getId(),
                                 getCustomAmount(), mSelectedDiscount);
                     }
@@ -199,8 +201,8 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         getViews(R.id.btn_add_record_order).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(checkInputData()){
-                    if(mSellerInfo != null && mCustomerInfo != null){
+                if (checkInputData()) {
+                    if (mSellerInfo != null && mCustomerInfo != null) {
                         mRecordOrderPresenter.generateOrder(mSellerInfo.getId(), mCustomerInfo.getId(),
                                 getCustomAmount(), mSelectedDiscount);
                     }
@@ -212,8 +214,8 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
             @Override
             public void onClick(View v) {
                 //  2017/5/25 0025 跳转购物车界面
-                if(mSellerInfo != null) {
-                    FragmentJumpUtil.toShopCartFragment(getUsualFragment(), mSellerInfo.getId());
+                if (mSellerInfo != null) {
+                    FragmentJumpUtil.toShopCartFragment(getUsualFragment(), mSellerInfo.getId(), mSellerInfo.getName());
                 }
             }
         });
@@ -227,7 +229,7 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
         });
     }
 
-    private void calculateDiscountAmount(){
+    private void calculateDiscountAmount() {
         //未填写金额
 //                amount = calculateAmount(amount, mSellerInfo.getDiscount() / 10);//以前计算方式
         discountAmount = calculateAmount(getCustomAmount(), mSelectedDiscount / 10);
@@ -267,20 +269,21 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
     /**
      * 计算让利金额
      */
-    private double calculateAmount(double customAmount, double discount){
-        double result = customAmount * ( 1 - discount);
+    private double calculateAmount(double customAmount, double discount) {
+        double result = customAmount * (1 - discount);
         return result;
     }
 
     /**
      * 获取消费金额
+     *
      * @return
      */
-    private double getCustomAmount(){
+    private double getCustomAmount() {
         double amount = 0;
-        try{
+        try {
             amount = Double.parseDouble(getAmountString());
-        }catch (NumberFormatException e){
+        } catch (NumberFormatException e) {
             e.printStackTrace();
         }
         return amount;
@@ -288,27 +291,30 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
 
     /**
      * 获取消费者手机号
+     *
      * @return
      */
-    private String getCustomerMobile(){
+    private String getCustomerMobile() {
         return LineViewHelper.getValue(getView(), R.id.lnv_customer_mobile);
     }
 
     /**
      * 获取消费金额
+     *
      * @return
      */
-    private String getAmountString(){
+    private String getAmountString() {
         return LineViewHelper.getValue(getView(), R.id.lnv_custom_amount);
     }
 
     /**
      * 检查输入数据
+     *
      * @return true 资料填写完成, false资料未填写完整
      */
-    private boolean checkInputData(){
+    private boolean checkInputData() {
         boolean result = true;
-        if(TextUtils.isEmpty(getCustomerMobile()) || TextUtils.isEmpty(getAmountString())){
+        if (TextUtils.isEmpty(getCustomerMobile()) || TextUtils.isEmpty(getAmountString())) {
             showToast("资料未填写完整！");
             result = false;
         }
@@ -323,11 +329,11 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
     @Override
     public void setSellerInfo(ResSellerInfo data) {
         mSellerInfo = data;
-        if(data != null){
+        if (data != null) {
             LineViewHelper.setValue(getView(), R.id.lnv_seller_name, data.getName());
             LineViewHelper.setValue(getView(), R.id.lnv_seller_address, data.getAddress());
             LineViewHelper.setValue(getView(), R.id.lnv_seller_owner, data.getRealName());
-            LineViewHelper.setValue(getView(), R.id.lnv_seller_discount, String.format("%s折", data.getDiscount()+""));
+            LineViewHelper.setValue(getView(), R.id.lnv_seller_discount, String.format("%s折", data.getDiscount() + ""));
             mSelectedDiscount = data.getDiscount();
             mShopDiscountDatas = getShopDiscountDatas();
             setViewText(String.format("购物车(%d)", data.getCartCount()), R.id.tv_cart_count);
@@ -337,9 +343,9 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
     @Override
     public void setCustomerInfo(ResCustomerInfo data) {
         mCustomerInfo = data;
-        if(data != null){
+        if (data != null) {
             String nickName = data.getNickName();
-            if(TextUtils.isEmpty(nickName)){
+            if (TextUtils.isEmpty(nickName)) {
                 nickName = "消费者不存在";
             }
             LineViewHelper.setValue(getView(), R.id.lnv_customer_nickname, nickName);
@@ -359,7 +365,7 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
     /**
      * 清空数据
      */
-    private void clearData(){
+    private void clearData() {
         mCustomerInfo = null;
         LineViewHelper.setValue(getView(), R.id.lnv_customer_mobile, "");
         LineViewHelper.setValue(getView(), R.id.lnv_customer_nickname, "");
@@ -372,19 +378,19 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
 
     @Override
     public void generateOrderSuccess(ResGenerateOrder data) {
-        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), mShopInfo.getId()+"");
+        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), mShopInfo.getId() + "", mSellerInfo.getName(), getAmountString());
     }
 
     @Override
     public void finish() {
         super.finish();
-        if(mRecordOrderPresenter != null){
+        if (mRecordOrderPresenter != null) {
             mRecordOrderPresenter.detachView();
         }
     }
 
     @Subscribe
-    public void onEvent(DataEvent.OnCloseRecordOrderFragmentEvent evet){
+    public void onEvent(DataEvent.OnCloseRecordOrderFragmentEvent evet) {
         finish();
     }
 }

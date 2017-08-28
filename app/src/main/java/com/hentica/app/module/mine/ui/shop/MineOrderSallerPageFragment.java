@@ -28,17 +28,17 @@ import java.util.List;
  * Created by Snow on 2017/7/5.
  */
 
-public class MineOrderSallerPageFragment extends MineOrderPageFragment implements IOrderDeleteView{
+public class MineOrderSallerPageFragment extends MineOrderPageFragment implements IOrderDeleteView {
     private IOrderDeletePresenter mOrderDeletePresenter;
 
     /**
-     *
      * @param orderStatus 订单状态 "UNPAID"未支付, "PAID"已支付待评价 , "FINISHED"评价后，已完成
      * @param isClearing  结算状态(结算中:false;已结算:true)
      */
     public MineOrderSallerPageFragment(ResShopInfo shopInfo, String orderStatus, String isClearing, String statusDesc) {
         super(shopInfo, orderStatus, isClearing, statusDesc);
     }
+
     @Override
     protected void initData() {
         mPtrPresenter = new OrderManagerPtrPresenter(this, String.valueOf(mShopInfo.getId()), true, orderStatus, isClear);
@@ -48,7 +48,7 @@ public class MineOrderSallerPageFragment extends MineOrderPageFragment implement
 
     @Override
     public void onClick(View view, OrderManagerAdapter.ViewHolder holder, int pos, ResShopOrderItem data) {
-        switch (view.getId()){
+        switch (view.getId()) {
             case R.id.item_btn_reply:
                 if (OrderStatus.UNPAID.equals(data.getStatus())) {
                     //删除订单
@@ -80,7 +80,7 @@ public class MineOrderSallerPageFragment extends MineOrderPageFragment implement
     }
 
     private void toPayOrder(ResShopOrderItem data) {
-        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getSn(), String.valueOf(data.getSeller().getId()));
+        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getSn(), String.valueOf(data.getSeller().getId()), data.getSeller().getName(), data.getAmount() + "");
     }
 
     @Override
