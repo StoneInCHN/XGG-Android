@@ -65,7 +65,7 @@
 
 # Orm数据结构
 -keep public class com.hentica.app.util.region.Region {public private protected *;}
-
+#注释
 # -libraryjars ../libs/andBase-release.aar
 # -libraryjars ../libs/androidQuery-release.aar
 # -libraryjars ../libs/largeImageViewLib-release.aar
@@ -73,16 +73,17 @@
 # -libraryjars ../libs/rangeSeekBarLib-release.aar
 # -libraryjars ../libs/viewPagerIndicator-release.aar
 # -libraryjars ../libs/wheel-release.aar
-
+#
 #-libraryjars ../libs/geTuiPushSDK-release.aar
 #-libraryjars ../libs/rongIMKit-release.aar
+#注释
 -libraryjars ../libs/umengSocialSdkLibrary-release.aar
 -libraryjars ../libs/weixinlib-release.aar
-
+#注释
 #-libraryjars libs/BaiduLBS_Android.jar
 #-libraryjars libs/bugly_crash_release__2.1.5.jar
 #-libraryjars libs/com.umeng.fb.5.4.0.jar
-
+#注释
 
 
 # ------------------------ 常用库 开始 ---------------------------------------
@@ -266,4 +267,23 @@
 # ------------------------ 支付宝 结束 ---------------------------------------
 
 # ------------------------ 自定义 开始 ---------------------------------------
+#-------------------------九派支付H5调Android----------------------------------
+-keep class com.hentica.app.util.WebHost{
+    *;
+}
+#-dontskipnonpubliclibraryclasses
+#----------忽略打包的警告-----------
+-dontwarn com.bestpay.**
+-dontwarn okio.**
+-dontwarn cn.jpush.**
+-dontwarn rx.internal.util.**
+-dontwarn com.viewpagerindicator.**
+#------------------------------------
+#---------------保留实体类-----------------
+-keep class com.hentica.app.module.entity.**{*;}
+#---------------保留storage下的类---------------
+-keep class com.hentica.app.lib.storage.**{*;}
+#---------------保留litesuits下的类---------------
+-keep class com.litesuits.orm.db.**{*;}
 # ------------------------ 自定义 结束 ---------------------------------------
+

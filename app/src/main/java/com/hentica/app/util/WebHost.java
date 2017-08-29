@@ -2,11 +2,10 @@ package com.hentica.app.util;
 
 import android.content.Context;
 import android.webkit.JavascriptInterface;
-import android.widget.Toast;
 
 /**
  * @CreateTime： 2017/8/28
- * @Describe:
+ * @Describe:  九派支付成功后与h5页面的交互
  * @Author： 曾强
  */
 
@@ -24,7 +23,6 @@ public class WebHost {
 
     @JavascriptInterface
     public void show() {
-        Toast.makeText(context, "支付成功", Toast.LENGTH_SHORT).show();
         if (paySuccessCallBack != null) {
             paySuccessCallBack.onClick();
         }

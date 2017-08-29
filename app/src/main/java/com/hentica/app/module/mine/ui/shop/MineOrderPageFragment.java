@@ -1,5 +1,6 @@
 package com.hentica.app.module.mine.ui.shop;
 
+import android.annotation.SuppressLint;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -24,6 +25,7 @@ import java.util.List;
  * Created by Snow on 2017/7/5.
  */
 
+@SuppressLint("ValidFragment")
 public class MineOrderPageFragment extends AbsPtrFragment<ResShopOrderItem> implements PtrView<ResShopOrderItem>, OrderManagerAdapter.OnItemOptionBtnClickListener{
 
     protected OrderManagerPtrPresenter mPtrPresenter;

@@ -1,5 +1,6 @@
 package com.hentica.app.widget.wheel;
 
+import android.annotation.SuppressLint;
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -39,6 +40,7 @@ public class CommonWheelDialog<T> extends DialogFragment {
      *
      * @param wheelCount 滚轮数据，>0有效
      */
+    @SuppressLint("ValidFragment")
     public CommonWheelDialog(int wheelCount){
         this(wheelCount, false);
     }
@@ -48,6 +50,7 @@ public class CommonWheelDialog<T> extends DialogFragment {
      * @param wheelCount
      * @param isLinked
      */
+    @SuppressLint("ValidFragment")
     public CommonWheelDialog(int wheelCount, boolean isLinked){
         super();
         this.mWheelCount = wheelCount;

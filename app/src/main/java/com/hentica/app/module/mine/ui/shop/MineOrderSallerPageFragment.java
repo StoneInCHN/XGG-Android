@@ -1,13 +1,9 @@
 package com.hentica.app.module.mine.ui.shop;
 
+import android.annotation.SuppressLint;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ListView;
 
 import com.fiveixlg.app.customer.R;
-import com.handmark.pulltorefresh.library.PullToRefreshBase;
-import com.hentica.app.framework.fragment.ptr.AbsPtrFragment;
-import com.hentica.app.framework.fragment.ptr.PtrView;
 import com.hentica.app.module.entity.mine.shop.ResShopInfo;
 import com.hentica.app.module.entity.mine.shop.ResShopOrderItem;
 import com.hentica.app.module.entity.type.OrderStatus;
@@ -17,17 +13,14 @@ import com.hentica.app.module.mine.presenter.OrderManagerPtrPresenter;
 import com.hentica.app.module.mine.ui.adapter.OrderManagerAdapter;
 import com.hentica.app.module.mine.view.IOrderDeleteView;
 import com.hentica.app.util.FragmentJumpUtil;
-import com.hentica.app.widget.dialog.SelfAlertDialog;
 import com.hentica.app.widget.dialog.SelfAlertDialogHelper;
-import com.hentica.appbase.famework.adapter.QuickAdapter;
-
-import java.util.List;
 
 /**
  * 录单订单
  * Created by Snow on 2017/7/5.
  */
 
+@SuppressLint("ValidFragment")
 public class MineOrderSallerPageFragment extends MineOrderPageFragment implements IOrderDeleteView {
     private IOrderDeletePresenter mOrderDeletePresenter;
 

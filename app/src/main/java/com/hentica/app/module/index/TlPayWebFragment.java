@@ -53,7 +53,9 @@ public class TlPayWebFragment extends CommonWebFragment {
         webHost.setPaySuccessCallBack(new WebHost.PaySuccessCallBack() {
             @Override
             public void onClick() {
-
+                // 支付成功
+                getActivity().setResult(Constants.ACTIVITY_RESULT_CODE_TL_PAY);
+                finish();
             }
         });
 //        }
