@@ -12,7 +12,6 @@ import com.fiveixlg.app.customer.R;
 import com.hentica.app.framework.data.Constants;
 import com.hentica.app.module.common.ui.CommonWebFragment;
 import com.hentica.app.util.IntentUtil;
-import com.hentica.app.util.WebHost;
 import com.hentica.app.widget.view.TitleView;
 
 import butterknife.BindView;
@@ -28,7 +27,7 @@ public class TlPayWebFragment extends CommonWebFragment {
     TitleView mTitleView;
     @BindView(R.id.common_web_webview_back_btn)
     ImageButton mBackBtn;
-    private WebHost webHost;
+//    private WebHost webHost;
     /**
      * 支付成功跳转url
      */
@@ -47,17 +46,17 @@ public class TlPayWebFragment extends CommonWebFragment {
         super.initView();
         // 隐藏返回按钮
 //        mTitleView.getLeftImageBtn().setVisibility(View.GONE);
-        //        if (mPickUpUrl == null || TextUtils.isEmpty(mPickUpUrl)) {
-        webHost = new WebHost(getActivity());
-        mRichDetailWebView.addJavascriptInterface(webHost, "Android");
-        webHost.setPaySuccessCallBack(new WebHost.PaySuccessCallBack() {
-            @Override
-            public void onClick() {
-                // 支付成功
-                getActivity().setResult(Constants.ACTIVITY_RESULT_CODE_TL_PAY);
-                finish();
-            }
-        });
+//        if (mPickUpUrl == null || TextUtils.isEmpty(mPickUpUrl)) {
+//        webHost = new WebHost(getActivity());
+//        mRichDetailWebView.addJavascriptInterface(webHost, "Android");
+//        webHost.setPaySuccessCallBack(new WebHost.PaySuccessCallBack() {
+//            @Override
+//            public void onClick() {
+//                // 支付成功
+//                getActivity().setResult(Constants.ACTIVITY_RESULT_CODE_TL_PAY);
+//                finish();
+//            }
+//        });
 //        }
     }
 

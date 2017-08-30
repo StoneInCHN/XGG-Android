@@ -73,7 +73,7 @@ public class MineOrderSallerPageFragment extends MineOrderPageFragment implement
     }
 
     private void toPayOrder(ResShopOrderItem data) {
-        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getSn(), String.valueOf(data.getSeller().getId()), data.getSeller().getName(), data.getAmount() + "");
+        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getSn(), String.valueOf(data.getSeller().getId()), data.getSeller().getName(), data.isIsSallerOrder() ? data.getRebateAmount() + "" : data.getAmount() + "");
     }
 
     @Override

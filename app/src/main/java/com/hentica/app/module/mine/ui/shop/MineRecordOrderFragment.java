@@ -378,7 +378,8 @@ public class MineRecordOrderFragment extends BaseFragment implements RecordOrder
 
     @Override
     public void generateOrderSuccess(ResGenerateOrder data) {
-        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), mShopInfo.getId() + "", mSellerInfo.getName(), getAmountString());
+        FragmentJumpUtil.toRecordOrderPayFragment(getUsualFragment(), data.getOrderSn(), mShopInfo.getId() + "", mSellerInfo.getName(), String.format("%.02f", discountAmount))
+        ;
     }
 
     @Override
