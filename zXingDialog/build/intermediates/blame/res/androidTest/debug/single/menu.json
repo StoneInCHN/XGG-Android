@@ -2,5 +2,9 @@
     {
         "merged": "D:\\ASWorkSpace\\XGG-android\\android\\zXingDialog\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\main.xml",
         "source": "D:\\ASWorkSpace\\XGG-android\\android\\zXingDialog\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
+    },
+    {
+        "merged": "D:\\xianglegou\\zXingDialog\\build\\intermediates\\res\\merged\\androidTest\\debug\\menu\\main.xml",
+        "source": "D:\\xianglegou\\zXingDialog\\build\\intermediates\\bundles\\debug\\res\\menu\\main.xml"
     }
 ]

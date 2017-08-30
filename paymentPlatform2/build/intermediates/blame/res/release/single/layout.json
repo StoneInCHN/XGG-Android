@@ -2,5 +2,9 @@
     {
         "merged": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\build\\intermediates\\res\\merged\\release\\layout\\activity_null_transparent_layout.xml",
         "source": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\src\\main\\res\\layout\\activity_null_transparent_layout.xml"
+    },
+    {
+        "merged": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\res\\merged\\release\\layout\\activity_null_transparent_layout.xml",
+        "source": "D:\\xianglegou\\paymentPlatform2\\src\\main\\res\\layout\\activity_null_transparent_layout.xml"
     }
 ]

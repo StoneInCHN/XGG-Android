@@ -18,7 +18,7 @@ public class ApplicationData {
 
     // 是否是测试模式
     public static final boolean IS_DEBUG = false;
-    public static final boolean PRINT_LOG = true;
+    public static final boolean PRINT_LOG = false;
 
     // 单实例
     private static ApplicationData sApplicationData;
