@@ -3,6 +3,7 @@ package com.hentica.app.module.login.presenter;
 import android.text.TextUtils;
 
 import com.hentica.app.lib.net.NetData;
+import com.hentica.app.lib.net.Post;
 import com.hentica.app.module.common.listener.ListenerAdapter;
 import com.hentica.app.module.common.listener.UsualDataBackListener;
 import com.hentica.app.module.config.ConfigDataUtl;
@@ -93,7 +94,10 @@ public class LoginRegisPresenterImpl implements LoginRegistPresenter {
                                         if (isSuccess) {
                                             LoginModel.getInstance().setUserLogin(data);
                                             StorageUtil.saveUserMobile(data.getCellPhoneNum());
+//                                            if (ApplicationData.getInstance().getToken() != null && !TextUtils.isEmpty(ApplicationData.getInstance().getToken()))
+//                                                setJpushRegistId(data.getId() + "");
                                             mRegistView.onRegistSuccess();
+
                                         }
                                     }
                                 }));
@@ -106,6 +110,29 @@ public class LoginRegisPresenterImpl implements LoginRegistPresenter {
         });
 
 
+    }
+
+    /**
+     * 设置极光推送注册id
+     */
+    private void setJpushRegistId(String userId) {
+        Request.setJpushRegistId(userId, new Post.FullListener() {
+            @Override
+            public void onResult(NetData result) {
+                //保存用户账号
+                mRegistView.onRegistSuccess();
+            }
+
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onProgress(long curr, long max) {
+
+            }
+        });
     }
 
     /**

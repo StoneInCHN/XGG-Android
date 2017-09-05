@@ -24,11 +24,11 @@ public class ApplicationData {
     private static ApplicationData sApplicationData;
 
     // 服务器地址 内网
-    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
-//   private String mServerUrl = "http://xgg.wa12580.cn";//正式环境（生产环境？？？）
+//    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
+    private String mServerUrl = "http://xgg.wa12580.cn";//正式环境（生产环境？？？）
 
-    public final String mImageBaseUrl = mServerUrl +"/rebate-interface/";
-    public final String mApkDownloadUrl = mServerUrl +"/rebate-interface";
+    public final String mImageBaseUrl = mServerUrl + "/rebate-interface/";
+    public final String mApkDownloadUrl = mServerUrl + "/rebate-interface";
 
     // 主界面是否存在
     private boolean mIsMainLayoutExists;
@@ -40,7 +40,9 @@ public class ApplicationData {
     /** 配置数据 */
     //private MResConfigData mConfigData;
 
-    /** 是否正在登录中（防止登录中其他请求引起掉线） */
+    /**
+     * 是否正在登录中（防止登录中其他请求引起掉线）
+     */
     private boolean mIsOnLogin;
 
     private String mRsaPublicKey;//加密公钥
@@ -91,7 +93,7 @@ public class ApplicationData {
         return Environment.getExternalStorageDirectory().getPath() + "/" + AppApplication.getInstance().getPackageName() + "/real/";
     }
 
-    public String getSystemNotTempDir(){
+    public String getSystemNotTempDir() {
         return AppApplication.getInstance().getCacheDir().getParentFile().getPath() + "/real/";
     }
 
@@ -103,11 +105,11 @@ public class ApplicationData {
         return Environment.getExternalStorageDirectory().getPath() + "/" + AppApplication.getInstance().getPackageName() + "/temp/";
     }
 
-    public String getSystemTempDir(){
+    public String getSystemTempDir() {
         return AppApplication.getInstance().getCacheDir() + "/temp/";
     }
 
-    public String getTempPhotoDir(){
+    public String getTempPhotoDir() {
         return getTempDir() + "photo/";
     }
 
@@ -183,38 +185,46 @@ public class ApplicationData {
         this.mWxAppId = mWxAppId;
     }
 
-    public void setToken(String token){
+    public void setToken(String token) {
         LoginModel.getInstance().setToken(token);
     }
 
-    public String getToken(){
+    public String getToken() {
         return LoginModel.getInstance().getToken();
     }
 
-    public String getImageUrl(String url){
+    public String getImageUrl(String url) {
         return TextUtils.isEmpty(url) ? "" : mImageBaseUrl + url;
     }
 
-    /** 设置加密密钥 */
-    public void setRsaPublicKey(String key){
+    /**
+     * 设置加密密钥
+     */
+    public void setRsaPublicKey(String key) {
         this.mRsaPublicKey = key;
-        if(!TextUtils.isEmpty(mRsaPublicKey)) {
+        if (!TextUtils.isEmpty(mRsaPublicKey)) {
             RsaUtils.getPublicKey(this.mRsaPublicKey);
         }
     }
 
-    /** 获取加密密钥 */
-    public String getRsaPublicKey(){
+    /**
+     * 获取加密密钥
+     */
+    public String getRsaPublicKey() {
         return mRsaPublicKey;
     }
 
-    /** 保存城市数据 */
-    public void setCitys(List<Region> citys){
+    /**
+     * 保存城市数据
+     */
+    public void setCitys(List<Region> citys) {
         mCitys = citys;
     }
 
-    /** 获取城市数据 */
-    public List<Region> getCitys(){
+    /**
+     * 获取城市数据
+     */
+    public List<Region> getCitys() {
         return mCitys;
     }
 
@@ -239,11 +249,12 @@ public class ApplicationData {
 //        mConfigData = configData;
 //    }
 
-    /** 取得配置数据 */
+    /**
+     * 取得配置数据
+     */
 //    public MResConfigData getConfigData(){
 //        return mConfigData;
 //    }
-
     public boolean isCheckSwitchCity() {
         return mIsCheckSwitchCity;
     }

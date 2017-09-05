@@ -6,5 +6,9 @@
     {
         "merged": "D:\\xianglegou\\zXingDialog\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon.png",
         "source": "D:\\xianglegou\\zXingDialog\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon.png"
+    },
+    {
+        "merged": "D:\\XGG-Android\\zXingDialog\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable\\icon.png",
+        "source": "D:\\XGG-Android\\zXingDialog\\build\\intermediates\\bundles\\debug\\res\\drawable\\icon.png"
     }
 ]

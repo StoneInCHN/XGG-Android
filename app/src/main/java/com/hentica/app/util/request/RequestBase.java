@@ -1,15 +1,17 @@
 package com.hentica.app.util.request;
 
 import com.google.gson.Gson;
+import com.hentica.app.framework.AppApplication;
 import com.hentica.app.framework.data.ApplicationData;
 import com.hentica.app.lib.net.Post;
 import com.hentica.app.module.entity.ReqShopCartDelete;
 import com.hentica.app.module.entity.ReqShopCartOrder;
-import com.hentica.app.module.entity.index.ReqIndexPayOrder;
 import com.hentica.app.util.ParseUtil;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import cn.jpush.android.api.JPushInterface;
 
 /**
  * 所有网络请求
@@ -2905,18 +2907,18 @@ public class RequestBase {
      * POST
      * json
      *
-     * @param userId 用户id
-     * @param transType 转账类型:乐心LE_MIND,乐豆LE_BEAN,乐分LE_SCORE
-     * @param smsCode 短信验证码
+     * @param userId       用户id
+     * @param transType    转账类型:乐心LE_MIND,乐豆LE_BEAN,乐分LE_SCORE
+     * @param smsCode      短信验证码
      * @param cellPhoneNum 转账接收手机号
-     * @param amount 转账数量
+     * @param amount       转账数量
      */
     public static void getTransferRebateDoTransfer(String userId,
-                                              String transType,
-                                              String smsCode,
-                                              String cellPhoneNum,
-                                              String amount,
-                                              Post.FullListener listener) {
+                                                   String transType,
+                                                   String smsCode,
+                                                   String cellPhoneNum,
+                                                   String amount,
+                                                   Post.FullListener listener) {
         String url = HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(),
                 "/rebate-interface/transferRebate/doTransfer.jhtml");
 
@@ -2943,12 +2945,12 @@ public class RequestBase {
      * POST
      * json
      *
-     * @param userId 用户id
+     * @param userId         用户id
      * @param receiverMobile 转账接收手机号
      */
     public static void getTransferRebateVerifyReceiver(String userId,
-                                              String receiverMobile,
-                                              Post.FullListener listener) {
+                                                       String receiverMobile,
+                                                       Post.FullListener listener) {
         String url = HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(),
                 "/rebate-interface/transferRebate/verifyReceiver.jhtml");
 
@@ -2957,6 +2959,28 @@ public class RequestBase {
         params.add(new Post.ParamNameValuePair("userId", userId));
         params.add(new Post.ParamNameValuePair("token", ApplicationData.getInstance().getToken()));
         params.add(new Post.ParamNameValuePair("receiverMobile", receiverMobile));
+        // 文件参数
+        List<Post.ParamNameValuePair> fileParams = new ArrayList<>();
+        Post post = new RebatePost(url, new JsonBodyCreater());//Json请求
+        post.setParams(params);
+        post.setFileParams(fileParams);
+        post.setFullListener(listener);
+        post.doPost();
+    }
+
+    /**
+     * 设置极光推送注册id
+     * userId 用户id
+     * jpushRegId 极光推送RegistId
+     */
+    public static void setJpushRegistId(String userId, Post.FullListener listener) {
+        String url = HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(), "/rebate-interface/common/setJpushId.jhtml");
+        // 参数
+        List<Post.ParamNameValuePair> params = new ArrayList<>();
+        params.add(new Post.ParamNameValuePair("userId", userId));
+        params.add(new Post.ParamNameValuePair("token", ApplicationData.getInstance().getToken()));
+        params.add(new Post.ParamNameValuePair("jpushRegId", JPushInterface.getRegistrationID(AppApplication.getInstance())));
+        params.add(new Post.ParamNameValuePair("appPlatform", "ANDROID"));
         // 文件参数
         List<Post.ParamNameValuePair> fileParams = new ArrayList<>();
         Post post = new RebatePost(url, new JsonBodyCreater());//Json请求

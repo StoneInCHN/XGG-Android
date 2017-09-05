@@ -12,12 +12,24 @@
         "source": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good3.jpg"
     },
     {
+        "merged": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good0.jpg",
+        "source": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good0.jpg"
+    },
+    {
+        "merged": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good3.jpg",
+        "source": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good3.jpg"
+    },
+    {
         "merged": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good1.jpg",
         "source": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good1.jpg"
     },
     {
         "merged": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good2.jpg",
         "source": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good2.jpg"
+    },
+    {
+        "merged": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good1.jpg",
+        "source": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good1.jpg"
     },
     {
         "merged": "D:\\ASWorkSpace\\XGG-android\\android\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good2.jpg",
@@ -30,5 +42,9 @@
     {
         "merged": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good0.jpg",
         "source": "D:\\xianglegou\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good0.jpg"
+    },
+    {
+        "merged": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\res\\merged\\androidTest\\debug\\drawable-mdpi-v4\\good2.jpg",
+        "source": "D:\\XGG-Android\\paymentPlatform2\\build\\intermediates\\bundles\\debug\\res\\drawable-mdpi-v4\\good2.jpg"
     }
 ]

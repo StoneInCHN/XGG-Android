@@ -1,2 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<merger version="3"><dataSet config="main"><source path="D:\xianglegou\zXingDialog\src\main\shaders"/></dataSet><dataSet config="release"><source path="D:\xianglegou\zXingDialog\src\release\shaders"/></dataSet></merger>
+<merger version="3"><dataSet config="main"><source path="D:\XGG-Android\zXingDialog\src\main\shaders"/></dataSet><dataSet config="release"><source path="D:\XGG-Android\zXingDialog\src\release\shaders"/></dataSet></merger>
