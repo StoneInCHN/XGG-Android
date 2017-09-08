@@ -12,7 +12,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
@@ -185,7 +184,7 @@ public class UsualFragment extends Fragment implements OnKeyListener, OnDispatch
 
 	/**
 	 * 销毁所有界面
-	 * 
+	 *
 	 * @param isKeeySelf
 	 *            是否保留当前界面
 	 */
@@ -513,7 +512,7 @@ public class UsualFragment extends Fragment implements OnKeyListener, OnDispatch
 
 	/**
 	 * 添加子fragment
-	 * 
+	 *
 	 * @param layoutId
 	 *            要显示到的节点
 	 * @param child
@@ -802,7 +801,7 @@ public class UsualFragment extends Fragment implements OnKeyListener, OnDispatch
 		private boolean mIsResume = true;
 
 		/**
-		 * 
+		 *
 		 */
 		public void onResume() {
 
@@ -936,7 +935,7 @@ public class UsualFragment extends Fragment implements OnKeyListener, OnDispatch
 
 		/**
 		 * 销毁所有界面
-		 * 
+		 *
 		 * @param isKeeySelf
 		 *            是否保留当前界面
 		 */

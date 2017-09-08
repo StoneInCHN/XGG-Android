@@ -36,7 +36,6 @@ public class ResLoginData {
      */
 
 
-
     private AreaBean area;
     private AgentBean agent;
     private boolean isBindWeChat;
@@ -68,6 +67,7 @@ public class ResLoginData {
 
     private boolean isOwnBankCard;//是否有银行卡
     private boolean isSalesmanApply;//null没有权限
+    private boolean isPushMsg;//极光推送开关
 
     public boolean getIsSalesmanApply() {
         return isSalesmanApply;
@@ -300,6 +300,14 @@ public class ResLoginData {
 
     public void setAuth(boolean auth) {
         isAuth = auth;
+    }
+
+    public boolean isPushMsg() {
+        return isPushMsg;
+    }
+
+    public void setPushMsg(boolean pushMsg) {
+        isPushMsg = pushMsg;
     }
 
     public static class AreaBean {

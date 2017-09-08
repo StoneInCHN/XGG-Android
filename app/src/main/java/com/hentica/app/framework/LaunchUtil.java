@@ -24,6 +24,8 @@ import com.hentica.app.util.request.AppPostWraper;
 import com.tencent.bugly.crashreport.CrashReport;
 import com.umeng.socialize.PlatformConfig;
 
+import cn.jpush.android.api.JPushInterface;
+
 /**
  * 里面存放了一些启动时就应该进行的操作
  */
@@ -112,8 +114,8 @@ public class LaunchUtil {
 //		GeTuiPushUtil.getInstance().setContext(context);
 
         //初始化极光推送
-//        JPushInterface.setDebugMode(isDebug);
-//        JPushInterface.init(context);
+        JPushInterface.setDebugMode(isDebug);
+        JPushInterface.init(context);
         PackageUtil.init(context);
 //		Log.d("JPushInterface", "initRegistId: " + JPushInterface.getRegistrationID(context));
     }

@@ -2,6 +2,7 @@ package com.hentica.app.module.login.presenter;
 
 import android.text.TextUtils;
 
+import com.hentica.app.framework.data.ApplicationData;
 import com.hentica.app.lib.net.NetData;
 import com.hentica.app.lib.net.Post;
 import com.hentica.app.module.common.listener.ListenerAdapter;
@@ -77,9 +78,9 @@ public class LoginMainPresenterImpl implements LoginMainPresenter {
                                 if (isSuccess) {
                                     LoginModel.getInstance().setUserLogin(data);
                                     StorageUtil.saveUserMobile(data.getCellPhoneNum());
-//                                    if (ApplicationData.getInstance().getToken() != null && !TextUtils.isEmpty(ApplicationData.getInstance().getToken()))
-//                                        setJpushRegistId(data.getId() + "");
-                                    mLoginMainView.onLoginSuccess();
+                                    if (ApplicationData.getInstance().getToken() != null && !TextUtils.isEmpty(ApplicationData.getInstance().getToken()))
+                                        setJpushRegistId(data.getId() + "");
+//                                    mLoginMainView.onLoginSuccess();
                                 }
                             }
                         }));

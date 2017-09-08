@@ -158,15 +158,17 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
      * 分类控制器
      */
     private ShopCategoryPresenter mCatPresenter;
-    /** 是否成功定位 */
+    /**
+     * 是否成功定位
+     */
     private boolean mIsLocated;
 
     private PermissionHelper.PermissionGrant permissionGrant = new PermissionHelper.PermissionGrant() {
         @Override
         public void onPermissionGranted(int requestCode) {
-            switch (requestCode){
+            switch (requestCode) {
                 case PermissionHelper.CODE_CAMERA:
-                    FragmentJumpUtil.toScan(getUsualFragment(),mLatitude,mLongitude);
+                    FragmentJumpUtil.toScan(getUsualFragment(), mLatitude, mLongitude);
                     break;
             }
         }
@@ -245,7 +247,7 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
             @Override
             public void onClick(View v) {
                 // 跳转到商家搜索结果界面
-                FragmentJumpUtil.toBusinessList(getUsualFragment(),"","");
+                FragmentJumpUtil.toBusinessList(getUsualFragment(), "", "");
             }
         });
         // 商家列表被点击
@@ -254,10 +256,10 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 // 跳转到商家详情
                 IndexSellerListData data = mBusinessAdapter.getItem(position);
-                if(data != null){
+                if (data != null) {
                     // 跳转到商家详情
-                    FragmentJumpUtil.toBusinessDetail(getUsualFragment(),data.getSellerId()+"");
-                }else {
+                    FragmentJumpUtil.toBusinessDetail(getUsualFragment(), data.getSellerId() + "");
+                } else {
                     showToast("商家不存在！");
                 }
             }
@@ -285,13 +287,13 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
                 // 刷新服务列表
                 mCatPresenter.getGategory();
                 // 刷新商家列表
-                requestIndexSellerList(false,false);
+                requestIndexSellerList(false, false);
             }
 
             @Override
             public void onPullUpToRefresh(PullToRefreshBase<ScrollView> refreshView) {
                 // 加载更多商家列表
-                requestIndexSellerList(true,false);
+                requestIndexSellerList(true, false);
             }
         });
     }
@@ -323,7 +325,7 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
      * 设置banner数据
      */
     private void initBanner(List<IndexBannerListData> data) {
-        if(ArrayListUtil.isEmpty(data)){
+        if (ArrayListUtil.isEmpty(data)) {
             // TODO 测试需要，若没有数据则造一个假数据
             data.add(new IndexBannerListData());
         }
@@ -349,30 +351,36 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
         indicator.setStrokeWidth(0);
     }
 
-    /** 保存当前定位城市 */
-    private void saveLocateCity(String cityName){
+    /**
+     * 保存当前定位城市
+     */
+    private void saveLocateCity(String cityName) {
         // 从数据库中查找城市信息
         Region region = ConfigModel.getInstace().getCityRegionByName(cityName);
         // 保存城市信息
         StorageUtil.saveSelectedRegion(region);
         // 更新当前城市
-        if(region != null){
+        if (region != null) {
             mCityCheck.setText(region.getName());
         }
     }
 
-    /** 刷新城市信息 */
-    private void refreshCity(){
+    /**
+     * 刷新城市信息
+     */
+    private void refreshCity() {
         Region city = getCity();
-        if(city != null){
+        if (city != null) {
             mCityCheck.setText(city.getName());
         }
     }
 
-    /** 获取城市信息 */
-    private Region getCity(){
+    /**
+     * 获取城市信息
+     */
+    private Region getCity() {
         Region city = StorageUtil.getSelectedRegion();
-        if(city == null){
+        if (city == null) {
             // 若城市为空，则默认保存成都市
             saveLocateCity("成都市");
             city = StorageUtil.getSelectedRegion();
@@ -380,30 +388,36 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
         return city;
     }
 
-    /** 获取地区id */
-    private String getAreaIds(){
+    /**
+     * 获取地区id
+     */
+    private String getAreaIds() {
         StringBuilder areaIds = new StringBuilder("");
         Region city = getCity();
-        if(city != null){
-            areaIds.append(city.getId()+"").append(",");
+        if (city != null) {
+            areaIds.append(city.getId() + "").append(",");
             List<Region> areas = ConfigModel.getInstace().findChildRegions(city.getId());
-            if(!ArrayListUtil.isEmpty(areas)){
-                for(Region area : areas){
-                    areaIds.append(area.getId()+"").append(",");
+            if (!ArrayListUtil.isEmpty(areas)) {
+                for (Region area : areas) {
+                    areaIds.append(area.getId() + "").append(",");
                 }
             }
         }
-        return areaIds.length() > 0 ? areaIds.substring(0,areaIds.length() - 1) : "";
+        return areaIds.length() > 0 ? areaIds.substring(0, areaIds.length() - 1) : "";
     }
 
-    /** 获取经度 */
-    private String getLatitude(double latitude){
-        return latitude < 0 ? "" : latitude+"";
+    /**
+     * 获取经度
+     */
+    private String getLatitude(double latitude) {
+        return latitude < 0 ? "" : latitude + "";
     }
 
-    /** 获取纬度 */
-    private String getLongitude(double longitude){
-        return longitude < 0 ? "" : longitude+"";
+    /**
+     * 获取纬度
+     */
+    private String getLongitude(double longitude) {
+        return longitude < 0 ? "" : longitude + "";
     }
 
     /***************************************** 网络请求 ***********************************************/
@@ -411,22 +425,29 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
     /**
      * 获取首页图片
      */
-    private void requestTopBanner(){
+    private void requestTopBanner() {
         Request.getBannerTop(ListenerAdapter.createArrayListener(IndexBannerListData.class, new UsualDataBackListener<List<IndexBannerListData>>(this) {
             @Override
             protected void onComplete(boolean isSuccess, List<IndexBannerListData> data) {
-                if(isSuccess){
+                if (isSuccess) {
                     // 请求成功
                     initBanner(data);
                 }
-        }
+            }
         }));
     }
 
-    /** 尝试加载商家列表 */
-    private void tryLoadBusinessList(final boolean isLoadMore){
+
+    /**
+     * 尝试加载商家列表
+     */
+    private void tryLoadBusinessList(final boolean isLoadMore) {
         // 不管有无定位，先拉取一次数据
-        requestIndexSellerList(isLoadMore,true);
+        requestIndexSellerList(isLoadMore, true);
+        baiduLocation(isLoadMore);
+    }
+
+    private void baiduLocation(final boolean isLoadMore) {
         // 尝试百度定位，若定位成功则重新拉取一次数据
         LocationUtils location = LocationUtils.newInstance(getContext(), new LocationUtils.LocationCallBack() {
             @Override
@@ -441,12 +462,12 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
                     Region city = StorageUtil.getSelectedRegion();
                     if (city == null) {
                         saveLocateCity(location.getAddress().city);
-                    }else {
+                    } else {
                         // 判断当前定位城市是否和保存城市一样
-                        if(!TextUtils.equals(location.getAddress().city,city.getName()) && !ApplicationData.getInstance().isCheckSwitchCity()){
+                        if (!TextUtils.equals(location.getAddress().city, city.getName()) && !ApplicationData.getInstance().isCheckSwitchCity()) {
                             // 弹出提示框
                             SelfAlertDialog dialog = new SelfAlertDialog();
-                            dialog.setText(String.format("系统定位到您在%s，需要切换至%s吗?",location.getAddress().city,location.getAddress().city));
+                            dialog.setText(String.format("系统定位到您在%s，需要切换至%s吗?", location.getAddress().city, location.getAddress().city));
                             dialog.setSureClickListener(new View.OnClickListener() {
                                 @Override
                                 public void onClick(View v) {
@@ -463,7 +484,7 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
                                     ApplicationData.getInstance().setCheckSwitchCity(true);
                                 }
                             });
-                            dialog.show(getChildFragmentManager(),"switchCity");
+                            dialog.show(getChildFragmentManager(), "switchCity");
                         }
                     }
                 }
@@ -485,16 +506,16 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
             @Override
             protected void onComplete(boolean isSuccess, List<IndexSellerListData> data) {
                 if (isSuccess) {
-                    if(needJudge && mIsLocated){
+                    if (needJudge && mIsLocated) {
                         // 若需要判断定位，且已定位成功，则此次请求不作处理
                         return;
                     }
                     mScrollView.onRefreshComplete();
                     PullToRefreshBase.Mode mode = data.size() < mPageNum ? PullToRefreshBase.Mode.PULL_FROM_START : PullToRefreshBase.Mode.BOTH;
                     mScrollView.setMode(mode);
-                    if(isLoadMore){
+                    if (isLoadMore) {
                         // 合并数据
-                        data = ViewUtil.mergeList(mBusinessAdapter.getDatas(),data);
+                        data = ViewUtil.mergeList(mBusinessAdapter.getDatas(), data);
                     }
                     // 请求成功
                     mBusinessAdapter.setDatas(data);
@@ -518,16 +539,16 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
             @Override
             protected void onComplete(boolean isSuccess, List<IndexSellerListData> data) {
                 if (isSuccess) {
-                    if(needJudge && mIsLocated){
+                    if (needJudge && mIsLocated) {
                         // 若需要判断定位，且已定位成功，则此次请求不作处理
                         return;
                     }
                     mScrollView.onRefreshComplete();
                     PullToRefreshBase.Mode mode = data.size() < mPageNum ? PullToRefreshBase.Mode.PULL_FROM_START : PullToRefreshBase.Mode.BOTH;
                     mScrollView.setMode(mode);
-                    if(isLoadMore){
+                    if (isLoadMore) {
                         // 合并数据
-                        data = ViewUtil.mergeList(mBusinessAdapter.getDatas(),data);
+                        data = ViewUtil.mergeList(mBusinessAdapter.getDatas(), data);
                     }
                     // 请求成功
                     mBusinessAdapter.setDatas(data);
@@ -544,17 +565,19 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
         initService(groupedCats);
     }
 
-    /** 分类数据分组 */
-    private List<List<ResShopCategory>> groupCatData(List<ResShopCategory> datas){
+    /**
+     * 分类数据分组
+     */
+    private List<List<ResShopCategory>> groupCatData(List<ResShopCategory> datas) {
         List<List<ResShopCategory>> groupedData = new ArrayList<>();
-        if(!ArrayListUtil.isEmpty(datas)){
+        if (!ArrayListUtil.isEmpty(datas)) {
             int mod = datas.size() % 10;
             int count = mod == 0 ? datas.size() / 10 : datas.size() / 10 + 1;
-            for(int i = 0; i < count; i++){
+            for (int i = 0; i < count; i++) {
                 List<ResShopCategory> item = new ArrayList<>();
-                for(int j = 0; j < 10; j++){
+                for (int j = 0; j < 10; j++) {
                     int index = 10 * i + j;
-                    if(index < datas.size()){
+                    if (index < datas.size()) {
                         item.add(datas.get(index));
                     }
                 }
@@ -613,7 +636,7 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                     ResShopCategory data = (ResShopCategory) view.getTag();
                     // 跳转到商家筛选列表
-                    FragmentJumpUtil.toBusinessList(getUsualFragment(),"",data.getId()+"");
+                    FragmentJumpUtil.toBusinessList(getUsualFragment(), "", data.getId() + "");
                 }
             });
         }
@@ -633,24 +656,28 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
         protected void fillView(int position, View convertView, ViewGroup parent, ResShopCategory data) {
             AQuery query = new AQuery(convertView);
             String url = ApplicationData.getInstance().getImageUrl(data.getCategoryPicUrl());
-            ViewUtil.bindImage(convertView,R.id.index_main_service_item_grid_item_img, url, 0);
+            ViewUtil.bindImage(convertView, R.id.index_main_service_item_grid_item_img, url, 0);
             query.id(R.id.index_main_service_item_grid_item_name).text(data.getCategoryName());
             convertView.setTag(data);
         }
     }
 
-    /** 选择城市通知 */
+    /**
+     * 选择城市通知
+     */
     @Subscribe
-    public void onEvent(DataEvent.OnSelectedCityEvent event){
+    public void onEvent(DataEvent.OnSelectedCityEvent event) {
         // 刷新城市信息
         refreshCity();
         // 刷新商家列表
         tryLoadBusinessList(false);
     }
 
-    /** 收藏成功 */
+    /**
+     * 收藏成功
+     */
     @Subscribe
-    public void onEvent(DataEvent.OnCollectedEvent event){
+    public void onEvent(DataEvent.OnCollectedEvent event) {
         // 刷新商家列表
         //tryLoadBusinessList(false);
     }
@@ -658,7 +685,7 @@ public class IndexMainFragment extends BaseFragment implements ShopCategoryView,
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
-        if(isVisibleToUser && mScrollView != null){
+        if (isVisibleToUser && mScrollView != null) {
             mScrollView.pullDownRefresh();
         }
     }

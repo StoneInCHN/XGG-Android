@@ -24,8 +24,8 @@ android {
         applicationId "com.fiveixlg.app.customer"
         minSdkVersion 15
         targetSdkVersion 23
-        versionCode 10029
-        versionName "1.0.13"
+        versionCode 10030
+        versionName "1.0.14"
         signingConfig signingConfigs.release
 //         Enabling multidex support.
         multiDexEnabled true

@@ -17,4 +17,9 @@ public interface MineSettingPresenter {
      * @return
      */
     String getCacheFilesSize();
+
+    /**
+     * 推送开关
+     */
+    void setJpushToggle(boolean msgSwitch);
 }

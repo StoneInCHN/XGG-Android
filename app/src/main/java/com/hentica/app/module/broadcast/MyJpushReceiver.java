@@ -1,8 +1,14 @@
 package com.hentica.app.module.broadcast;
 
+import android.app.ActivityManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+
+import com.hentica.app.framework.activity.FrameActivity;
+import com.hentica.app.util.LogUtils;
+
+import java.util.List;
 
 import cn.jpush.android.api.JPushInterface;
 
@@ -46,9 +52,37 @@ public class MyJpushReceiver extends BroadcastReceiver {
 //            }
 
         } else if (JPushInterface.ACTION_NOTIFICATION_OPENED.equals(intent.getAction())) {
-//            LogUtils.e(TAG, "用户点击打开了通知");
+            LogUtils.e(TAG, "用户点击打开了通知");
+            if (isBackground(context)) {
+                Intent to = new Intent();
+                to.setClass(context, FrameActivity.class);
+                to.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                to.putExtra("jumpTo", "com.hentica.app.module.home.ui.HomeMainFragment");
+                context.startActivity(to);
+            }
         }
-
     }
 
+    public static boolean isBackground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context
+                .getSystemService(Context.ACTIVITY_SERVICE);
+        List<ActivityManager.RunningAppProcessInfo> appProcesses = activityManager
+                .getRunningAppProcesses();
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.processName.equals(context.getPackageName())) {
+                /*
+                BACKGROUND=400 EMPTY=500 FOREGROUND=100
+                GONE=1000 PERCEPTIBLE=130 SERVICE=300 ISIBLE=200
+                 */
+                if (appProcess.importance != ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND) {
+                    //"处于后台"
+                    return true;
+                } else {
+                    // "处于前台"
+                    return false;
+                }
+            }
+        }
+        return false;
+    }
 }

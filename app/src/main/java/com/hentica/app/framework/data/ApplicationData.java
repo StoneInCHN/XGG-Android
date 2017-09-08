@@ -18,14 +18,14 @@ public class ApplicationData {
 
     // 是否是测试模式
     public static final boolean IS_DEBUG = false;
-    public static final boolean PRINT_LOG = false;
+    public static final boolean PRINT_LOG = true;
 
     // 单实例
     private static ApplicationData sApplicationData;
 
     // 服务器地址 内网
-//    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
-    private String mServerUrl = "http://xgg.wa12580.cn";//正式环境（生产环境？？？）
+    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
+//    private String mServerUrl = "http://xgg.wa12580.cn";//正式环境（生产环境？？？）
 
     public final String mImageBaseUrl = mServerUrl + "/rebate-interface/";
     public final String mApkDownloadUrl = mServerUrl + "/rebate-interface";

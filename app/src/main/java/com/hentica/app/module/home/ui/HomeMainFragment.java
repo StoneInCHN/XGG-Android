@@ -6,6 +6,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.RadioGroup;
 
+import com.fiveixlg.app.customer.R;
 import com.hentica.app.framework.fragment.UsualFragment;
 import com.hentica.app.module.bonus.BonusMainFragment;
 import com.hentica.app.module.common.base.BaseFragment;
@@ -21,7 +22,7 @@ import com.hentica.app.util.LogUtils;
 import com.hentica.app.util.PermissionUtils;
 import com.hentica.app.util.StatusBarUtil;
 import com.hentica.app.util.event.DataEvent;
-import com.fiveixlg.app.customer.R;
+
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
@@ -36,7 +37,7 @@ import butterknife.BindView;
  * on 2016/10/21 11:46
  */
 
-public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResAppUpdateData>{
+public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResAppUpdateData> {
 
     @BindView(R.id.main_viewPager)
     ViewPager mPager;
@@ -50,7 +51,9 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
 
     private AppUpdateModel appUpdateModel;
 
-    /** 标志是否从分红跳转登录界面 */
+    /**
+     * 标志是否从分红跳转登录界面
+     */
     private boolean mIsToLoginFromBonus;
 
     private CheckUpdateUtil mUpdateUtil;
@@ -88,10 +91,10 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         mFragmentFlipHelper.setOnBeforeChangeListener(new FragmentFlipHelper.OnBeforeChangeListener() {
             @Override
             public boolean beforeChanged(int checkedId) {
-                if(checkedId == R.id.main_bottom_tab_bonus){
+                if (checkedId == R.id.main_bottom_tab_bonus) {
                     int index = mFragmentFlipHelper.getCurrIndex();
                     // 尝试跳转登录界面
-                    if(FragmentJumpUtil.tryToLogin(getUsualFragment())){
+                    if (FragmentJumpUtil.tryToLogin(getUsualFragment())) {
                         mFragmentFlipHelper.setCurrIndex(index);
                         mIsToLoginFromBonus = true;
                         return true;
@@ -109,12 +112,12 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         if (appUpdateModel != null) appUpdateModel.check();
     }
 
-    private int getFragmentIndex(Class<? extends UsualFragment> clzz){
+    private int getFragmentIndex(Class<? extends UsualFragment> clzz) {
         int result = -1;
-        List<FragmentFlipHelper.FragmentInfo> fragmentInfos= mFragmentFlipHelper.getAllChildFragmentInfos();
-        for(int i = 0; i < fragmentInfos.size(); i++){
+        List<FragmentFlipHelper.FragmentInfo> fragmentInfos = mFragmentFlipHelper.getAllChildFragmentInfos();
+        for (int i = 0; i < fragmentInfos.size(); i++) {
             FragmentFlipHelper.FragmentInfo info = fragmentInfos.get(i);
-            if(info.mFragment.getClass() == clzz){
+            if (info.mFragment.getClass() == clzz) {
                 result = i;
                 break;
             }
@@ -129,16 +132,16 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
                 return true;
             }
         }
-        if(event.getKeyCode() == KeyEvent.KEYCODE_BACK){
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK) {
             return doubleClickToFinish();
         }
         return super.onKeyDown(keyCode, event);
     }
 
-    private boolean doubleClickToFinish(){
-        if(finish){
+    private boolean doubleClickToFinish() {
+        if (finish) {
             finish();
-        }else{
+        } else {
             new Timer().schedule(new TimerTask() {
                 @Override
                 public void run() {
@@ -169,7 +172,7 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
     /**
      * 检查文件限权
      */
-    private void checkFilePermissioinUpdate(){
+    private void checkFilePermissioinUpdate() {
         PermissionUtils.mPermissionSetCancelListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -181,7 +184,7 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         PermissionUtils.requestPermission(this, PermissionUtils.CODE_WRITE_EXTERNAL_STORAGE, getPermissionGrant());
     }
 
-    private PermissionUtils.PermissionGrant getPermissionGrant(){
+    private PermissionUtils.PermissionGrant getPermissionGrant() {
         return new PermissionUtils.PermissionGrant() {
             @Override
             public void onPermissionGranted(int requestCode) {
@@ -194,19 +197,23 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         };
     }
 
-    /** 登录事件 */
+    /**
+     * 登录事件
+     */
     @Subscribe
-    public void onEvent(DataEvent.OnLoginEvent event){
-        if(mIsToLoginFromBonus){
+    public void onEvent(DataEvent.OnLoginEvent event) {
+        if (mIsToLoginFromBonus) {
             // 跳转到分红界面
             mFragmentFlipHelper.setCurrIndex(1);
             mIsToLoginFromBonus = false;
         }
     }
 
-    /** 支付成功 */
+    /**
+     * 支付成功
+     */
     @Subscribe
-    public void onEvent(DataEvent.OnPaySuccess event){
+    public void onEvent(DataEvent.OnPaySuccess event) {
         // 切换到我的
         mFragmentFlipHelper.setCurrIndex(2);
     }
@@ -215,8 +222,8 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         LogUtils.i("BaseFragment", "onRequestPermissionsResult : requestCode=" + requestCode);
-        for(FragmentFlipHelper.FragmentInfo fragmentInfo : mFragmentFlipHelper.getAllChildFragmentInfos()){
-            if(fragmentInfo.mFragment != null){
+        for (FragmentFlipHelper.FragmentInfo fragmentInfo : mFragmentFlipHelper.getAllChildFragmentInfos()) {
+            if (fragmentInfo.mFragment != null) {
                 fragmentInfo.mFragment.onRequestPermissionsResult(requestCode, permissions, grantResults);
             }
         }

@@ -1,18 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:ptr="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <include layout="@layout/mine_statistics_list_fragment"
-             android:layout_width="match_parent"
-             android:layout_height="0dp"
-             android:layout_weight="1" />
+    <include
+        layout="@layout/mine_statistics_list_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:visibility="gone">
 
         <Button
             android:id="@+id/ledou_btn_transfer"
@@ -22,7 +25,7 @@
             android:background="@drawable/rebate_selector_public_big_button"
             android:text="转账"
             android:textColor="@color/text_white"
-            android:textSize="@dimen/text_36"/>
+            android:textSize="@dimen/text_36" />
 
     </LinearLayout>
 

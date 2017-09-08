@@ -14,6 +14,7 @@ import java.util.List;
 public abstract class RebateListenerAdapter<T> extends ListenerAdapter<T> {
 
     private RebateDataBackListener l;
+
     /**
      * 构造函数
      *
@@ -61,19 +62,22 @@ public abstract class RebateListenerAdapter<T> extends ListenerAdapter<T> {
     @Override
     public void onResult(NetData result) {
         super.onResult(result);
-        if(result.isSuccess()){
-            JNode resultNode = new JNode(result.getResult());
-            String page = resultNode.getChild("page").getJsonString();
-            extralData(page);
-            setResult(result);
+        if (result.isSuccess()) {
+            String resultString = result.getResult();
+            if (resultString != null) {
+                JNode resultNode = new JNode(resultString);
+                String page = resultNode.getChild("page").getJsonString();
+                extralData(page);
+                setResult(result);
+            }
         }
     }
 
     /**
      * 扩展数据
      */
-    public void extralData(String extral){
-        if(l != null){
+    public void extralData(String extral) {
+        if (l != null) {
             l.extralData(extral);
         }
     }
@@ -81,8 +85,8 @@ public abstract class RebateListenerAdapter<T> extends ListenerAdapter<T> {
     /**
      * 扩展数据
      */
-    public void setResult(NetData netData){
-        if(l != null){
+    public void setResult(NetData netData) {
+        if (l != null) {
             l.setResult(netData);
         }
     }

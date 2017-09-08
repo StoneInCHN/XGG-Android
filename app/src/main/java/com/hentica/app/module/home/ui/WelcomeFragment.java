@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.androidquery.AQuery;
+import com.fiveixlg.app.customer.R;
 import com.hentica.app.framework.data.ApplicationData;
 import com.hentica.app.framework.fragment.RequestPermissionResultListener;
 import com.hentica.app.framework.fragment.UsualFragment;
@@ -23,7 +24,6 @@ import com.hentica.app.util.PermissionUtils;
 import com.hentica.app.util.StorageUtil;
 import com.hentica.app.util.ViewUtil;
 import com.hentica.app.util.rsa.RsaUtils;
-import com.fiveixlg.app.customer.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -141,6 +141,7 @@ public class WelcomeFragment extends UsualFragment {
                 return mWelcomImages.get(position);
             }
         });
+
         PermissionUtils.requestPermission(this, PermissionUtils.CODE_WRITE_EXTERNAL_STORAGE, new PermissionUtils.PermissionGrant() {
             @Override
             public void onPermissionGranted(int requestCode) {

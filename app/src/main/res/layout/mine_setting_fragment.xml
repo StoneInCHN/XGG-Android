@@ -26,25 +26,24 @@
             android:layout_width="wrap_content"
             android:layout_height="@dimen/common_line_height"
             android:drawableLeft="@drawable/rebate_mine_update"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:gravity="center_vertical"
             android:paddingLeft="@dimen/view_padding"
             android:text="版本更新"
-            android:textSize="@dimen/text_28"
             android:textColor="@color/text_black"
-            android:gravity="center_vertical"
-            android:drawablePadding="@dimen/drawable_padding"
-            />
+            android:textSize="@dimen/text_28" />
 
         <TextView
             android:id="@+id/setting_tv_version_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="XXX"
-            android:textSize="@dimen/text_24"
-            android:textColor="@color/text_gray"
             android:layout_gravity="right|center_vertical"
-            android:drawableRight="@drawable/rebate_public_next"
+            android:layout_marginRight="30dp"
             android:drawablePadding="@dimen/drawable_padding"
-            android:layout_marginRight="30dp"/>
+            android:drawableRight="@drawable/rebate_public_next"
+            android:text="XXX"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_24" />
 
     </FrameLayout>
 
@@ -60,29 +59,59 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:drawableLeft="@drawable/rebate_mine_delete"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:gravity="center_vertical"
             android:paddingLeft="@dimen/view_padding"
             android:paddingRight="@dimen/view_padding"
             android:text="清除缓存"
-            android:textSize="@dimen/text_28"
             android:textColor="@color/text_black"
-            android:gravity="center_vertical"
-            android:drawablePadding="@dimen/drawable_padding"
-            />
+            android:textSize="@dimen/text_28" />
 
         <TextView
             android:id="@+id/setting_tv_cache_size"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="XXX"
-            android:textSize="@dimen/text_24"
-            android:textColor="@color/text_gray"
             android:layout_gravity="right|center_vertical"
-            android:drawableRight="@drawable/rebate_public_next"
+            android:layout_marginRight="30dp"
             android:drawablePadding="@dimen/drawable_padding"
-            android:layout_marginRight="30dp"/>
+            android:drawableRight="@drawable/rebate_public_next"
+            android:text="XXX"
+            android:textColor="@color/text_gray"
+            android:textSize="@dimen/text_24" />
 
     </FrameLayout>
 
     <include layout="@layout/common_split_line_long" />
 
+    <FrameLayout
+        android:id="@+id/setting_layout_jpush"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/common_line_height"
+        android:background="@color/bg_white">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:drawableLeft="@drawable/jpush_lable"
+            android:drawablePadding="@dimen/drawable_padding"
+            android:gravity="center_vertical"
+            android:paddingLeft="@dimen/view_padding"
+            android:paddingRight="@dimen/view_padding"
+            android:text="消息推送"
+            android:textColor="@color/text_black"
+            android:textSize="@dimen/text_28" />
+
+        <CheckBox
+            android:id="@+id/setting_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="30dp"
+            android:background="@drawable/rebate_selector_homepage_switch"
+            android:button="@null" />
+
+
+    </FrameLayout>
+
+    <include layout="@layout/common_split_line_long" />
 </LinearLayout>

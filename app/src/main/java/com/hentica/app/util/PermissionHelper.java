@@ -13,10 +13,9 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
-import com.hentica.app.widget.dialog.SelfAlertDialogHelper;
 import com.fiveixlg.app.customer.R;
+import com.hentica.app.widget.dialog.SelfAlertDialogHelper;
 
 import java.util.ArrayList;
 import java.util.HashMap;

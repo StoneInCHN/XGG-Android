@@ -2989,4 +2989,24 @@ public class RequestBase {
         post.setFullListener(listener);
         post.doPost();
     }
+
+    /**
+     * 设置极光推送开关
+     */
+    public static void setJpushToggle(boolean msgSwitch, Post.FullListener listener) {
+        String url = HostUtil.splicelHost(ApplicationData.getInstance().getServerUrl(), "/rebate-interface/common/pushMsgSwitch.jhtml");
+        // 参数
+        List<Post.ParamNameValuePair> params = new ArrayList<>();
+        params.add(new Post.ParamNameValuePair("userId", ApplicationData.getInstance().getLoginUserId()));
+        params.add(new Post.ParamNameValuePair("token", ApplicationData.getInstance().getToken()));
+        params.add(new Post.ParamNameValuePair("msgSwitch", msgSwitch + ""));
+        params.add(new Post.ParamNameValuePair("appPlatform", "ANDROID"));
+        // 文件参数
+        List<Post.ParamNameValuePair> fileParams = new ArrayList<>();
+        Post post = new RebatePost(url, new JsonBodyCreater());//Json请求
+        post.setParams(params);
+        post.setFileParams(fileParams);
+        post.setFullListener(listener);
+        post.doPost();
+    }
 }

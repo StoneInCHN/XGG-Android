@@ -2,8 +2,12 @@ package com.hentica.app.module.mine.presenter;
 
 import com.hentica.app.framework.AppApplication;
 import com.hentica.app.framework.data.ApplicationData;
+import com.hentica.app.lib.net.NetData;
+import com.hentica.app.lib.net.Post;
 import com.hentica.app.lib.util.FileHelper;
 import com.hentica.app.module.mine.view.MineSettingView;
+import com.hentica.app.util.StorageUtil;
+import com.hentica.app.util.request.Request;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -31,7 +35,7 @@ public class MineSettingPresenterImpl implements MineSettingPresenter {
         for (String path : mCacheFiles) {
             FileHelper.deletePath(path);
         }
-        if(mSettingView != null){
+        if (mSettingView != null) {
             mSettingView.cacheClearSuccess();
         }
     }
@@ -44,4 +48,27 @@ public class MineSettingPresenterImpl implements MineSettingPresenter {
         }
         return FileHelper.formatSize(cacheSize, FileHelper.SIZETYPE_MB);
     }
+
+    @Override
+    public void setJpushToggle(final boolean msgSwitch) {
+        Request.setJpushToggle(msgSwitch, new Post.FullListener() {
+            @Override
+            public void onStart() {
+
+            }
+
+            @Override
+            public void onProgress(long curr, long max) {
+
+            }
+
+            @Override
+            public void onResult(NetData result) {
+                if (result.isSuccess()) {
+                    StorageUtil.getLastLoginInfo().setPushMsg(msgSwitch);
+                }
+            }
+        });
+    }
+
 }
