@@ -77,7 +77,7 @@ public class DataEvent {
     /**
      * 微信支付事件
      */
-    public static class OnWXPayRespEvent{
+    public static class OnWXPayRespEvent {
         private int mErrCode;
 
         public OnWXPayRespEvent(int mErrCode) {
@@ -96,14 +96,14 @@ public class DataEvent {
     /**
      * 需更新用户资料事件
      */
-    public static class OnToUpdataUserProfileEvent{
+    public static class OnToUpdataUserProfileEvent {
 
     }
 
     /**
      * 店铺资料更新
      */
-    public static class OnUpdateShopProfileEvent{
+    public static class OnUpdateShopProfileEvent {
 
     }
 
@@ -114,37 +114,51 @@ public class DataEvent {
     }
 
 
-    /** 数据库更新事件 */
-    public static class OnDBUploadSuccess{
+    /**
+     * 数据库更新事件
+     */
+    public static class OnDBUploadSuccess {
 
     }
 
-    /** 选择城市事件 */
-    public static class OnSelectedCityEvent{
+    /**
+     * 选择城市事件
+     */
+    public static class OnSelectedCityEvent {
 
     }
 
-    /** 收藏成功事件 */
-    public static class OnCollectedEvent{
+    /**
+     * 收藏成功事件
+     */
+    public static class OnCollectedEvent {
 
     }
 
-    /** 评价成功 */
-    public static class OnEvaluatedEvent{
+    /**
+     * 评价成功
+     */
+    public static class OnEvaluatedEvent {
 
     }
 
-    /** 商家回复评价成功 */
-    public static class OnShopReplySuccessEvent{
+    /**
+     * 商家回复评价成功
+     */
+    public static class OnShopReplySuccessEvent {
 
     }
 
-    /** 支付成功 */
-    public static class OnPaySuccess{
+    /**
+     * 支付成功
+     */
+    public static class OnPaySuccess {
 
     }
 
-    /** 录单支付成功 */
+    /**
+     * 录单支付成功
+     */
     public static class OnCloseRecordOrderFragmentEvent {
 
     }
@@ -152,8 +166,14 @@ public class DataEvent {
     /**
      * 添加银行卡成功
      */
-    public static class OnBankCardAddSuccess{
+    public static class OnBankCardAddSuccess {
 
     }
 
+    /**
+     * 重新加载商城webView
+     */
+    public static class OnLoadWebView {
+
+    }
 }

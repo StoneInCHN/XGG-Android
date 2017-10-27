@@ -1,9 +1,13 @@
 package com.hentica.app.module.home.ui;
 
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v4.view.ViewPager;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
 import com.fiveixlg.app.customer.R;
@@ -13,6 +17,7 @@ import com.hentica.app.module.common.base.BaseFragment;
 import com.hentica.app.module.entity.ResAppUpdateData;
 import com.hentica.app.module.index.IndexMainFragment;
 import com.hentica.app.module.mine.ui.MineMainFragment;
+import com.hentica.app.module.mine.ui.ShopMallFragment;
 import com.hentica.app.module.update.AppUpdateModel;
 import com.hentica.app.module.update.UpdateAppView;
 import com.hentica.app.util.CheckUpdateUtil;
@@ -23,6 +28,7 @@ import com.hentica.app.util.PermissionUtils;
 import com.hentica.app.util.StatusBarUtil;
 import com.hentica.app.util.event.DataEvent;
 
+import org.greenrobot.eventbus.EventBus;
 import org.greenrobot.eventbus.Subscribe;
 
 import java.util.List;
@@ -30,6 +36,8 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 /**
  * Created by kezhong.
@@ -46,11 +54,18 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
     RadioGroup mRgTabs;
 
     FragmentFlipHelper mFragmentFlipHelper;
+    @BindView(R.id.main_bottom_tab_shop_mall)
+    RadioButton mainBottomTabShopMall;
+    Unbinder unbinder;
 
     private boolean finish = false;
 
     private AppUpdateModel appUpdateModel;
 
+    /**
+     * 标志是否从分红跳转登录界面
+     */
+    private boolean mIsToLoginFromShopMall;
     /**
      * 标志是否从分红跳转登录界面
      */
@@ -80,6 +95,7 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         mFragmentFlipHelper = new FragmentFlipHelper(getUsualFragment(), R.id.main_viewPager, R.id.main_bottom_radio_group, 0, 0);
         mFragmentFlipHelper.addFragmentInfo(new FragmentFlipHelper.FragmentInfo(new IndexMainFragment(), R.id.main_bottom_tab_index, "index"));
         mFragmentFlipHelper.addFragmentInfo(new FragmentFlipHelper.FragmentInfo(new BonusMainFragment(), R.id.main_bottom_tab_bonus, "bonus"));
+        mFragmentFlipHelper.addFragmentInfo(new FragmentFlipHelper.FragmentInfo(new ShopMallFragment(), R.id.main_bottom_tab_shop_mall, "shop"));
         mFragmentFlipHelper.addFragmentInfo(new FragmentFlipHelper.FragmentInfo(new MineMainFragment(), R.id.main_bottom_tab_mine, "mine"));
         mFragmentFlipHelper.createFragments();
 
@@ -97,6 +113,22 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
                     if (FragmentJumpUtil.tryToLogin(getUsualFragment())) {
                         mFragmentFlipHelper.setCurrIndex(index);
                         mIsToLoginFromBonus = true;
+                        return true;
+                    }
+                    return false;
+                } else if (checkedId == R.id.main_bottom_tab_shop_mall) {
+                    int index = mFragmentFlipHelper.getCurrIndex();
+                    mainBottomTabShopMall.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            if (!FragmentJumpUtil.tryToLogin(getUsualFragment()))
+                                EventBus.getDefault().post(new DataEvent.OnLoadWebView());
+                        }
+                    });
+                    // 尝试跳转登录界面
+                    if (FragmentJumpUtil.tryToLogin(getUsualFragment())) {
+                        mFragmentFlipHelper.setCurrIndex(index);
+                        mIsToLoginFromShopMall = true;
                         return true;
                     }
                     return false;
@@ -206,6 +238,9 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
             // 跳转到分红界面
             mFragmentFlipHelper.setCurrIndex(1);
             mIsToLoginFromBonus = false;
+        } else if (mIsToLoginFromShopMall) {
+            mFragmentFlipHelper.setCurrIndex(2);
+            mIsToLoginFromShopMall = false;
         }
     }
 
@@ -230,4 +265,17 @@ public class HomeMainFragment extends BaseFragment implements UpdateAppView<ResA
         PermissionUtils.requestPermissionsResult(getUsualFragment(), requestCode, permissions, grantResults, getPermissionGrant());
     }
 
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        // TODO: inflate a fragment view
+        View rootView = super.onCreateView(inflater, container, savedInstanceState);
+        unbinder = ButterKnife.bind(this, rootView);
+        return rootView;
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 }

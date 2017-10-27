@@ -3,14 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/XGG-Android.iml" filepath="$PROJECT_DIR$/XGG-Android.iml" />
-      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/appbase/appbase.iml" filepath="$PROJECT_DIR$/appbase/appbase.iml" />
       <module fileurl="file://$PROJECT_DIR$/datalib/datalib.iml" filepath="$PROJECT_DIR$/datalib/datalib.iml" />
       <module fileurl="file://$PROJECT_DIR$/developtools/developtools.iml" filepath="$PROJECT_DIR$/developtools/developtools.iml" />
       <module fileurl="file://$PROJECT_DIR$/paymentPlatform2/paymentPlatform2.iml" filepath="$PROJECT_DIR$/paymentPlatform2/paymentPlatform2.iml" />
       <module fileurl="file://$PROJECT_DIR$/takephoto_library/takephoto_library.iml" filepath="$PROJECT_DIR$/takephoto_library/takephoto_library.iml" />
-      <module fileurl="file://$PROJECT_DIR$/xianglegou.iml" filepath="$PROJECT_DIR$/xianglegou.iml" />
       <module fileurl="file://$PROJECT_DIR$/zXingDialog/zXingDialog.iml" filepath="$PROJECT_DIR$/zXingDialog/zXingDialog.iml" />
     </modules>
   </component>

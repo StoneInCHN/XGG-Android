@@ -77,7 +77,7 @@ public class RebatePost extends Post {
             }
             return netData;
         }
-        return null;
+        return new NetData();
     }
 
     @Override

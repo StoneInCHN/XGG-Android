@@ -24,8 +24,10 @@ public class ApplicationData {
     private static ApplicationData sApplicationData;
 
     // 服务器地址 内网
-    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
+//    private String mServerUrl = "http://118.190.83.191:10001";//测试服务器
 //    private String mServerUrl = "http://xgg.wa12580.cn";//正式环境（生产环境？？？）
+    private String mServerUrl = "http://120.78.134.176:8080";//正式环境（生产环境？？？）
+    private String mshopMallUrl = "http://119.23.48.5:8080/pss/weixin/index.html";//商城地址
 
     public final String mImageBaseUrl = mServerUrl + "/rebate-interface/";
     public final String mApkDownloadUrl = mServerUrl + "/rebate-interface";
@@ -119,6 +121,20 @@ public class ApplicationData {
     public boolean isLogin() {
 
         return LoginModel.getInstance().isLogin();
+    }
+
+    /**
+     * 获得商城地址
+     */
+    public String getMshopMallUrl() {
+        return mshopMallUrl;
+    }
+
+    /**
+     * 设置商城地址
+     */
+    public void setMshopMallUrl(String mshopMallUrl) {
+        this.mshopMallUrl = mshopMallUrl;
     }
 
     /**
